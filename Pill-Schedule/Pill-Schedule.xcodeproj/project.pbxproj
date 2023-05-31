@@ -14,9 +14,11 @@
 		11400A412A2735F700751E1A /* Pill_Schedule.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 11400A3F2A2735F700751E1A /* Pill_Schedule.xcdatamodeld */; };
 		11400A432A2735F800751E1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11400A422A2735F800751E1A /* Assets.xcassets */; };
 		11400A462A2735F800751E1A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11400A442A2735F800751E1A /* LaunchScreen.storyboard */; };
+		352D5C0B61B6710BC14F3744 /* Pods_Pill_Schedule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FC939FBE800F91926364B70 /* Pods_Pill_Schedule.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0FC939FBE800F91926364B70 /* Pods_Pill_Schedule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pill_Schedule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		11400A332A2735F700751E1A /* Pill-Schedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pill-Schedule.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		11400A362A2735F700751E1A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11400A382A2735F700751E1A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +28,8 @@
 		11400A422A2735F800751E1A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11400A452A2735F800751E1A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		11400A472A2735F800751E1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8AAEE064348429D8E370FB7D /* Pods-Pill-Schedule.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pill-Schedule.debug.xcconfig"; path = "Target Support Files/Pods-Pill-Schedule/Pods-Pill-Schedule.debug.xcconfig"; sourceTree = "<group>"; };
+		A7885F8EB21951C0CA0E75A0 /* Pods-Pill-Schedule.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pill-Schedule.release.xcconfig"; path = "Target Support Files/Pods-Pill-Schedule/Pods-Pill-Schedule.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				352D5C0B61B6710BC14F3744 /* Pods_Pill_Schedule.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +49,8 @@
 			children = (
 				11400A352A2735F700751E1A /* Pill-Schedule */,
 				11400A342A2735F700751E1A /* Products */,
+				2C9209D61C61F87A20DC0068 /* Pods */,
+				6989D02EE83982D7BCDF2D42 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,6 +77,24 @@
 			path = "Pill-Schedule";
 			sourceTree = "<group>";
 		};
+		2C9209D61C61F87A20DC0068 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8AAEE064348429D8E370FB7D /* Pods-Pill-Schedule.debug.xcconfig */,
+				A7885F8EB21951C0CA0E75A0 /* Pods-Pill-Schedule.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		6989D02EE83982D7BCDF2D42 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0FC939FBE800F91926364B70 /* Pods_Pill_Schedule.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,9 +102,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 11400A4A2A2735F800751E1A /* Build configuration list for PBXNativeTarget "Pill-Schedule" */;
 			buildPhases = (
+				DB5FDDA899B46FD8E3226BFD /* [CP] Check Pods Manifest.lock */,
 				11400A2F2A2735F700751E1A /* Sources */,
 				11400A302A2735F700751E1A /* Frameworks */,
 				11400A312A2735F700751E1A /* Resources */,
+				188885EF48FD0BC81F892BC5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -135,6 +162,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		188885EF48FD0BC81F892BC5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Pill-Schedule/Pods-Pill-Schedule-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Pill-Schedule/Pods-Pill-Schedule-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Pill-Schedule/Pods-Pill-Schedule-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DB5FDDA899B46FD8E3226BFD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Pill-Schedule-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		11400A2F2A2735F700751E1A /* Sources */ = {
@@ -286,6 +355,7 @@
 		};
 		11400A4B2A2735F800751E1A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8AAEE064348429D8E370FB7D /* Pods-Pill-Schedule.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -314,6 +384,7 @@
 		};
 		11400A4C2A2735F800751E1A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7885F8EB21951C0CA0E75A0 /* Pods-Pill-Schedule.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
