@@ -8,19 +8,14 @@
 import Foundation
 import UIKit
 extension AccountSettingsView {
-    //MARK: - About sender's tag
-    /// Tag 1  ------------- Registration Button
-    /// Tag 0 -------------- Login Button
-    @objc func showLoginView(_ sender: UIButton){
-        switch sender.tag {
-        case 1:
-            logInView.showCase = .registration
-            showLogInView()
-        case 0:
-            logInView.showCase = .login
-            showLogInView()
-        default: print("Unknown sender's tag")
-        }
+    
+    @objc func didTapLogInButton(_ sender: UIButton) {
+        logInView.showCase = .login
+        showLogInView()
+    }
+    @objc func didTapRegistrationButton(_ sender: UIButton) {
+        logInView.showCase = .registration
+        showLogInView()
     }
 
     @objc func hideLoginView(){

@@ -55,6 +55,9 @@
 		11400AB12A27441000751E1A /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400AB02A27441000751E1A /* CircularProgressBar.swift */; };
 		11400AB32A27441F00751E1A /* ChoosePillButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400AB22A27441F00751E1A /* ChoosePillButtonView.swift */; };
 		11400AB52A27443500751E1A /* ChoosePillButtonView+Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400AB42A27443500751E1A /* ChoosePillButtonView+Actions.swift */; };
+		11400AB92A27509300751E1A /* AccountSettingsView+SetupViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400AB82A27509300751E1A /* AccountSettingsView+SetupViews.swift */; };
+		11400ABB2A2750D700751E1A /* AccountSettingsView+LoggedInSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400ABA2A2750D700751E1A /* AccountSettingsView+LoggedInSetup.swift */; };
+		11400ABD2A2750F800751E1A /* AccountSettingsView+NotLoggedInSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400ABC2A2750F800751E1A /* AccountSettingsView+NotLoggedInSetup.swift */; };
 		352D5C0B61B6710BC14F3744 /* Pods_Pill_Schedule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FC939FBE800F91926364B70 /* Pods_Pill_Schedule.framework */; };
 /* End PBXBuildFile section */
 
@@ -110,6 +113,9 @@
 		11400AB02A27441000751E1A /* CircularProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBar.swift; sourceTree = "<group>"; };
 		11400AB22A27441F00751E1A /* ChoosePillButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosePillButtonView.swift; sourceTree = "<group>"; };
 		11400AB42A27443500751E1A /* ChoosePillButtonView+Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChoosePillButtonView+Actions.swift"; sourceTree = "<group>"; };
+		11400AB82A27509300751E1A /* AccountSettingsView+SetupViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountSettingsView+SetupViews.swift"; sourceTree = "<group>"; };
+		11400ABA2A2750D700751E1A /* AccountSettingsView+LoggedInSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountSettingsView+LoggedInSetup.swift"; sourceTree = "<group>"; };
+		11400ABC2A2750F800751E1A /* AccountSettingsView+NotLoggedInSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountSettingsView+NotLoggedInSetup.swift"; sourceTree = "<group>"; };
 		8AAEE064348429D8E370FB7D /* Pods-Pill-Schedule.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pill-Schedule.debug.xcconfig"; path = "Target Support Files/Pods-Pill-Schedule/Pods-Pill-Schedule.debug.xcconfig"; sourceTree = "<group>"; };
 		A7885F8EB21951C0CA0E75A0 /* Pods-Pill-Schedule.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pill-Schedule.release.xcconfig"; path = "Target Support Files/Pods-Pill-Schedule/Pods-Pill-Schedule.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -327,8 +333,8 @@
 		11400A9C2A27434E00751E1A /* AccountSettingsView */ = {
 			isa = PBXGroup;
 			children = (
+				11400AB72A27507D00751E1A /* AccountSetingsView+Extensions */,
 				11400AA02A27437E00751E1A /* AccountSettingsView.swift */,
-				11400AA22A27438E00751E1A /* AccountSettingsView+Actions.swift */,
 			);
 			path = AccountSettingsView;
 			sourceTree = "<group>";
@@ -382,6 +388,17 @@
 				11400AB22A27441F00751E1A /* ChoosePillButtonView.swift */,
 			);
 			path = ChoosePillButtonView;
+			sourceTree = "<group>";
+		};
+		11400AB72A27507D00751E1A /* AccountSetingsView+Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				11400AA22A27438E00751E1A /* AccountSettingsView+Actions.swift */,
+				11400AB82A27509300751E1A /* AccountSettingsView+SetupViews.swift */,
+				11400ABA2A2750D700751E1A /* AccountSettingsView+LoggedInSetup.swift */,
+				11400ABC2A2750F800751E1A /* AccountSettingsView+NotLoggedInSetup.swift */,
+			);
+			path = "AccountSetingsView+Extensions";
 			sourceTree = "<group>";
 		};
 		2C9209D61C61F87A20DC0068 /* Pods */ = {
@@ -551,11 +568,13 @@
 				11400A8A2A27428A00751E1A /* InfoContainerView.swift in Sources */,
 				11400AB12A27441000751E1A /* CircularProgressBar.swift in Sources */,
 				11400A692A273E7800751E1A /* FirstCreatePillViewController+Actions.swift in Sources */,
+				11400AB92A27509300751E1A /* AccountSettingsView+SetupViews.swift in Sources */,
 				11400A8C2A2742A100751E1A /* InfoContainerView+Actions.swift in Sources */,
 				11400A3B2A2735F700751E1A /* ViewController.swift in Sources */,
 				11400A772A27416500751E1A /* VaccinationMenuDelegate.swift in Sources */,
 				11400AA12A27437E00751E1A /* AccountSettingsView.swift in Sources */,
 				11400AB52A27443500751E1A /* ChoosePillButtonView+Actions.swift in Sources */,
+				11400ABD2A2750F800751E1A /* AccountSettingsView+NotLoggedInSetup.swift in Sources */,
 				11400A722A27411400751E1A /* Pill.swift in Sources */,
 				11400A542A273D2F00751E1A /* Extensions.swift in Sources */,
 				11400A372A2735F700751E1A /* AppDelegate.swift in Sources */,
@@ -578,6 +597,7 @@
 				11400A5A2A273D7F00751E1A /* ViewController+Layout.swift in Sources */,
 				11400AA62A2743B900751E1A /* InfoViewCell.swift in Sources */,
 				11400A852A27424900751E1A /* BurgerMenuView+Actions.swift in Sources */,
+				11400ABB2A2750D700751E1A /* AccountSettingsView+LoggedInSetup.swift in Sources */,
 				11400A962A27430600751E1A /* LoginView+TextFieldDelegate.swift in Sources */,
 				11400A812A27422B00751E1A /* BurgerMenuView+CollectionView.swift in Sources */,
 				11400A412A2735F700751E1A /* Pill_Schedule.xcdatamodeld in Sources */,
