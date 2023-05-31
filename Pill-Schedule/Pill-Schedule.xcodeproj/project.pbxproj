@@ -16,6 +16,45 @@
 		11400A462A2735F800751E1A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11400A442A2735F800751E1A /* LaunchScreen.storyboard */; };
 		11400A4F2A273A7800751E1A /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400A4E2A273A7800751E1A /* R.generated.swift */; };
 		11400A512A273C8100751E1A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11400A502A273C8100751E1A /* GoogleService-Info.plist */; };
+		11400A542A273D2F00751E1A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400A532A273D2F00751E1A /* Extensions.swift */; };
+		11400A582A273D6900751E1A /* ViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400A572A273D6900751E1A /* ViewController+DataSource.swift */; };
+		11400A5A2A273D7F00751E1A /* ViewController+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400A592A273D7F00751E1A /* ViewController+Layout.swift */; };
+		11400A5C2A273D9400751E1A /* ViewController+CollectionViewSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400A5B2A273D9400751E1A /* ViewController+CollectionViewSetup.swift */; };
+		11400A5E2A273DA500751E1A /* ViewController+Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400A5D2A273DA500751E1A /* ViewController+Actions.swift */; };
+		11400A602A273DC400751E1A /* ViewController+CreateSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400A5F2A273DC400751E1A /* ViewController+CreateSubviews.swift */; };
+		11400A622A273DD600751E1A /* ViewController+Security.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400A612A273DD600751E1A /* ViewController+Security.swift */; };
+		11400A662A273E4C00751E1A /* FirstCreatePillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400A652A273E4C00751E1A /* FirstCreatePillViewController.swift */; };
+		11400A692A273E7800751E1A /* FirstCreatePillViewController+Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400A682A273E7800751E1A /* FirstCreatePillViewController+Actions.swift */; };
+		11400A6B2A2740CD00751E1A /* FirstCreatePillViewController+CreateSubViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400A6A2A2740CD00751E1A /* FirstCreatePillViewController+CreateSubViews.swift */; };
+		11400A6E2A2740F500751E1A /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400A6D2A2740F500751E1A /* Section.swift */; };
+		11400A702A27410800751E1A /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400A6F2A27410800751E1A /* Item.swift */; };
+		11400A722A27411400751E1A /* Pill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400A712A27411400751E1A /* Pill.swift */; };
+		11400A752A27415600751E1A /* MenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400A742A27415600751E1A /* MenuDelegate.swift */; };
+		11400A772A27416500751E1A /* VaccinationMenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400A762A27416500751E1A /* VaccinationMenuDelegate.swift */; };
+		11400A7C2A2741F100751E1A /* BurgerMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400A7B2A2741F100751E1A /* BurgerMenuView.swift */; };
+		11400A7F2A27421C00751E1A /* BurgerMenuView+SetupViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400A7E2A27421C00751E1A /* BurgerMenuView+SetupViews.swift */; };
+		11400A812A27422B00751E1A /* BurgerMenuView+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400A802A27422B00751E1A /* BurgerMenuView+CollectionView.swift */; };
+		11400A832A27423C00751E1A /* BurgerMenuView+CollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400A822A27423C00751E1A /* BurgerMenuView+CollectionViewDelegate.swift */; };
+		11400A852A27424900751E1A /* BurgerMenuView+Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400A842A27424900751E1A /* BurgerMenuView+Actions.swift */; };
+		11400A872A27426700751E1A /* MenuViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400A862A27426700751E1A /* MenuViewCell.swift */; };
+		11400A8A2A27428A00751E1A /* InfoContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400A892A27428A00751E1A /* InfoContainerView.swift */; };
+		11400A8C2A2742A100751E1A /* InfoContainerView+Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400A8B2A2742A100751E1A /* InfoContainerView+Actions.swift */; };
+		11400A8F2A2742C100751E1A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400A8E2A2742C100751E1A /* LoginView.swift */; };
+		11400A912A2742D600751E1A /* LoginView+SetupViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400A902A2742D600751E1A /* LoginView+SetupViews.swift */; };
+		11400A942A2742F100751E1A /* LoginView+Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400A932A2742F100751E1A /* LoginView+Actions.swift */; };
+		11400A962A27430600751E1A /* LoginView+TextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400A952A27430600751E1A /* LoginView+TextFieldDelegate.swift */; };
+		11400A982A27431D00751E1A /* LoginView+Security.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400A972A27431D00751E1A /* LoginView+Security.swift */; };
+		11400A9A2A27433100751E1A /* LoginView+Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400A992A27433100751E1A /* LoginView+Auth.swift */; };
+		11400AA12A27437E00751E1A /* AccountSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400AA02A27437E00751E1A /* AccountSettingsView.swift */; };
+		11400AA32A27438E00751E1A /* AccountSettingsView+Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400AA22A27438E00751E1A /* AccountSettingsView+Actions.swift */; };
+		11400AA62A2743B900751E1A /* InfoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400AA52A2743B900751E1A /* InfoViewCell.swift */; };
+		11400AA82A2743C500751E1A /* VaccinationViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400AA72A2743C500751E1A /* VaccinationViewCell.swift */; };
+		11400AAA2A2743D600751E1A /* PillCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400AA92A2743D600751E1A /* PillCell.swift */; };
+		11400AAC2A2743E200751E1A /* HeaderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400AAB2A2743E200751E1A /* HeaderViewCell.swift */; };
+		11400AAF2A27440300751E1A /* AddPillButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400AAE2A27440300751E1A /* AddPillButton.swift */; };
+		11400AB12A27441000751E1A /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400AB02A27441000751E1A /* CircularProgressBar.swift */; };
+		11400AB32A27441F00751E1A /* ChoosePillButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400AB22A27441F00751E1A /* ChoosePillButtonView.swift */; };
+		11400AB52A27443500751E1A /* ChoosePillButtonView+Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400AB42A27443500751E1A /* ChoosePillButtonView+Actions.swift */; };
 		352D5C0B61B6710BC14F3744 /* Pods_Pill_Schedule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FC939FBE800F91926364B70 /* Pods_Pill_Schedule.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +71,45 @@
 		11400A472A2735F800751E1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11400A4E2A273A7800751E1A /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		11400A502A273C8100751E1A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		11400A532A273D2F00751E1A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		11400A572A273D6900751E1A /* ViewController+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+DataSource.swift"; sourceTree = "<group>"; };
+		11400A592A273D7F00751E1A /* ViewController+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Layout.swift"; sourceTree = "<group>"; };
+		11400A5B2A273D9400751E1A /* ViewController+CollectionViewSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+CollectionViewSetup.swift"; sourceTree = "<group>"; };
+		11400A5D2A273DA500751E1A /* ViewController+Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Actions.swift"; sourceTree = "<group>"; };
+		11400A5F2A273DC400751E1A /* ViewController+CreateSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+CreateSubviews.swift"; sourceTree = "<group>"; };
+		11400A612A273DD600751E1A /* ViewController+Security.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Security.swift"; sourceTree = "<group>"; };
+		11400A652A273E4C00751E1A /* FirstCreatePillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstCreatePillViewController.swift; sourceTree = "<group>"; };
+		11400A682A273E7800751E1A /* FirstCreatePillViewController+Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirstCreatePillViewController+Actions.swift"; sourceTree = "<group>"; };
+		11400A6A2A2740CD00751E1A /* FirstCreatePillViewController+CreateSubViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirstCreatePillViewController+CreateSubViews.swift"; sourceTree = "<group>"; };
+		11400A6D2A2740F500751E1A /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
+		11400A6F2A27410800751E1A /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		11400A712A27411400751E1A /* Pill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pill.swift; sourceTree = "<group>"; };
+		11400A742A27415600751E1A /* MenuDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDelegate.swift; sourceTree = "<group>"; };
+		11400A762A27416500751E1A /* VaccinationMenuDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccinationMenuDelegate.swift; sourceTree = "<group>"; };
+		11400A7B2A2741F100751E1A /* BurgerMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BurgerMenuView.swift; sourceTree = "<group>"; };
+		11400A7E2A27421C00751E1A /* BurgerMenuView+SetupViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BurgerMenuView+SetupViews.swift"; sourceTree = "<group>"; };
+		11400A802A27422B00751E1A /* BurgerMenuView+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BurgerMenuView+CollectionView.swift"; sourceTree = "<group>"; };
+		11400A822A27423C00751E1A /* BurgerMenuView+CollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BurgerMenuView+CollectionViewDelegate.swift"; sourceTree = "<group>"; };
+		11400A842A27424900751E1A /* BurgerMenuView+Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BurgerMenuView+Actions.swift"; sourceTree = "<group>"; };
+		11400A862A27426700751E1A /* MenuViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewCell.swift; sourceTree = "<group>"; };
+		11400A892A27428A00751E1A /* InfoContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoContainerView.swift; sourceTree = "<group>"; };
+		11400A8B2A2742A100751E1A /* InfoContainerView+Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InfoContainerView+Actions.swift"; sourceTree = "<group>"; };
+		11400A8E2A2742C100751E1A /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		11400A902A2742D600751E1A /* LoginView+SetupViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginView+SetupViews.swift"; sourceTree = "<group>"; };
+		11400A932A2742F100751E1A /* LoginView+Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginView+Actions.swift"; sourceTree = "<group>"; };
+		11400A952A27430600751E1A /* LoginView+TextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginView+TextFieldDelegate.swift"; sourceTree = "<group>"; };
+		11400A972A27431D00751E1A /* LoginView+Security.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginView+Security.swift"; sourceTree = "<group>"; };
+		11400A992A27433100751E1A /* LoginView+Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginView+Auth.swift"; sourceTree = "<group>"; };
+		11400AA02A27437E00751E1A /* AccountSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsView.swift; sourceTree = "<group>"; };
+		11400AA22A27438E00751E1A /* AccountSettingsView+Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountSettingsView+Actions.swift"; sourceTree = "<group>"; };
+		11400AA52A2743B900751E1A /* InfoViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewCell.swift; sourceTree = "<group>"; };
+		11400AA72A2743C500751E1A /* VaccinationViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccinationViewCell.swift; sourceTree = "<group>"; };
+		11400AA92A2743D600751E1A /* PillCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillCell.swift; sourceTree = "<group>"; };
+		11400AAB2A2743E200751E1A /* HeaderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewCell.swift; sourceTree = "<group>"; };
+		11400AAE2A27440300751E1A /* AddPillButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPillButton.swift; sourceTree = "<group>"; };
+		11400AB02A27441000751E1A /* CircularProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBar.swift; sourceTree = "<group>"; };
+		11400AB22A27441F00751E1A /* ChoosePillButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosePillButtonView.swift; sourceTree = "<group>"; };
+		11400AB42A27443500751E1A /* ChoosePillButtonView+Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChoosePillButtonView+Actions.swift"; sourceTree = "<group>"; };
 		8AAEE064348429D8E370FB7D /* Pods-Pill-Schedule.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pill-Schedule.debug.xcconfig"; path = "Target Support Files/Pods-Pill-Schedule/Pods-Pill-Schedule.debug.xcconfig"; sourceTree = "<group>"; };
 		A7885F8EB21951C0CA0E75A0 /* Pods-Pill-Schedule.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pill-Schedule.release.xcconfig"; path = "Target Support Files/Pods-Pill-Schedule/Pods-Pill-Schedule.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,7 +150,10 @@
 				11400A4E2A273A7800751E1A /* R.generated.swift */,
 				11400A362A2735F700751E1A /* AppDelegate.swift */,
 				11400A382A2735F700751E1A /* SceneDelegate.swift */,
-				11400A3A2A2735F700751E1A /* ViewController.swift */,
+				11400A522A273D1C00751E1A /* Project Extensions */,
+				11400A552A273D4000751E1A /* Controller */,
+				11400A6C2A2740E500751E1A /* Models */,
+				11400A782A27417400751E1A /* Views */,
 				11400A3C2A2735F700751E1A /* Main.storyboard */,
 				11400A422A2735F800751E1A /* Assets.xcassets */,
 				11400A442A2735F800751E1A /* LaunchScreen.storyboard */,
@@ -81,6 +162,226 @@
 				11400A3F2A2735F700751E1A /* Pill_Schedule.xcdatamodeld */,
 			);
 			path = "Pill-Schedule";
+			sourceTree = "<group>";
+		};
+		11400A522A273D1C00751E1A /* Project Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				11400A532A273D2F00751E1A /* Extensions.swift */,
+			);
+			path = "Project Extensions";
+			sourceTree = "<group>";
+		};
+		11400A552A273D4000751E1A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				11400A642A273DFF00751E1A /* CreatePillViewController(FirstScreen) */,
+				11400A632A273DF400751E1A /* ViewController */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		11400A562A273D5100751E1A /* ViewController+Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				11400A572A273D6900751E1A /* ViewController+DataSource.swift */,
+				11400A592A273D7F00751E1A /* ViewController+Layout.swift */,
+				11400A5B2A273D9400751E1A /* ViewController+CollectionViewSetup.swift */,
+				11400A5D2A273DA500751E1A /* ViewController+Actions.swift */,
+				11400A5F2A273DC400751E1A /* ViewController+CreateSubviews.swift */,
+				11400A612A273DD600751E1A /* ViewController+Security.swift */,
+			);
+			path = "ViewController+Extensions";
+			sourceTree = "<group>";
+		};
+		11400A632A273DF400751E1A /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				11400A562A273D5100751E1A /* ViewController+Extensions */,
+				11400A3A2A2735F700751E1A /* ViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		11400A642A273DFF00751E1A /* CreatePillViewController(FirstScreen) */ = {
+			isa = PBXGroup;
+			children = (
+				11400A672A273E5A00751E1A /* FirstCreatePillViewController+Extensions */,
+				11400A652A273E4C00751E1A /* FirstCreatePillViewController.swift */,
+			);
+			path = "CreatePillViewController(FirstScreen)";
+			sourceTree = "<group>";
+		};
+		11400A672A273E5A00751E1A /* FirstCreatePillViewController+Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				11400A682A273E7800751E1A /* FirstCreatePillViewController+Actions.swift */,
+				11400A6A2A2740CD00751E1A /* FirstCreatePillViewController+CreateSubViews.swift */,
+			);
+			path = "FirstCreatePillViewController+Extensions";
+			sourceTree = "<group>";
+		};
+		11400A6C2A2740E500751E1A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				11400A732A27414A00751E1A /* Delegates */,
+				11400A6D2A2740F500751E1A /* Section.swift */,
+				11400A6F2A27410800751E1A /* Item.swift */,
+				11400A712A27411400751E1A /* Pill.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		11400A732A27414A00751E1A /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				11400A742A27415600751E1A /* MenuDelegate.swift */,
+				11400A762A27416500751E1A /* VaccinationMenuDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		11400A782A27417400751E1A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				11400AAD2A2743EF00751E1A /* SupplementaryViews */,
+				11400AA42A2743A500751E1A /* Cells */,
+				11400A792A2741D900751E1A /* SideMenu */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		11400A792A2741D900751E1A /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				11400A9B2A27434700751E1A /* InfoViews */,
+				11400A8D2A2742B400751E1A /* LoginView */,
+				11400A882A27427900751E1A /* InfoContainerView */,
+				11400A7A2A2741E200751E1A /* BurgerMenuView */,
+			);
+			path = SideMenu;
+			sourceTree = "<group>";
+		};
+		11400A7A2A2741E200751E1A /* BurgerMenuView */ = {
+			isa = PBXGroup;
+			children = (
+				11400A7D2A27420600751E1A /* BurgerMenuView+Extensions */,
+				11400A7B2A2741F100751E1A /* BurgerMenuView.swift */,
+				11400A862A27426700751E1A /* MenuViewCell.swift */,
+			);
+			path = BurgerMenuView;
+			sourceTree = "<group>";
+		};
+		11400A7D2A27420600751E1A /* BurgerMenuView+Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				11400A7E2A27421C00751E1A /* BurgerMenuView+SetupViews.swift */,
+				11400A802A27422B00751E1A /* BurgerMenuView+CollectionView.swift */,
+				11400A822A27423C00751E1A /* BurgerMenuView+CollectionViewDelegate.swift */,
+				11400A842A27424900751E1A /* BurgerMenuView+Actions.swift */,
+			);
+			path = "BurgerMenuView+Extensions";
+			sourceTree = "<group>";
+		};
+		11400A882A27427900751E1A /* InfoContainerView */ = {
+			isa = PBXGroup;
+			children = (
+				11400A892A27428A00751E1A /* InfoContainerView.swift */,
+				11400A8B2A2742A100751E1A /* InfoContainerView+Actions.swift */,
+			);
+			path = InfoContainerView;
+			sourceTree = "<group>";
+		};
+		11400A8D2A2742B400751E1A /* LoginView */ = {
+			isa = PBXGroup;
+			children = (
+				11400A922A2742D900751E1A /* LoginView+Extenions */,
+				11400A8E2A2742C100751E1A /* LoginView.swift */,
+			);
+			path = LoginView;
+			sourceTree = "<group>";
+		};
+		11400A922A2742D900751E1A /* LoginView+Extenions */ = {
+			isa = PBXGroup;
+			children = (
+				11400A902A2742D600751E1A /* LoginView+SetupViews.swift */,
+				11400A932A2742F100751E1A /* LoginView+Actions.swift */,
+				11400A952A27430600751E1A /* LoginView+TextFieldDelegate.swift */,
+				11400A972A27431D00751E1A /* LoginView+Security.swift */,
+				11400A992A27433100751E1A /* LoginView+Auth.swift */,
+			);
+			path = "LoginView+Extenions";
+			sourceTree = "<group>";
+		};
+		11400A9B2A27434700751E1A /* InfoViews */ = {
+			isa = PBXGroup;
+			children = (
+				11400A9F2A27436B00751E1A /* AboutThisAppView */,
+				11400A9E2A27436400751E1A /* VaccinationCentersView */,
+				11400A9D2A27435B00751E1A /* GeneralSettingsView */,
+				11400A9C2A27434E00751E1A /* AccountSettingsView */,
+			);
+			path = InfoViews;
+			sourceTree = "<group>";
+		};
+		11400A9C2A27434E00751E1A /* AccountSettingsView */ = {
+			isa = PBXGroup;
+			children = (
+				11400AA02A27437E00751E1A /* AccountSettingsView.swift */,
+				11400AA22A27438E00751E1A /* AccountSettingsView+Actions.swift */,
+			);
+			path = AccountSettingsView;
+			sourceTree = "<group>";
+		};
+		11400A9D2A27435B00751E1A /* GeneralSettingsView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GeneralSettingsView;
+			sourceTree = "<group>";
+		};
+		11400A9E2A27436400751E1A /* VaccinationCentersView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VaccinationCentersView;
+			sourceTree = "<group>";
+		};
+		11400A9F2A27436B00751E1A /* AboutThisAppView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AboutThisAppView;
+			sourceTree = "<group>";
+		};
+		11400AA42A2743A500751E1A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				11400AA52A2743B900751E1A /* InfoViewCell.swift */,
+				11400AA72A2743C500751E1A /* VaccinationViewCell.swift */,
+				11400AA92A2743D600751E1A /* PillCell.swift */,
+				11400AAB2A2743E200751E1A /* HeaderViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		11400AAD2A2743EF00751E1A /* SupplementaryViews */ = {
+			isa = PBXGroup;
+			children = (
+				11400AAE2A27440300751E1A /* AddPillButton.swift */,
+				11400AB02A27441000751E1A /* CircularProgressBar.swift */,
+				11400AB62A27443900751E1A /* ChoosePillButtonView */,
+			);
+			path = SupplementaryViews;
+			sourceTree = "<group>";
+		};
+		11400AB62A27443900751E1A /* ChoosePillButtonView */ = {
+			isa = PBXGroup;
+			children = (
+				11400AB42A27443500751E1A /* ChoosePillButtonView+Actions.swift */,
+				11400AB22A27441F00751E1A /* ChoosePillButtonView.swift */,
+			);
+			path = ChoosePillButtonView;
 			sourceTree = "<group>";
 		};
 		2C9209D61C61F87A20DC0068 /* Pods */ = {
@@ -236,10 +537,49 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11400A582A273D6900751E1A /* ViewController+DataSource.swift in Sources */,
+				11400A8F2A2742C100751E1A /* LoginView.swift in Sources */,
+				11400A6E2A2740F500751E1A /* Section.swift in Sources */,
+				11400A832A27423C00751E1A /* BurgerMenuView+CollectionViewDelegate.swift in Sources */,
+				11400A702A27410800751E1A /* Item.swift in Sources */,
+				11400A752A27415600751E1A /* MenuDelegate.swift in Sources */,
+				11400AAC2A2743E200751E1A /* HeaderViewCell.swift in Sources */,
+				11400AB32A27441F00751E1A /* ChoosePillButtonView.swift in Sources */,
+				11400A982A27431D00751E1A /* LoginView+Security.swift in Sources */,
+				11400A942A2742F100751E1A /* LoginView+Actions.swift in Sources */,
+				11400A5C2A273D9400751E1A /* ViewController+CollectionViewSetup.swift in Sources */,
+				11400A8A2A27428A00751E1A /* InfoContainerView.swift in Sources */,
+				11400AB12A27441000751E1A /* CircularProgressBar.swift in Sources */,
+				11400A692A273E7800751E1A /* FirstCreatePillViewController+Actions.swift in Sources */,
+				11400A8C2A2742A100751E1A /* InfoContainerView+Actions.swift in Sources */,
 				11400A3B2A2735F700751E1A /* ViewController.swift in Sources */,
+				11400A772A27416500751E1A /* VaccinationMenuDelegate.swift in Sources */,
+				11400AA12A27437E00751E1A /* AccountSettingsView.swift in Sources */,
+				11400AB52A27443500751E1A /* ChoosePillButtonView+Actions.swift in Sources */,
+				11400A722A27411400751E1A /* Pill.swift in Sources */,
+				11400A542A273D2F00751E1A /* Extensions.swift in Sources */,
 				11400A372A2735F700751E1A /* AppDelegate.swift in Sources */,
+				11400AA82A2743C500751E1A /* VaccinationViewCell.swift in Sources */,
+				11400AAA2A2743D600751E1A /* PillCell.swift in Sources */,
+				11400A602A273DC400751E1A /* ViewController+CreateSubviews.swift in Sources */,
+				11400A622A273DD600751E1A /* ViewController+Security.swift in Sources */,
+				11400A912A2742D600751E1A /* LoginView+SetupViews.swift in Sources */,
+				11400A7C2A2741F100751E1A /* BurgerMenuView.swift in Sources */,
 				11400A4F2A273A7800751E1A /* R.generated.swift in Sources */,
+				11400A9A2A27433100751E1A /* LoginView+Auth.swift in Sources */,
+				11400A6B2A2740CD00751E1A /* FirstCreatePillViewController+CreateSubViews.swift in Sources */,
+				11400A872A27426700751E1A /* MenuViewCell.swift in Sources */,
+				11400A5E2A273DA500751E1A /* ViewController+Actions.swift in Sources */,
+				11400AA32A27438E00751E1A /* AccountSettingsView+Actions.swift in Sources */,
 				11400A392A2735F700751E1A /* SceneDelegate.swift in Sources */,
+				11400A662A273E4C00751E1A /* FirstCreatePillViewController.swift in Sources */,
+				11400A7F2A27421C00751E1A /* BurgerMenuView+SetupViews.swift in Sources */,
+				11400AAF2A27440300751E1A /* AddPillButton.swift in Sources */,
+				11400A5A2A273D7F00751E1A /* ViewController+Layout.swift in Sources */,
+				11400AA62A2743B900751E1A /* InfoViewCell.swift in Sources */,
+				11400A852A27424900751E1A /* BurgerMenuView+Actions.swift in Sources */,
+				11400A962A27430600751E1A /* LoginView+TextFieldDelegate.swift in Sources */,
+				11400A812A27422B00751E1A /* BurgerMenuView+CollectionView.swift in Sources */,
 				11400A412A2735F700751E1A /* Pill_Schedule.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
