@@ -12,15 +12,19 @@ class AccountSettingsView: UIView {
     var user: User?
     var userProfilePictureView: UIImageView!
     var userNameLabel: UILabel!
+    var userSurnameLabel: UILabel!
     var logInPromptLabel: UILabel!
     var alreadyHaveAnAccLabel: UILabel!
     var logInButton: UIButton!
     var registerButton: UIButton!
     var logOutButton: UIButton!
+    var editButton: UIButton!
     var logInView: LogInView!
     var container: InfoContainerView!
     
-    var loggedIn: Bool = false
+    var mainView: UIView!
+    
+    var loggedIn: Bool = true
     var handle: AuthStateDidChangeListenerHandle?
     
     override init(frame: CGRect) {

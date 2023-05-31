@@ -11,22 +11,25 @@ import UIKit
 extension AccountSettingsView {
     
     func setupNotLoggedInView(){
+        mainView = UIView()
+        self.addSubview(mainView)
+        
         userProfilePictureView = UIImageView()
         userProfilePictureView.image = R.image.basicPP()
         userProfilePictureView.translatesAutoresizingMaskIntoConstraints = false
-        self.addSubview(userProfilePictureView)
+        mainView.addSubview(userProfilePictureView)
         
         userNameLabel = UILabel()
         userNameLabel.text = "You're not logged in :("
         userNameLabel.font = UIFont.systemFont(ofSize: 26, weight: .bold)
-        self.addSubview(userNameLabel)
+        mainView.addSubview(userNameLabel)
         
         logInPromptLabel = UILabel()
         logInPromptLabel.text = "With an account in Pills, you will be able to store your data online."
         logInPromptLabel.numberOfLines = 0
         logInPromptLabel.textAlignment = .center
         logInPromptLabel.font = UIFont.systemFont(ofSize: 20, weight: .medium)
-        self.addSubview(logInPromptLabel)
+        mainView.addSubview(logInPromptLabel)
         
         registerButton = UIButton()
         registerButton.setTitle("Sign Up", for: .normal)
@@ -35,13 +38,13 @@ extension AccountSettingsView {
         registerButton.layer.cornerRadius = 21
         registerButton.titleLabel?.font = UIFont.systemFont(ofSize: 21, weight: .bold)
         registerButton.addTarget(self, action: #selector(didTapRegistrationButton), for: .touchUpInside)
-        self.addSubview(registerButton)
+        mainView.addSubview(registerButton)
         
         alreadyHaveAnAccLabel = UILabel()
         alreadyHaveAnAccLabel.text = "Already have an account in Pills?"
         alreadyHaveAnAccLabel.textColor = R.color.gray()
         alreadyHaveAnAccLabel.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
-        self.addSubview(alreadyHaveAnAccLabel)
+        mainView.addSubview(alreadyHaveAnAccLabel)
         
         logInButton = UIButton()
         logInButton.setTitle("Sign In", for: .normal)
@@ -50,15 +53,22 @@ extension AccountSettingsView {
         logInButton.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         logInButton.addTarget(self, action: #selector(didTapLogInButton), for: .touchUpInside)
         logInButton.layer.cornerRadius = 20
-        self.addSubview(logInButton)
+        mainView.addSubview(logInButton)
         
         logInView = LogInView()
         logInView.parentView = self
-        self.addSubview(logInView)
+        mainView.addSubview(logInView)
     }
     
     func setupNotLoggedInConstraints() {
         let width = UIScreen.main.bounds.width
+        
+        self.mainView.snp.makeConstraints { make in
+            make.height.equalTo(self)
+            make.width.equalTo(self)
+            make.top.equalTo(self)
+            make.left.equalTo(self)
+        }
         self.logInView.snp.makeConstraints { make in
             make.width.equalTo(self)
             make.height.equalTo(self)

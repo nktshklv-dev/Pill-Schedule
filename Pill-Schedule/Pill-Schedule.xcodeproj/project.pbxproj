@@ -333,8 +333,8 @@
 		11400A9C2A27434E00751E1A /* AccountSettingsView */ = {
 			isa = PBXGroup;
 			children = (
-				11400AB72A27507D00751E1A /* AccountSetingsView+Extensions */,
 				11400AA02A27437E00751E1A /* AccountSettingsView.swift */,
+				11400AB72A27507D00751E1A /* AccountSetingsView+Extensions */,
 			);
 			path = AccountSettingsView;
 			sourceTree = "<group>";

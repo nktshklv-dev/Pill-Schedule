@@ -21,8 +21,7 @@ extension AccountSettingsView {
     @objc func hideLoginView(){
         hideLogInView()
     }
-    
-    
+
     private func showLogInView(){
         UIView.animate(withDuration: 0.35) {
             self.logInView.transform = CGAffineTransform(translationX: -365, y: 0)
