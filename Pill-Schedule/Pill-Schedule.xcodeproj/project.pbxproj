@@ -15,6 +15,7 @@
 		11400A432A2735F800751E1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11400A422A2735F800751E1A /* Assets.xcassets */; };
 		11400A462A2735F800751E1A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11400A442A2735F800751E1A /* LaunchScreen.storyboard */; };
 		11400A4F2A273A7800751E1A /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400A4E2A273A7800751E1A /* R.generated.swift */; };
+		11400A512A273C8100751E1A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11400A502A273C8100751E1A /* GoogleService-Info.plist */; };
 		352D5C0B61B6710BC14F3744 /* Pods_Pill_Schedule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FC939FBE800F91926364B70 /* Pods_Pill_Schedule.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +31,7 @@
 		11400A452A2735F800751E1A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		11400A472A2735F800751E1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11400A4E2A273A7800751E1A /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		11400A502A273C8100751E1A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8AAEE064348429D8E370FB7D /* Pods-Pill-Schedule.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pill-Schedule.debug.xcconfig"; path = "Target Support Files/Pods-Pill-Schedule/Pods-Pill-Schedule.debug.xcconfig"; sourceTree = "<group>"; };
 		A7885F8EB21951C0CA0E75A0 /* Pods-Pill-Schedule.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pill-Schedule.release.xcconfig"; path = "Target Support Files/Pods-Pill-Schedule/Pods-Pill-Schedule.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -75,6 +77,7 @@
 				11400A422A2735F800751E1A /* Assets.xcassets */,
 				11400A442A2735F800751E1A /* LaunchScreen.storyboard */,
 				11400A472A2735F800751E1A /* Info.plist */,
+				11400A502A273C8100751E1A /* GoogleService-Info.plist */,
 				11400A3F2A2735F700751E1A /* Pill_Schedule.xcdatamodeld */,
 			);
 			path = "Pill-Schedule";
@@ -159,6 +162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				11400A462A2735F800751E1A /* LaunchScreen.storyboard in Resources */,
+				11400A512A273C8100751E1A /* GoogleService-Info.plist in Resources */,
 				11400A432A2735F800751E1A /* Assets.xcassets in Resources */,
 				11400A3E2A2735F700751E1A /* Main.storyboard in Resources */,
 			);
