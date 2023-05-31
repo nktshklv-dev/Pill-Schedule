@@ -14,6 +14,7 @@
 		11400A412A2735F700751E1A /* Pill_Schedule.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 11400A3F2A2735F700751E1A /* Pill_Schedule.xcdatamodeld */; };
 		11400A432A2735F800751E1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11400A422A2735F800751E1A /* Assets.xcassets */; };
 		11400A462A2735F800751E1A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11400A442A2735F800751E1A /* LaunchScreen.storyboard */; };
+		11400A4F2A273A7800751E1A /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400A4E2A273A7800751E1A /* R.generated.swift */; };
 		352D5C0B61B6710BC14F3744 /* Pods_Pill_Schedule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FC939FBE800F91926364B70 /* Pods_Pill_Schedule.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +29,7 @@
 		11400A422A2735F800751E1A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11400A452A2735F800751E1A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		11400A472A2735F800751E1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11400A4E2A273A7800751E1A /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		8AAEE064348429D8E370FB7D /* Pods-Pill-Schedule.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pill-Schedule.debug.xcconfig"; path = "Target Support Files/Pods-Pill-Schedule/Pods-Pill-Schedule.debug.xcconfig"; sourceTree = "<group>"; };
 		A7885F8EB21951C0CA0E75A0 /* Pods-Pill-Schedule.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pill-Schedule.release.xcconfig"; path = "Target Support Files/Pods-Pill-Schedule/Pods-Pill-Schedule.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -65,6 +67,7 @@
 		11400A352A2735F700751E1A /* Pill-Schedule */ = {
 			isa = PBXGroup;
 			children = (
+				11400A4E2A273A7800751E1A /* R.generated.swift */,
 				11400A362A2735F700751E1A /* AppDelegate.swift */,
 				11400A382A2735F700751E1A /* SceneDelegate.swift */,
 				11400A3A2A2735F700751E1A /* ViewController.swift */,
@@ -83,7 +86,6 @@
 				8AAEE064348429D8E370FB7D /* Pods-Pill-Schedule.debug.xcconfig */,
 				A7885F8EB21951C0CA0E75A0 /* Pods-Pill-Schedule.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -103,6 +105,7 @@
 			buildConfigurationList = 11400A4A2A2735F800751E1A /* Build configuration list for PBXNativeTarget "Pill-Schedule" */;
 			buildPhases = (
 				DB5FDDA899B46FD8E3226BFD /* [CP] Check Pods Manifest.lock */,
+				11400A4D2A2737FF00751E1A /* ShellScript */,
 				11400A2F2A2735F700751E1A /* Sources */,
 				11400A302A2735F700751E1A /* Frameworks */,
 				11400A312A2735F700751E1A /* Resources */,
@@ -164,6 +167,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		11400A4D2A2737FF00751E1A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$SRCROOT/Pill-Schedule/Pill-Schedule/R.generated.swift",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
+		};
 		188885EF48FD0BC81F892BC5 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -212,6 +234,7 @@
 			files = (
 				11400A3B2A2735F700751E1A /* ViewController.swift in Sources */,
 				11400A372A2735F700751E1A /* AppDelegate.swift in Sources */,
+				11400A4F2A273A7800751E1A /* R.generated.swift in Sources */,
 				11400A392A2735F700751E1A /* SceneDelegate.swift in Sources */,
 				11400A412A2735F700751E1A /* Pill_Schedule.xcdatamodeld in Sources */,
 			);
