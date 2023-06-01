@@ -32,6 +32,27 @@ extension LogInView {
         print(status)
     }
     
+    func loadFromKeychain(account: String) -> Data? {
+        let service = "com.nktshklv.Pills"
+        let query: [String: Any] = [
+            kSecClass as String: kSecClassGenericPassword,
+            kSecAttrService as String: service,
+            kSecAttrAccount as String: account,
+            kSecMatchLimit as String: kSecMatchLimitOne,
+            kSecReturnData as String: true
+        ]
+        
+        var result: AnyObject?
+        let status = SecItemCopyMatching(query as CFDictionary, &result)
+        
+        if status == errSecSuccess {
+            return result as? Data
+        } else {
+            print("Ошибка загрузки данных из Keychain: \(status)")
+            return nil
+        }
+    }
+    
     
     func saveEmailtoUserDefaults(email: String){
         let defaults = UserDefaults.standard

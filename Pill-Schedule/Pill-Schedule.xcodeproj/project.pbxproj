@@ -60,6 +60,8 @@
 		11400ABD2A2750F800751E1A /* AccountSettingsView+NotLoggedInSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400ABC2A2750F800751E1A /* AccountSettingsView+NotLoggedInSetup.swift */; };
 		11400ABF2A28A92300751E1A /* AccountSettingsView+ButtonActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400ABE2A28A92300751E1A /* AccountSettingsView+ButtonActions.swift */; };
 		11400AC32A291DB800751E1A /* SpinningProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400AC22A291DB800751E1A /* SpinningProgressView.swift */; };
+		11400AC52A29243F00751E1A /* LoginView+RegViewSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400AC42A29243F00751E1A /* LoginView+RegViewSetup.swift */; };
+		11400AC72A29244900751E1A /* LoginView+LogViewSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400AC62A29244900751E1A /* LoginView+LogViewSetup.swift */; };
 		352D5C0B61B6710BC14F3744 /* Pods_Pill_Schedule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FC939FBE800F91926364B70 /* Pods_Pill_Schedule.framework */; };
 /* End PBXBuildFile section */
 
@@ -120,6 +122,8 @@
 		11400ABC2A2750F800751E1A /* AccountSettingsView+NotLoggedInSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountSettingsView+NotLoggedInSetup.swift"; sourceTree = "<group>"; };
 		11400ABE2A28A92300751E1A /* AccountSettingsView+ButtonActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountSettingsView+ButtonActions.swift"; sourceTree = "<group>"; };
 		11400AC22A291DB800751E1A /* SpinningProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinningProgressView.swift; sourceTree = "<group>"; };
+		11400AC42A29243F00751E1A /* LoginView+RegViewSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginView+RegViewSetup.swift"; sourceTree = "<group>"; };
+		11400AC62A29244900751E1A /* LoginView+LogViewSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginView+LogViewSetup.swift"; sourceTree = "<group>"; };
 		8AAEE064348429D8E370FB7D /* Pods-Pill-Schedule.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pill-Schedule.debug.xcconfig"; path = "Target Support Files/Pods-Pill-Schedule/Pods-Pill-Schedule.debug.xcconfig"; sourceTree = "<group>"; };
 		A7885F8EB21951C0CA0E75A0 /* Pods-Pill-Schedule.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pill-Schedule.release.xcconfig"; path = "Target Support Files/Pods-Pill-Schedule/Pods-Pill-Schedule.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -314,11 +318,13 @@
 		11400A922A2742D900751E1A /* LoginView+Extenions */ = {
 			isa = PBXGroup;
 			children = (
-				11400A902A2742D600751E1A /* LoginView+SetupViews.swift */,
 				11400A932A2742F100751E1A /* LoginView+Actions.swift */,
 				11400A952A27430600751E1A /* LoginView+TextFieldDelegate.swift */,
 				11400A972A27431D00751E1A /* LoginView+Security.swift */,
 				11400A992A27433100751E1A /* LoginView+Auth.swift */,
+				11400A902A2742D600751E1A /* LoginView+SetupViews.swift */,
+				11400AC42A29243F00751E1A /* LoginView+RegViewSetup.swift */,
+				11400AC62A29244900751E1A /* LoginView+LogViewSetup.swift */,
 			);
 			path = "LoginView+Extenions";
 			sourceTree = "<group>";
@@ -561,6 +567,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				11400A582A273D6900751E1A /* ViewController+DataSource.swift in Sources */,
+				11400AC72A29244900751E1A /* LoginView+LogViewSetup.swift in Sources */,
 				11400A8F2A2742C100751E1A /* LoginView.swift in Sources */,
 				11400A6E2A2740F500751E1A /* Section.swift in Sources */,
 				11400ABF2A28A92300751E1A /* AccountSettingsView+ButtonActions.swift in Sources */,
@@ -586,6 +593,7 @@
 				11400A542A273D2F00751E1A /* Extensions.swift in Sources */,
 				11400A372A2735F700751E1A /* AppDelegate.swift in Sources */,
 				11400AA82A2743C500751E1A /* VaccinationViewCell.swift in Sources */,
+				11400AC52A29243F00751E1A /* LoginView+RegViewSetup.swift in Sources */,
 				11400AAA2A2743D600751E1A /* PillCell.swift in Sources */,
 				11400A602A273DC400751E1A /* ViewController+CreateSubviews.swift in Sources */,
 				11400A622A273DD600751E1A /* ViewController+Security.swift in Sources */,

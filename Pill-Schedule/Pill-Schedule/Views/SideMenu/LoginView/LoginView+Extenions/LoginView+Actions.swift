@@ -51,53 +51,14 @@ extension LogInView {
         case .login: performSignIn()
         default: print("Default")
         }
-       
-    }
-    func performSignIn() {
-        guard let email = emailTextField.text else {return}
-        guard let password = passwordTextField.text else {return}
-        showProgressView()
-        Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
-            if error != nil{
-                self.showError(error: error!)
-                print(error)
-            }
-            
-            guard let result = authResult else {return}
-            self.setUser(authResult: result)
-            self.didTapBackButton()
-            print(authResult)
-          
-
-        }
-    }
-    func performRegistration() {
-        guard let email = emailTextField.text else {return}
-        guard let password = secondPasswordTextField.text else {return}
-        print(email)
-        print(password)
-        showProgressView()
-        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
-            if error == nil {
-                self.user = authResult?.user
-                self.saveToKeychain(email: email, password: password)
-                self.didTapBackButton()
-                self.performSignIn()
-            }
-            else {
-                self.showError(error: error!)
-                print(error!)
-            }
-        }
-    }
-    func setUser(authResult: AuthDataResult) {
-        self.parentView.user = authResult.user
-        self.parentView.clearMainView()
-        self.parentView.isLoggedIn = true
     }
     
     func showError(error: Error) {
-        passwordTextFieldLabel.text = error.localizedDescription
+        hideProgressView()
+        let ac = UIAlertController(title: "Error!", message: error.localizedDescription, preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .cancel))
+        window?.rootViewController?.present(ac, animated: true)
+      
     }
     
     func showProgressView(){

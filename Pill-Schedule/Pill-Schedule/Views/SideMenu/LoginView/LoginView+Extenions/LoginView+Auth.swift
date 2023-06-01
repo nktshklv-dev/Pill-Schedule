@@ -40,25 +40,47 @@ extension LogInView {
             }
         }
     }
-    
-    func loadFromKeychain(account: String) -> Data? {
-        let service = "com.nktshklv.Pills"
-        let query: [String: Any] = [
-            kSecClass as String: kSecClassGenericPassword,
-            kSecAttrService as String: service,
-            kSecAttrAccount as String: account,
-            kSecMatchLimit as String: kSecMatchLimitOne,
-            kSecReturnData as String: true
-        ]
-        
-        var result: AnyObject?
-        let status = SecItemCopyMatching(query as CFDictionary, &result)
-        
-        if status == errSecSuccess {
-            return result as? Data
-        } else {
-            print("Ошибка загрузки данных из Keychain: \(status)")
-            return nil
+
+    func performSignIn() {
+        guard let email = emailTextField.text else {return}
+        guard let password = passwordTextField.text else {return}
+        showProgressView()
+        Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
+            if error != nil{
+                self.showError(error: error!)
+                print(error)
+            }
+            
+            guard let result = authResult else {return}
+            self.setUser(authResult: result)
+            self.didTapBackButton()
+            print(authResult)
         }
+    }
+    
+    func performRegistration() {
+        guard let email = emailTextField.text else {return}
+        guard let password = secondPasswordTextField.text else {return}
+        print(email)
+        print(password)
+        showProgressView()
+        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+            if error == nil {
+                self.user = authResult?.user
+                self.saveToKeychain(email: email, password: password)
+                self.didTapBackButton()
+                self.performSignIn()
+            }
+            else {
+                self.showError(error: error!)
+                print(error!)
+            }
+        }
+    }
+    
+    func setUser(authResult: AuthDataResult) {
+        self.parentView.user = authResult.user
+        self.parentView.clearMainView()
+        self.parentView.isLoggedIn = true
     }
 }
