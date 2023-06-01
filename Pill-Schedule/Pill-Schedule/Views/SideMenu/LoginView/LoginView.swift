@@ -20,7 +20,7 @@ class LogInView: UIView {
             setupConstraints()
         }
     }
-    
+    var spinningProgressView: SpinningProgressView!
     weak var parentView: AccountSettingsView!
     var promptLabel: UILabel!
     var emailTextField: UITextField!

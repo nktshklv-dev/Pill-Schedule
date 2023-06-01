@@ -12,6 +12,7 @@ import FirebaseAuth
 extension LogInView {
     
     @objc func didTapBackButton(){
+        hideProgressView()
         parentView.hideLoginView()
         emailTextField.layer.borderWidth = 0
         passwordTextField.layer.borderWidth = 0
@@ -55,7 +56,7 @@ extension LogInView {
     func performSignIn() {
         guard let email = emailTextField.text else {return}
         guard let password = passwordTextField.text else {return}
-        
+        showProgressView()
         Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
             if error != nil{
                 self.showError(error: error!)
@@ -64,6 +65,7 @@ extension LogInView {
             
             guard let result = authResult else {return}
             self.setUser(authResult: result)
+            self.didTapBackButton()
             print(authResult)
           
 
@@ -74,6 +76,7 @@ extension LogInView {
         guard let password = secondPasswordTextField.text else {return}
         print(email)
         print(password)
+        showProgressView()
         Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
             if error == nil {
                 self.user = authResult?.user
@@ -91,12 +94,19 @@ extension LogInView {
         self.parentView.user = authResult.user
         self.parentView.clearMainView()
         self.parentView.isLoggedIn = true
-        self.didTapBackButton()
-        
     }
     
     func showError(error: Error) {
         passwordTextFieldLabel.text = error.localizedDescription
     }
     
+    func showProgressView(){
+        spinningProgressView.alpha = 1
+        spinningProgressView.startSpinning()
+    }
+    
+    func hideProgressView() {
+        spinningProgressView.alpha = 0
+        spinningProgressView.stopSpinning()
+    }
 }

@@ -73,6 +73,10 @@ extension LogInView {
         continueButton.addTarget(self, action: #selector(didTapContinueButton), for: .touchUpInside)
         continueButton.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .bold)
         self.addSubview(continueButton)
+        
+        spinningProgressView = SpinningProgressView()
+        spinningProgressView.alpha = 0
+        self.addSubview(spinningProgressView)
     }
     func setupLogInView() {
         promptLabel = UILabel()
@@ -123,6 +127,10 @@ extension LogInView {
         continueButton.addTarget(self, action: #selector(didTapContinueButton), for: .touchUpInside)
         continueButton.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .bold)
         self.addSubview(continueButton)
+        
+        spinningProgressView = SpinningProgressView()
+        spinningProgressView.alpha = 0 
+        self.addSubview(spinningProgressView)
     }
     func setupConstraints() {
         backButton.snp.makeConstraints { make in
@@ -171,6 +179,12 @@ extension LogInView {
             make.centerX.equalTo(promptLabel)
         }
         
+        spinningProgressView.snp.makeConstraints { make in
+            make.width.height.equalTo(100)
+            make.centerX.equalTo(promptLabel)
+            make.centerY.equalTo(self)
+        }
+        
     }
     func setupRegistrationConstraints() {
         promptLabel.snp.makeConstraints { make in
@@ -210,6 +224,12 @@ extension LogInView {
             make.height.equalTo(50)
             make.bottom.equalTo(self.snp.bottom).inset(75)
             make.centerX.equalTo(promptLabel)
+        }
+        
+        spinningProgressView.snp.makeConstraints { make in
+            make.width.height.equalTo(100)
+            make.centerX.equalTo(promptLabel)
+            make.centerY.equalTo(self)
         }
     }
 }
