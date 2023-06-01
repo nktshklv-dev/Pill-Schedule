@@ -46,7 +46,7 @@
 		11400A982A27431D00751E1A /* LoginView+Security.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400A972A27431D00751E1A /* LoginView+Security.swift */; };
 		11400A9A2A27433100751E1A /* LoginView+Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400A992A27433100751E1A /* LoginView+Auth.swift */; };
 		11400AA12A27437E00751E1A /* AccountSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400AA02A27437E00751E1A /* AccountSettingsView.swift */; };
-		11400AA32A27438E00751E1A /* AccountSettingsView+Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400AA22A27438E00751E1A /* AccountSettingsView+Actions.swift */; };
+		11400AA32A27438E00751E1A /* AccountSettingsView+UIActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400AA22A27438E00751E1A /* AccountSettingsView+UIActions.swift */; };
 		11400AA62A2743B900751E1A /* InfoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400AA52A2743B900751E1A /* InfoViewCell.swift */; };
 		11400AA82A2743C500751E1A /* VaccinationViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400AA72A2743C500751E1A /* VaccinationViewCell.swift */; };
 		11400AAA2A2743D600751E1A /* PillCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400AA92A2743D600751E1A /* PillCell.swift */; };
@@ -58,6 +58,7 @@
 		11400AB92A27509300751E1A /* AccountSettingsView+SetupViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400AB82A27509300751E1A /* AccountSettingsView+SetupViews.swift */; };
 		11400ABB2A2750D700751E1A /* AccountSettingsView+LoggedInSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400ABA2A2750D700751E1A /* AccountSettingsView+LoggedInSetup.swift */; };
 		11400ABD2A2750F800751E1A /* AccountSettingsView+NotLoggedInSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400ABC2A2750F800751E1A /* AccountSettingsView+NotLoggedInSetup.swift */; };
+		11400ABF2A28A92300751E1A /* AccountSettingsView+ButtonActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400ABE2A28A92300751E1A /* AccountSettingsView+ButtonActions.swift */; };
 		352D5C0B61B6710BC14F3744 /* Pods_Pill_Schedule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FC939FBE800F91926364B70 /* Pods_Pill_Schedule.framework */; };
 /* End PBXBuildFile section */
 
@@ -104,7 +105,7 @@
 		11400A972A27431D00751E1A /* LoginView+Security.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginView+Security.swift"; sourceTree = "<group>"; };
 		11400A992A27433100751E1A /* LoginView+Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginView+Auth.swift"; sourceTree = "<group>"; };
 		11400AA02A27437E00751E1A /* AccountSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsView.swift; sourceTree = "<group>"; };
-		11400AA22A27438E00751E1A /* AccountSettingsView+Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountSettingsView+Actions.swift"; sourceTree = "<group>"; };
+		11400AA22A27438E00751E1A /* AccountSettingsView+UIActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountSettingsView+UIActions.swift"; sourceTree = "<group>"; };
 		11400AA52A2743B900751E1A /* InfoViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewCell.swift; sourceTree = "<group>"; };
 		11400AA72A2743C500751E1A /* VaccinationViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccinationViewCell.swift; sourceTree = "<group>"; };
 		11400AA92A2743D600751E1A /* PillCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillCell.swift; sourceTree = "<group>"; };
@@ -116,6 +117,7 @@
 		11400AB82A27509300751E1A /* AccountSettingsView+SetupViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountSettingsView+SetupViews.swift"; sourceTree = "<group>"; };
 		11400ABA2A2750D700751E1A /* AccountSettingsView+LoggedInSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountSettingsView+LoggedInSetup.swift"; sourceTree = "<group>"; };
 		11400ABC2A2750F800751E1A /* AccountSettingsView+NotLoggedInSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountSettingsView+NotLoggedInSetup.swift"; sourceTree = "<group>"; };
+		11400ABE2A28A92300751E1A /* AccountSettingsView+ButtonActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountSettingsView+ButtonActions.swift"; sourceTree = "<group>"; };
 		8AAEE064348429D8E370FB7D /* Pods-Pill-Schedule.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pill-Schedule.debug.xcconfig"; path = "Target Support Files/Pods-Pill-Schedule/Pods-Pill-Schedule.debug.xcconfig"; sourceTree = "<group>"; };
 		A7885F8EB21951C0CA0E75A0 /* Pods-Pill-Schedule.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pill-Schedule.release.xcconfig"; path = "Target Support Files/Pods-Pill-Schedule/Pods-Pill-Schedule.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -393,7 +395,8 @@
 		11400AB72A27507D00751E1A /* AccountSetingsView+Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				11400AA22A27438E00751E1A /* AccountSettingsView+Actions.swift */,
+				11400AA22A27438E00751E1A /* AccountSettingsView+UIActions.swift */,
+				11400ABE2A28A92300751E1A /* AccountSettingsView+ButtonActions.swift */,
 				11400AB82A27509300751E1A /* AccountSettingsView+SetupViews.swift */,
 				11400ABA2A2750D700751E1A /* AccountSettingsView+LoggedInSetup.swift */,
 				11400ABC2A2750F800751E1A /* AccountSettingsView+NotLoggedInSetup.swift */,
@@ -557,6 +560,7 @@
 				11400A582A273D6900751E1A /* ViewController+DataSource.swift in Sources */,
 				11400A8F2A2742C100751E1A /* LoginView.swift in Sources */,
 				11400A6E2A2740F500751E1A /* Section.swift in Sources */,
+				11400ABF2A28A92300751E1A /* AccountSettingsView+ButtonActions.swift in Sources */,
 				11400A832A27423C00751E1A /* BurgerMenuView+CollectionViewDelegate.swift in Sources */,
 				11400A702A27410800751E1A /* Item.swift in Sources */,
 				11400A752A27415600751E1A /* MenuDelegate.swift in Sources */,
@@ -589,7 +593,7 @@
 				11400A6B2A2740CD00751E1A /* FirstCreatePillViewController+CreateSubViews.swift in Sources */,
 				11400A872A27426700751E1A /* MenuViewCell.swift in Sources */,
 				11400A5E2A273DA500751E1A /* ViewController+Actions.swift in Sources */,
-				11400AA32A27438E00751E1A /* AccountSettingsView+Actions.swift in Sources */,
+				11400AA32A27438E00751E1A /* AccountSettingsView+UIActions.swift in Sources */,
 				11400A392A2735F700751E1A /* SceneDelegate.swift in Sources */,
 				11400A662A273E4C00751E1A /* FirstCreatePillViewController.swift in Sources */,
 				11400A7F2A27421C00751E1A /* BurgerMenuView+SetupViews.swift in Sources */,

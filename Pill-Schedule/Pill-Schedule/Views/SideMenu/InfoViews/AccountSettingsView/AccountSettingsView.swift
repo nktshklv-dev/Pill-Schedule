@@ -24,7 +24,7 @@ class AccountSettingsView: UIView {
     
     var mainView: UIView!
     
-    var loggedIn: Bool = true
+    var isLoggedIn: Bool = false
     var handle: AuthStateDidChangeListenerHandle?
     
     override init(frame: CGRect) {

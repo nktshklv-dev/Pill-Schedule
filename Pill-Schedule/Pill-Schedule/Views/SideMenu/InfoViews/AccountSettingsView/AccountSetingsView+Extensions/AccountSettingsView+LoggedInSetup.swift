@@ -43,7 +43,8 @@ extension AccountSettingsView {
         logOutButton.setTitle("Log Out", for: .normal)
         logOutButton.setTitleColor(.black, for: .normal)
         logOutButton.backgroundColor = R.color.gray2()
-        mainView.addSubview(logOutButton)
+        logOutButton.addTarget(self, action: #selector(didTapLogOut), for: .touchUpInside)
+        self.addSubview(logOutButton)
     }
     
     func setupLoggedInConstraints() {
@@ -81,8 +82,5 @@ extension AccountSettingsView {
             make.centerX.equalTo(userProfilePictureView)
             make.bottom.equalTo(self.snp.bottom).offset(-70)
         }
-        
-        
-        
     }
 }

@@ -11,7 +11,7 @@ import UIKit
 extension AccountSettingsView {
     
     func setupViews() {
-        if loggedIn {
+        if isLoggedIn {
             setupLoggedInView()
         }
         else {
@@ -20,7 +20,7 @@ extension AccountSettingsView {
     }
     
     func setupConstraints() {
-        if loggedIn {
+        if isLoggedIn {
             setupLoggedInConstraints()
         }
         else {

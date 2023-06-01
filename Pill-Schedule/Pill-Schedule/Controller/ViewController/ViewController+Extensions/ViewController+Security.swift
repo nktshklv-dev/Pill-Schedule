@@ -59,6 +59,7 @@ extension ViewController {
     }
     
     func tryUserLogin(){
+        print(Auth.auth().currentUser?.email)
         let defaults = UserDefaults.standard
         var result: AuthDataResult? = nil
         guard let userEmail = defaults.string(forKey: "userEmail") else {
