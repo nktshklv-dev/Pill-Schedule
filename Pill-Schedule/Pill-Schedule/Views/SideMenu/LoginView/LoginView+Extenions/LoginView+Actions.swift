@@ -57,13 +57,16 @@ extension LogInView {
         guard let password = passwordTextField.text else {return}
         
         Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
-            print(authResult)
-            print(error)
-            
             if error != nil{
                 self.showError(error: error!)
+                print(error)
             }
             
+            guard let result = authResult else {return}
+            self.setUser(authResult: result)
+            print(authResult)
+          
+
         }
     }
     func performRegistration() {
@@ -76,19 +79,20 @@ extension LogInView {
                 self.user = authResult?.user
                 self.saveToKeychain(email: email, password: password)
                 self.didTapBackButton()
+                self.performSignIn()
             }
             else {
                 self.showError(error: error!)
+                print(error!)
             }
         }
-        Auth.auth().signIn(withEmail: email, password: password) { (authResult, error) in
-            guard error == nil else {
-                return
-            }
-            print(error)
-            print(authResult)
-            print(Auth.auth().currentUser)
-        }
+    }
+    func setUser(authResult: AuthDataResult) {
+        self.parentView.user = authResult.user
+        self.parentView.clearMainView()
+        self.parentView.isLoggedIn = true
+        self.didTapBackButton()
+        
     }
     
     func showError(error: Error) {

@@ -19,7 +19,7 @@ extension AccountSettingsView {
         mainView.addSubview(userProfilePictureView)
         
         userNameLabel = UILabel()
-        userNameLabel.text = "Name"
+        userNameLabel.text = user?.email
         userNameLabel.textAlignment = .center
         userNameLabel.font = UIFont.systemFont(ofSize: 24, weight: .bold)
         userNameLabel.textColor = R.color.dark()

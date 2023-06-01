@@ -303,8 +303,8 @@
 		11400A8D2A2742B400751E1A /* LoginView */ = {
 			isa = PBXGroup;
 			children = (
-				11400A922A2742D900751E1A /* LoginView+Extenions */,
 				11400A8E2A2742C100751E1A /* LoginView.swift */,
+				11400A922A2742D900751E1A /* LoginView+Extenions */,
 			);
 			path = LoginView;
 			sourceTree = "<group>";

@@ -53,7 +53,8 @@ extension AccountSettingsView {
     func performSignOut() {
         do {
             try Auth.auth().signOut()
-            self.mainView.removeFromSuperview()
+            deleteLoginInfo()
+            clearMainView()
             self.logOutButton.removeFromSuperview()
             self.isLoggedIn = false
             self.setupViews()
@@ -66,5 +67,35 @@ extension AccountSettingsView {
         }
         print(Auth.auth().currentUser?.email)
        
+    }
+    
+    func clearMainView() {
+        mainView.removeFromSuperview()
+    }
+    
+    func deleteLoginInfo() {
+        let defaults = UserDefaults.standard
+        
+        guard let email = defaults.string(forKey: "userEmail") else {return}
+        eraseEmailFromUserDefaults()
+        erasePasswordFromKeychain(email: email)
+    }
+    func eraseEmailFromUserDefaults(){
+        let defaults = UserDefaults.standard
+        defaults.removeObject(forKey: "userEmail")
+    }
+    func erasePasswordFromKeychain(email: String){
+        deleteFromKeychain(account: email)
+    }
+    func deleteFromKeychain(account: String) {
+        let service = "com.nktshklv.Pills"
+        print("Account to delete: \(account)")
+        let query: [CFString: Any] = [
+            kSecAttrService: service,
+            kSecAttrAccount: account,
+            kSecClass: kSecClassGenericPassword]
+        
+        let status = SecItemDelete(query as CFDictionary)
+        print("Deletion Result: \(status)")
     }
 }

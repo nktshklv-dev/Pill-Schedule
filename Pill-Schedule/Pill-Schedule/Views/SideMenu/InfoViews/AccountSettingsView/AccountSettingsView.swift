@@ -24,16 +24,31 @@ class AccountSettingsView: UIView {
     
     var mainView: UIView!
     
-    var isLoggedIn: Bool = false
+    var isLoggedIn: Bool = false {
+        didSet {
+          checkIfLoggedIn()
+        }
+    }
     var handle: AuthStateDidChangeListenerHandle?
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
-        setupViews()
-        setupConstraints()
+        checkIfLoggedIn()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func checkIfLoggedIn() {
+        let user = Auth.auth().currentUser
+        if user != nil {
+            self.user = user
+        }
+        else {
+            self.user = nil
+        }
+        setupViews()
+        setupConstraints()
     }
 }
