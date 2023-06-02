@@ -23,6 +23,8 @@ extension AccountSettingsView {
         changeProfilePicButton.setTitle("Set profile photo", for: .normal)
         changeProfilePicButton.setTitleColor(R.color.blue(), for: .normal)
         changeProfilePicButton.titleLabel?.textAlignment = .center
+        changeProfilePicButton.menu = menu
+        changeProfilePicButton.showsMenuAsPrimaryAction = true 
         self.addSubview(changeProfilePicButton)
         
         editNameTextField = UITextField()

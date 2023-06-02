@@ -26,7 +26,21 @@ class AccountSettingsView: UIView {
     var changeProfilePicButton: UIButton!
     var editNameTextField: UITextField!
     var editSurnameTextField: UITextField!
-    
+    var menuItems: [UIAction] {
+        return [
+            UIAction(title: "Take a photo", image: UIImage(systemName: "camera"), handler: { action in
+                print("camera")
+            }),
+            UIAction(title: "Choose from gallery", image: UIImage(systemName: "photo.on.rectangle.angled"), handler: { action in
+                print("gallery")
+            }),
+            UIAction(title: "Remove", image: UIImage(systemName: "trash"), attributes: .destructive, handler: { action in
+                print("trash")
+            })]
+    }
+    var menu: UIMenu {
+        return UIMenu(title: "", image: nil, identifier: nil, options: [], children: menuItems)
+    }
     var mainView: UIView!
     
     var isLoggedIn: Bool = false {
