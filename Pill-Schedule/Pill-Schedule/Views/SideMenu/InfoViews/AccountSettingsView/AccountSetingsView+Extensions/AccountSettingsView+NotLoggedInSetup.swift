@@ -11,8 +11,6 @@ import UIKit
 extension AccountSettingsView {
     
     func setupNotLoggedInView(){
-        mainView = UIView()
-        self.addSubview(mainView)
         
         userProfilePictureView = UIImageView()
         userProfilePictureView.image = R.image.basicPP()
@@ -62,13 +60,7 @@ extension AccountSettingsView {
     
     func setupNotLoggedInConstraints() {
         let width = UIScreen.main.bounds.width
-        
-        self.mainView.snp.makeConstraints { make in
-            make.height.equalTo(self)
-            make.width.equalTo(self)
-            make.top.equalTo(self)
-            make.left.equalTo(self)
-        }
+    
         self.logInView.snp.makeConstraints { make in
             make.width.equalTo(self)
             make.height.equalTo(self)

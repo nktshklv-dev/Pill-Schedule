@@ -19,6 +19,26 @@ extension AccountSettingsView {
         logInView.showCase = .registration
         showLogInView()
     }
+    
+    @objc func toggleEditMode() {
+        isEditing.toggle()
+    }
+    
+    func toggledEditMode() {
+        clearMainView()
+        if isEditing {
+            setupEditModeView()
+            setupEditModeConstraints()
+            logOutButton.removeFromSuperview()
+        } else {
+            editButton.removeFromSuperview()
+            changeProfilePicButton.removeFromSuperview()
+            editNameTextField.removeFromSuperview()
+            editSurnameTextField.removeFromSuperview()
+            setupLoggedInView()
+            setupLoggedInConstraints()
+        }
+    }
 
     @objc func hideLoginView(){
         hideLogInView()
@@ -50,6 +70,7 @@ extension AccountSettingsView {
         ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         self.window?.rootViewController?.present(ac, animated: true)
     }
+    
     func performSignOut() {
         do {
             try Auth.auth().signOut()

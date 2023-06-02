@@ -22,11 +22,21 @@ class AccountSettingsView: UIView {
     var logInView: LogInView!
     var container: InfoContainerView!
     
+    //Edit Mode props:
+    var changeProfilePicButton: UIButton!
+    var editNameTextField: UITextField!
+    var editSurnameTextField: UITextField!
+    
     var mainView: UIView!
     
     var isLoggedIn: Bool = false {
         didSet {
           checkIfLoggedIn()
+        }
+    }
+    var isEditing: Bool = false {
+        didSet {
+            toggledEditMode()
         }
     }
     var handle: AuthStateDidChangeListenerHandle?

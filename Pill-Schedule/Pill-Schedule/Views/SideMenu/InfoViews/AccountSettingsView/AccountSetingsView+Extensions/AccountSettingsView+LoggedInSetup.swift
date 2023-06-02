@@ -36,6 +36,7 @@ extension AccountSettingsView {
         editButton.setTitle("Edit", for: .normal)
         editButton.setTitleColor(R.color.blue(), for: .normal)
         editButton.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .medium)
+        editButton.addTarget(self, action: #selector(toggleEditMode), for: .touchUpInside)
         mainView.addSubview(editButton)
         
         logOutButton = UIButton(type: .roundedRect)
@@ -50,21 +51,28 @@ extension AccountSettingsView {
     func setupLoggedInConstraints() {
         let width = UIScreen.main.bounds.width
         
+        self.mainView.snp.makeConstraints { make in
+            make.height.equalTo(self)
+            make.width.equalTo(self)
+            make.top.equalTo(self)
+            make.left.equalTo(self)
+        }
+        
         userProfilePictureView.snp.makeConstraints { make in
             make.width.height.equalTo(100)
             make.top.equalTo(self.snp.top).offset(100)
             make.centerX.equalTo(self.snp.right).inset(width/2)
         }
         userNameLabel.snp.makeConstraints { make in
-            make.width.equalTo(150)
+            make.width.equalTo(250)
             make.height.equalTo(20)
             make.centerX.equalTo(userProfilePictureView)
             make.top.equalTo(userProfilePictureView.snp.bottom).offset(30)
         }
         
         userSurnameLabel.snp.makeConstraints { make in
-            make.width.equalTo(150)
-            make.height.equalTo(20)
+            make.width.equalTo(userNameLabel)
+            make.height.equalTo(userNameLabel)
             make.centerX.equalTo(userProfilePictureView)
             make.top.equalTo(userNameLabel.snp.bottom).offset(10)
         }
