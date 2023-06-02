@@ -64,6 +64,7 @@
 		11400AC72A29244900751E1A /* LoginView+LogViewSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400AC62A29244900751E1A /* LoginView+LogViewSetup.swift */; };
 		118654AA2A29F5CD00446B34 /* AccountSettingsView+EditModeViewSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118654A92A29F5CD00446B34 /* AccountSettingsView+EditModeViewSetup.swift */; };
 		118654AC2A2A7B9400446B34 /* AccountSettingsView+ImagePickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118654AB2A2A7B9400446B34 /* AccountSettingsView+ImagePickerDelegate.swift */; };
+		118654AE2A2A838800446B34 /* AccountSettingsView+StorageActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118654AD2A2A838800446B34 /* AccountSettingsView+StorageActions.swift */; };
 		352D5C0B61B6710BC14F3744 /* Pods_Pill_Schedule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FC939FBE800F91926364B70 /* Pods_Pill_Schedule.framework */; };
 /* End PBXBuildFile section */
 
@@ -128,6 +129,7 @@
 		11400AC62A29244900751E1A /* LoginView+LogViewSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginView+LogViewSetup.swift"; sourceTree = "<group>"; };
 		118654A92A29F5CD00446B34 /* AccountSettingsView+EditModeViewSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountSettingsView+EditModeViewSetup.swift"; sourceTree = "<group>"; };
 		118654AB2A2A7B9400446B34 /* AccountSettingsView+ImagePickerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountSettingsView+ImagePickerDelegate.swift"; sourceTree = "<group>"; };
+		118654AD2A2A838800446B34 /* AccountSettingsView+StorageActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountSettingsView+StorageActions.swift"; sourceTree = "<group>"; };
 		8AAEE064348429D8E370FB7D /* Pods-Pill-Schedule.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pill-Schedule.debug.xcconfig"; path = "Target Support Files/Pods-Pill-Schedule/Pods-Pill-Schedule.debug.xcconfig"; sourceTree = "<group>"; };
 		A7885F8EB21951C0CA0E75A0 /* Pods-Pill-Schedule.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pill-Schedule.release.xcconfig"; path = "Target Support Files/Pods-Pill-Schedule/Pods-Pill-Schedule.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -415,6 +417,7 @@
 				11400ABC2A2750F800751E1A /* AccountSettingsView+NotLoggedInSetup.swift */,
 				118654A92A29F5CD00446B34 /* AccountSettingsView+EditModeViewSetup.swift */,
 				118654AB2A2A7B9400446B34 /* AccountSettingsView+ImagePickerDelegate.swift */,
+				118654AD2A2A838800446B34 /* AccountSettingsView+StorageActions.swift */,
 			);
 			path = "AccountSetingsView+Extensions";
 			sourceTree = "<group>";
@@ -605,6 +608,7 @@
 				11400A602A273DC400751E1A /* ViewController+CreateSubviews.swift in Sources */,
 				11400A622A273DD600751E1A /* ViewController+Security.swift in Sources */,
 				11400A912A2742D600751E1A /* LoginView+SetupViews.swift in Sources */,
+				118654AE2A2A838800446B34 /* AccountSettingsView+StorageActions.swift in Sources */,
 				11400A7C2A2741F100751E1A /* BurgerMenuView.swift in Sources */,
 				11400A4F2A273A7800751E1A /* R.generated.swift in Sources */,
 				11400A9A2A27433100751E1A /* LoginView+Auth.swift in Sources */,

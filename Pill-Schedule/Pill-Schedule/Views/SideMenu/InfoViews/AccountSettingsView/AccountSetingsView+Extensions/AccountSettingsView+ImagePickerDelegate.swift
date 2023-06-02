@@ -13,6 +13,7 @@ extension AccountSettingsView: UIImagePickerControllerDelegate, UINavigationCont
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let image = info[.editedImage] as? UIImage else {return}
         setProfilePicture(picture: image)
+        uploadUserProfilePic()
         self.window?.rootViewController?.dismiss(animated: true)
     }
 }

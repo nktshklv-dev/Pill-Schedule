@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 import FirebaseAuth
-import FirebaseStorage
 
 extension AccountSettingsView {
     
@@ -124,8 +123,6 @@ extension AccountSettingsView {
     func setProfilePicture(picture: UIImage) {
         self.userProfilePictureView.image = picture
     }
-    
-   
     
     func getImagePicker(sourceType: UIImagePickerController.SourceType) -> UIImagePickerController {
         let imagePicker = UIImagePickerController()
