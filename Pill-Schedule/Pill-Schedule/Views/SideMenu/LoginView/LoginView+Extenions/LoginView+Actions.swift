@@ -38,10 +38,12 @@ extension LogInView {
         if emailFieldValid && passwordFieldsValid {
             continueButton.isUserInteractionEnabled = true
             continueButton.backgroundColor = R.color.blue()
+            continueButton.setTitleColor(.white, for: .normal)
         }
         else {
             continueButton.isUserInteractionEnabled = false
             continueButton.backgroundColor = R.color.gray2()
+            continueButton.setTitleColor(R.color.dark(), for: .normal)
         }
     }
    
