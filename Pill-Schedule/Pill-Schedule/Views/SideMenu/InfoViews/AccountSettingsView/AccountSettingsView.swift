@@ -29,10 +29,16 @@ class AccountSettingsView: UIView {
     var menuItems: [UIAction] {
         return [
             UIAction(title: "Take a photo", image: UIImage(systemName: "camera"), handler: { action in
-                print("camera")
+                let picker = self.getImagePicker(sourceType: .camera)
+                picker.delegate = self
+                picker.allowsEditing = true
+                self.window?.rootViewController?.present(picker, animated: true)
             }),
             UIAction(title: "Choose from gallery", image: UIImage(systemName: "photo.on.rectangle.angled"), handler: { action in
-                print("gallery")
+                let picker = self.getImagePicker(sourceType: .photoLibrary)
+                picker.delegate = self
+                picker.allowsEditing = true 
+                self.window?.rootViewController?.present(picker, animated: true)
             }),
             UIAction(title: "Remove", image: UIImage(systemName: "trash"), attributes: .destructive, handler: { action in
                 print("trash")

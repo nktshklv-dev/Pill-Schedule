@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import FirebaseAuth
+import FirebaseStorage
 
 extension AccountSettingsView {
     
@@ -39,11 +40,11 @@ extension AccountSettingsView {
             setupLoggedInConstraints()
         }
     }
-
+    
     @objc func hideLoginView(){
         hideLogInView()
     }
-
+    
     private func showLogInView(){
         UIView.animate(withDuration: 0.35) {
             self.logInView.transform = CGAffineTransform(translationX: -365, y: 0)
@@ -87,7 +88,7 @@ extension AccountSettingsView {
             self.window?.rootViewController?.present(ac, animated: true)
         }
         print(Auth.auth().currentUser?.email)
-       
+        
     }
     
     func clearMainView() {
@@ -118,5 +119,18 @@ extension AccountSettingsView {
         
         let status = SecItemDelete(query as CFDictionary)
         print("Deletion Result: \(status)")
+    }
+    
+    func setProfilePicture(picture: UIImage) {
+        self.userProfilePictureView.image = picture
+    }
+    
+   
+    
+    func getImagePicker(sourceType: UIImagePickerController.SourceType) -> UIImagePickerController {
+        let imagePicker = UIImagePickerController()
+        imagePicker.sourceType = sourceType
+        return imagePicker
+        
     }
 }
