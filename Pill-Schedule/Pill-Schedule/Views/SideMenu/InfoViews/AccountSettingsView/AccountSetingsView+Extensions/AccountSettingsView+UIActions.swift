@@ -30,7 +30,7 @@ extension AccountSettingsView {
             progressSpinner.removeFromSuperview()
             setupEditModeView()
             setupEditModeConstraints()
-            retrieveUserProfilePic()
+            checkProfilePicture()
             logOutButton.removeFromSuperview()
         } else {
             progressSpinner.removeFromSuperview()
@@ -40,7 +40,7 @@ extension AccountSettingsView {
             editSurnameTextField.removeFromSuperview()
             setupLoggedInView()
             setupLoggedInConstraints()
-            retrieveUserProfilePic()
+            checkProfilePicture()
         }
     }
     

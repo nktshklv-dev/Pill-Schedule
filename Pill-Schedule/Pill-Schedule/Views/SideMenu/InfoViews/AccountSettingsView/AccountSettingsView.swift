@@ -22,6 +22,8 @@ class AccountSettingsView: UIView {
     var logInView: LogInView!
     var container: InfoContainerView!
     
+    var profilePicture: UIImage?
+    
     //Edit Mode props:
     var changeProfilePicButton: UIButton!
     var editNameTextField: UITextField!
@@ -71,6 +73,26 @@ class AccountSettingsView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func checkProfilePicture() {
+        let image = loadProfilePictureLocally()
+        if image == nil {
+            let onlineImage = retrieveUserProfilePic()
+            if onlineImage == nil {
+                profilePicture = R.image.basicPP()
+                saveProfilePictureLocally(image: profilePicture!)
+                uploadUserProfilePic()
+            }
+            profilePicture = R.image.basicPP()
+            profilePicture = retrieveUserProfilePic()
+            print(profilePicture)
+            saveProfilePictureLocally(image: profilePicture!)
+            uploadUserProfilePic()
+        }
+        else {
+            self.profilePicture = image
+        }
+    }
+    
     func checkIfLoggedIn() {
         let user = Auth.auth().currentUser
         if user != nil {
@@ -81,5 +103,9 @@ class AccountSettingsView: UIView {
         }
         setupViews()
         setupConstraints()
+        if user != nil {
+            checkProfilePicture()
+        }
+        
     }
 }

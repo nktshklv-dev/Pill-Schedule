@@ -20,8 +20,6 @@ extension LogInView {
         continueButton.isUserInteractionEnabled = false
         deleteLayers()
         parentView.user = user
-        parentView.logInButton.removeFromSuperview()
-        parentView.registerButton.removeFromSuperview()
     }
     
     func deleteLayers() {
@@ -55,6 +53,8 @@ extension LogInView {
         case .login: performSignIn()
         default: print("Default")
         }
+        parentView.logInButton.removeFromSuperview()
+        parentView.registerButton.removeFromSuperview()
     }
     
     func showError(error: Error) {

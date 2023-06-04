@@ -14,6 +14,7 @@ extension AccountSettingsView: UIImagePickerControllerDelegate, UINavigationCont
         guard let image = info[.editedImage] as? UIImage else {return}
         setProfilePicture(picture: image)
         uploadUserProfilePic()
+        saveProfilePictureLocally(image: image)
         self.window?.rootViewController?.dismiss(animated: true)
     }
 }
