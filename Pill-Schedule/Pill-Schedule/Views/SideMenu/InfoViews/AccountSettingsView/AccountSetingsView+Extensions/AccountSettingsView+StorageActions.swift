@@ -34,6 +34,8 @@ extension AccountSettingsView {
         let downloadTask = profileImageReference.getData(maxSize: 1 * 1024 * 1024) { retrievedData, error in
             if let error = error {
                 print(error.localizedDescription)
+                self.userProfilePictureView.image = R.image.basicPP()
+                self.hideProgressSpinner()
                 return
             }
             
