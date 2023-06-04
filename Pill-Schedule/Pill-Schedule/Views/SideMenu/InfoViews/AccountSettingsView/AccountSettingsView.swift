@@ -48,6 +48,7 @@ class AccountSettingsView: UIView {
         return UIMenu(title: "", image: nil, identifier: nil, options: [], children: menuItems)
     }
     var mainView: UIView!
+    var progressSpinner: UIActivityIndicatorView!
     
     var isLoggedIn: Bool = false {
         didSet {

@@ -13,6 +13,7 @@ extension AccountSettingsView {
     func setupViews() {
         if user != nil {
             setupLoggedInView()
+            retrieveUserProfilePic()
         }
         else {
             setupNotLoggedInView()

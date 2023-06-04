@@ -17,7 +17,6 @@ extension AccountSettingsView {
         userProfilePictureView = UIImageView()
         userProfilePictureView.layer.cornerRadius = 50
         userProfilePictureView.clipsToBounds = true 
-        retrieveUserProfilePic()
         mainView.addSubview(userProfilePictureView)
         
         userNameLabel = UILabel()
@@ -48,6 +47,11 @@ extension AccountSettingsView {
         logOutButton.backgroundColor = R.color.gray2()
         logOutButton.addTarget(self, action: #selector(didTapLogOut), for: .touchUpInside)
         self.addSubview(logOutButton)
+        
+        progressSpinner = UIActivityIndicatorView()
+        progressSpinner.stopAnimating()
+        progressSpinner.alpha = 0 
+        self.addSubview(progressSpinner)
     }
     
     func setupLoggedInConstraints() {
@@ -65,6 +69,12 @@ extension AccountSettingsView {
             make.top.equalTo(self.snp.top).offset(100)
             make.centerX.equalTo(self.snp.right).inset(width/2)
         }
+        
+        progressSpinner.snp.makeConstraints { make in
+            make.width.height.equalTo(100)
+            make.center.equalTo(userProfilePictureView)
+        }
+        
         userNameLabel.snp.makeConstraints { make in
             make.width.equalTo(250)
             make.height.equalTo(20)

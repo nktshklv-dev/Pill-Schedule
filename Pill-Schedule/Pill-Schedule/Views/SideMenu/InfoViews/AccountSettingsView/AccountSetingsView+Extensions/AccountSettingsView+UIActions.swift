@@ -27,16 +27,20 @@ extension AccountSettingsView {
     func toggledEditMode() {
         clearMainView()
         if isEditing {
+            progressSpinner.removeFromSuperview()
             setupEditModeView()
             setupEditModeConstraints()
+            retrieveUserProfilePic()
             logOutButton.removeFromSuperview()
         } else {
+            progressSpinner.removeFromSuperview()
             editButton.removeFromSuperview()
             changeProfilePicButton.removeFromSuperview()
             editNameTextField.removeFromSuperview()
             editSurnameTextField.removeFromSuperview()
             setupLoggedInView()
             setupLoggedInConstraints()
+            retrieveUserProfilePic()
         }
     }
     
@@ -129,5 +133,15 @@ extension AccountSettingsView {
         imagePicker.sourceType = sourceType
         return imagePicker
         
+    }
+    
+    func showProgressSpinner() {
+        self.progressSpinner.alpha = 1
+        self.progressSpinner.startAnimating()
+    }
+    
+    func hideProgressSpinner() {
+        self.progressSpinner.alpha = 0
+        self.progressSpinner.stopAnimating()
     }
 }

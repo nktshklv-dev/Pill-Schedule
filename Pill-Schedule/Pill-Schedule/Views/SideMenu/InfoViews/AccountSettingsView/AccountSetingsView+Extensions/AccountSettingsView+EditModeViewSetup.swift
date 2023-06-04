@@ -18,7 +18,6 @@ extension AccountSettingsView {
         userProfilePictureView = UIImageView()
         userProfilePictureView.layer.cornerRadius = 50
         userProfilePictureView.clipsToBounds = true 
-        userProfilePictureView.image = R.image.basicPP()
         mainView.addSubview(userProfilePictureView)
         
         changeProfilePicButton = UIButton()
@@ -45,6 +44,11 @@ extension AccountSettingsView {
         editButton.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         editButton.addTarget(self, action: #selector(toggleEditMode), for: .touchUpInside)
         self.addSubview(editButton)
+        
+        progressSpinner = UIActivityIndicatorView()
+        progressSpinner.alpha = 0
+        progressSpinner.stopAnimating()
+        self.addSubview(progressSpinner)
     }
     
     func setupEditModeConstraints() {
@@ -54,6 +58,11 @@ extension AccountSettingsView {
             make.width.height.equalTo(100)
             make.top.equalTo(self.snp.top).offset(100)
             make.centerX.equalTo(self.snp.right).inset(width/2)
+        }
+        
+        progressSpinner.snp.makeConstraints { make in
+            make.width.height.equalTo(100)
+            make.center.equalTo(userProfilePictureView)
         }
         
         changeProfilePicButton.snp.makeConstraints { make in
