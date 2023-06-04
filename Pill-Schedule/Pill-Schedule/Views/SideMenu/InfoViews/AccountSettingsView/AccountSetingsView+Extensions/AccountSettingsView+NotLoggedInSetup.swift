@@ -12,6 +12,9 @@ extension AccountSettingsView {
     
     func setupNotLoggedInView(){
         
+        mainView = UIView()
+        self.addSubview(mainView)
+        
         userProfilePictureView = UIImageView()
         userProfilePictureView.image = R.image.basicPP()
         userProfilePictureView.translatesAutoresizingMaskIntoConstraints = false
@@ -36,7 +39,7 @@ extension AccountSettingsView {
         registerButton.layer.cornerRadius = 21
         registerButton.titleLabel?.font = UIFont.systemFont(ofSize: 21, weight: .bold)
         registerButton.addTarget(self, action: #selector(didTapRegistrationButton), for: .touchUpInside)
-        mainView.addSubview(registerButton)
+        self.addSubview(registerButton)
         
         alreadyHaveAnAccLabel = UILabel()
         alreadyHaveAnAccLabel.text = "Already have an account in Pills?"
@@ -51,16 +54,16 @@ extension AccountSettingsView {
         logInButton.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         logInButton.addTarget(self, action: #selector(didTapLogInButton), for: .touchUpInside)
         logInButton.layer.cornerRadius = 20
-        mainView.addSubview(logInButton)
+        self.addSubview(logInButton)
         
         logInView = LogInView()
         logInView.parentView = self
-        mainView.addSubview(logInView)
+        self.addSubview(logInView)
     }
     
     func setupNotLoggedInConstraints() {
         let width = UIScreen.main.bounds.width
-    
+        
         self.logInView.snp.makeConstraints { make in
             make.width.equalTo(self)
             make.height.equalTo(self)

@@ -82,8 +82,6 @@ extension AccountSettingsView {
             clearMainView()
             self.logOutButton.removeFromSuperview()
             self.isLoggedIn = false
-            self.setupViews()
-            self.setupConstraints()
         }
         catch {
             let ac = UIAlertController(title: "Error", message: "\(error.localizedDescription)", preferredStyle: .alert)
