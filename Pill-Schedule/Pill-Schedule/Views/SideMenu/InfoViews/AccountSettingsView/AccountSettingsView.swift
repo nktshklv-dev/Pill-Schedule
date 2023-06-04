@@ -22,7 +22,6 @@ class AccountSettingsView: UIView {
     var logInView: LogInView!
     var container: InfoContainerView!
     
-    var profilePicture: UIImage?
     
     //Edit Mode props:
     var changeProfilePicButton: UIButton!
@@ -43,7 +42,10 @@ class AccountSettingsView: UIView {
                 self.window?.rootViewController?.present(picker, animated: true)
             }),
             UIAction(title: "Remove", image: UIImage(systemName: "trash"), attributes: .destructive, handler: { action in
-                print("trash")
+                guard let image = R.image.basicPP() else {return}
+                self.userProfilePictureView.image = image
+                self.saveProfilePictureLocally(image: image)
+                self.saveUserProfilePicRemote(image: image)
             })]
     }
     var menu: UIMenu {
@@ -73,23 +75,18 @@ class AccountSettingsView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    
     func checkProfilePicture() {
-        let image = loadProfilePictureLocally()
-        if image == nil {
-            let onlineImage = retrieveUserProfilePic()
-            if onlineImage == nil {
-                profilePicture = R.image.basicPP()
-                saveProfilePictureLocally(image: profilePicture!)
-                uploadUserProfilePic()
+        var profilePic = retrieveProfilePictureLocally()
+        if profilePic == nil {
+            profilePic = retrieveUserProfilePicRemote()
+            if profilePic == nil {
+                profilePic = R.image.basicPP()
+                saveProfilePictureLocally(image: profilePic)
+                saveUserProfilePicRemote(image: profilePic)
+            } else {
+                saveProfilePictureLocally(image: profilePic)
             }
-            profilePicture = R.image.basicPP()
-            profilePicture = retrieveUserProfilePic()
-            print(profilePicture)
-            saveProfilePictureLocally(image: profilePicture!)
-            uploadUserProfilePic()
-        }
-        else {
-            self.profilePicture = image
         }
     }
     

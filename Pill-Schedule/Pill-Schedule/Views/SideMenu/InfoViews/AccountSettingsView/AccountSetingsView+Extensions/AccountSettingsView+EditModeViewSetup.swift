@@ -16,7 +16,7 @@ extension AccountSettingsView {
         self.addSubview(mainView)
         
         userProfilePictureView = UIImageView()
-        userProfilePictureView.image = profilePicture
+        userProfilePictureView.image = retrieveProfilePictureLocally()
         userProfilePictureView.layer.cornerRadius = 50
         userProfilePictureView.clipsToBounds = true 
         mainView.addSubview(userProfilePictureView)

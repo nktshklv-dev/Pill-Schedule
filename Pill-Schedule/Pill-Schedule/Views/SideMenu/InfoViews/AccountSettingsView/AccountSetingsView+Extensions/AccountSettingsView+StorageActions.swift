@@ -12,10 +12,10 @@ import UIKit
 
 extension AccountSettingsView {
     
-    func uploadUserProfilePic() {
-        guard let pic = profilePicture else {return}
+    func saveUserProfilePicRemote(image img: UIImage?) {
+        guard let image = img else {return}
         guard let uid = Auth.auth().currentUser?.uid else {return} 
-        guard let imageData = pic.jpegData(compressionQuality: 0.5) else {return}
+        guard let imageData = image.jpegData(compressionQuality: 1) else {return}
         
         let profileImgReference = Storage.storage().reference().child("profile_image_urls").child("\(uid).jpg")
         let uploadTask = profileImgReference.putData(imageData, metadata: nil) { (metadata, error) in
@@ -26,7 +26,7 @@ extension AccountSettingsView {
         }
     }
     
-    func retrieveUserProfilePic() -> UIImage?{
+    func retrieveUserProfilePicRemote() -> UIImage?{
         showProgressSpinner()
         guard let uid = Auth.auth().currentUser?.uid else {return nil}
         var returnImage: UIImage?
@@ -51,7 +51,8 @@ extension AccountSettingsView {
         return returnImage
     }
     
-    func saveProfilePictureLocally(image: UIImage) {
+    func saveProfilePictureLocally(image img: UIImage?) {
+        guard let image = img else {return}
         let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         guard let userID = Auth.auth().currentUser?.uid else {return}
         let url = path.appendingPathComponent("\(userID).jpg")
@@ -64,7 +65,7 @@ extension AccountSettingsView {
         }
     }
     
-    func loadProfilePictureLocally() -> UIImage? {
+    func retrieveProfilePictureLocally() -> UIImage? {
         let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         guard let userID = Auth.auth().currentUser?.uid else {return nil}
         let url = path.appendingPathComponent("\(userID).jpg")
