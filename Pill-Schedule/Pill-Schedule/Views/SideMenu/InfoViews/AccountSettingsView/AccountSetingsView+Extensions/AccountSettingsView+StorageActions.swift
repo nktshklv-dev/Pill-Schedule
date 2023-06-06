@@ -9,6 +9,8 @@ import Foundation
 import FirebaseStorage
 import FirebaseAuth
 import UIKit
+import FirebaseCore
+import FirebaseDatabase
 
 extension AccountSettingsView {
     
@@ -79,5 +81,27 @@ extension AccountSettingsView {
             print(error.localizedDescription)
             return nil
         }
+    }
+    
+    func saveUserDataRemote() {
+        guard let userUID = Auth.auth().currentUser?.uid else {return}
+        let rootRef = Database.database(url: "https://pill-schedule-76e16-default-rtdb.europe-west1.firebasedatabase.app").reference().child("users").child("\(userUID)")
+        let nameRef = rootRef.child("userName")
+        let surnameRef = rootRef.child("userSurname")
+       
+        nameRef.setValue("name")
+        surnameRef.setValue("surname")
+    }
+    
+    func loadUserDataRemote() {
+        
+    }
+    
+    func saveUserDataLocally() {
+        
+    }
+    
+    func loadUserDataLocally() {
+        
     }
 }

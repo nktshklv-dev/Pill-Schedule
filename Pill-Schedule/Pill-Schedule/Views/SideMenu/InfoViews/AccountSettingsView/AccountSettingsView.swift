@@ -68,6 +68,7 @@ class AccountSettingsView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
+        saveUserDataRemote()
         checkIfLoggedIn()
     }
     

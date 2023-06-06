@@ -616,6 +616,16 @@ PODS:
   - FBSDKCoreKit_Basics (15.1.0)
   - FBSDKLoginKit (15.1.0):
     - FBSDKCoreKit (= 15.1.0)
+  - Firebase (10.6.0):
+    - Firebase/Core (= 10.6.0)
+  - Firebase/Core (10.6.0):
+    - Firebase/CoreOnly
+    - FirebaseAnalytics (~> 10.6.0)
+  - Firebase/CoreOnly (10.6.0):
+    - FirebaseCore (= 10.6.0)
+  - Firebase/Database (10.6.0):
+    - Firebase/CoreOnly
+    - FirebaseDatabase (~> 10.6.0)
   - FirebaseAnalytics (10.6.0):
     - FirebaseAnalytics/AdIdSupport (= 10.6.0)
     - FirebaseCore (~> 10.0)
@@ -652,6 +662,9 @@ PODS:
     - FirebaseCore (~> 10.0)
   - FirebaseCoreInternal (10.6.0):
     - "GoogleUtilities/NSData+zlib (~> 7.8)"
+  - FirebaseDatabase (10.6.0):
+    - FirebaseCore (~> 10.0)
+    - leveldb-library (~> 1.22)
   - FirebaseEmailAuthUI (13.0.0):
     - FirebaseAuth
     - FirebaseAuthUI
@@ -825,6 +838,8 @@ PODS:
   - SnapKit (5.6.0)
 
 DEPENDENCIES:
+  - Firebase
+  - Firebase/Database
   - FirebaseAnalytics
   - FirebaseAuth
   - FirebaseFirestore
@@ -847,6 +862,7 @@ SPEC REPOS:
     - FBSDKCoreKit
     - FBSDKCoreKit_Basics
     - FBSDKLoginKit
+    - Firebase
     - FirebaseAnalytics
     - FirebaseAppCheckInterop
     - FirebaseAuth
@@ -855,6 +871,7 @@ SPEC REPOS:
     - FirebaseCore
     - FirebaseCoreExtension
     - FirebaseCoreInternal
+    - FirebaseDatabase
     - FirebaseEmailAuthUI
     - FirebaseFacebookAuthUI
     - FirebaseFirestore
@@ -886,6 +903,7 @@ SPEC CHECKSUMS:
   FBSDKCoreKit: 7542746fc63a2a38dd6a865eeb54268341f37b83
   FBSDKCoreKit_Basics: 92d6b26c0bed30ab09bbdd96dccaa26e6c9978d1
   FBSDKLoginKit: 4e275d30cf90e92bdf3a7c82857a8642abf23037
+  Firebase: f13680471b021937f2230ea8503c7809d8c29806
   FirebaseAnalytics: 9f382605c5ee412b039212f054bf7a403d9850c1
   FirebaseAppCheckInterop: 13e5394346a811e7158cc136c01f10e3302a3514
   FirebaseAuth: 743e5cd568af59d6d99a91ea9300843672515cf7
@@ -894,6 +912,7 @@ SPEC CHECKSUMS:
   FirebaseCore: fa80ad16a62d52f67274b5b88304c3a318bbf9a4
   FirebaseCoreExtension: 318e5ee9ad4092b00423c2bddd51c3f5c3585973
   FirebaseCoreInternal: c7cd505e2136811096b225ac388d6254a2622362
+  FirebaseDatabase: c3ab8f695e48d4c4431f8406b58ebe543be185d9
   FirebaseEmailAuthUI: 940ed59d732cef15d5fc69cb326d40eedac2b062
   FirebaseFacebookAuthUI: 3caa730a45ef6a7a4fc3670604b76e676a32b2cb
   FirebaseFirestore: f91b23a3c71448475d17163baf916d5d20d01609
@@ -917,6 +936,6 @@ SPEC CHECKSUMS:
   R.swift: cef1c530541cb49412752721797f10dae6b32d11
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
 
-PODFILE CHECKSUM: 64e6cb75f5bb446916ccd61964ee38770d3ea727
+PODFILE CHECKSUM: a841cb5356829b4e7aa5a93137503beee5d5aa02
 
 COCOAPODS: 1.12.0
