@@ -83,21 +83,45 @@ extension AccountSettingsView {
         }
     }
     
-    func saveUserDataRemote() {
+    func saveUserDataRemote(name: String, surname: String) {
         guard let userUID = Auth.auth().currentUser?.uid else {return}
         let rootRef = Database.database(url: "https://pill-schedule-76e16-default-rtdb.europe-west1.firebasedatabase.app").reference().child("users").child("\(userUID)")
         let nameRef = rootRef.child("userName")
         let surnameRef = rootRef.child("userSurname")
        
-        nameRef.setValue("name")
-        surnameRef.setValue("surname")
+        nameRef.setValue(name)
+        surnameRef.setValue(surname)
     }
     
     func loadUserDataRemote() {
+        var userName: String?
+        var userSurname: String?
+        guard let userUID = Auth.auth().currentUser?.uid else {return}
+        let rootRef = Database.database(url: "https://pill-schedule-76e16-default-rtdb.europe-west1.firebasedatabase.app").reference().child("users").child(userUID)
         
+        rootRef.child("userName").getData { error, snapshot in
+            guard error == nil else {
+                print(error?.localizedDescription)
+                return
+            }
+            let name = snapshot?.value as? String ?? "No name"
+            userName = name
+        }
+        
+        rootRef.child("userSurname").getData { error, snapshot in
+            guard error == nil else {
+                print(error?.localizedDescription)
+                return
+            }
+            let surname = snapshot?.value as? String ?? "No surname"
+            userSurname = surname
+        }
+        
+        print(userName)
+        print(userSurname)
     }
     
-    func saveUserDataLocally() {
+    func saveUserDataLocally(name: String, surname: String) {
         
     }
     
