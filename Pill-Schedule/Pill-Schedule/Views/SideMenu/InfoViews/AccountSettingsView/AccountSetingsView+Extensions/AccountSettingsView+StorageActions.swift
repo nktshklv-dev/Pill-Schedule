@@ -122,10 +122,16 @@ extension AccountSettingsView {
     }
     
     func saveUserDataLocally(name: String, surname: String) {
+        let defaults = UserDefaults.standard
         
+        defaults.set(name, forKey: "userName")
+        defaults.set(surname, forKey: "userSurname")
     }
     
     func loadUserDataLocally() {
+        let defaults = UserDefaults.standard
         
+        let name = defaults.string(forKey: "userName")
+        let surname = defaults.string(forKey: "userSurname")
     }
 }
