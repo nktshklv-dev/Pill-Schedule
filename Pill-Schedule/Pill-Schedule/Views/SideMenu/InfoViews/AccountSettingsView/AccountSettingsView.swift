@@ -91,23 +91,8 @@ class AccountSettingsView: UIView {
     }
     
     func checkUserData() {
-        var name = loadUserNameLocally()
-        var surname = loadUserSurnameLocally()
-        
-        if name == nil || surname == nil {
-            name = loadUserNameRemote()
-            surname = loadUserSurnameRemote()
-            
-            if name == nil {
-                name = "User name"
-            }
-            if surname == nil {
-                surname = "User surname"
-            }
-            saveUserNameLocally(name: name)
-            saveUserSurnameLocally(surname: surname)
-        }
-        
+       loadUserNameRemote()
+        loadUserSurnameRemote()
     }
     
     func checkIfLoggedIn() {

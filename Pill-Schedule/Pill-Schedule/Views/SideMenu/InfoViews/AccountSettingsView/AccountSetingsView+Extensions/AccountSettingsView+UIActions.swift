@@ -67,7 +67,6 @@ extension AccountSettingsView {
         }
     }
     
-    
     func askToPerformSignOut() {
         let ac = UIAlertController(title: "Are you sure you want to log out?", message: nil, preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "Log Out", style: .default) {
@@ -84,6 +83,7 @@ extension AccountSettingsView {
             deleteLoginInfo()
             clearMainView()
             self.logOutButton.removeFromSuperview()
+            self.deleteUserData()
             self.isLoggedIn = false
         }
         catch {
@@ -106,13 +106,16 @@ extension AccountSettingsView {
         eraseEmailFromUserDefaults()
         erasePasswordFromKeychain(email: email)
     }
+    
     func eraseEmailFromUserDefaults(){
         let defaults = UserDefaults.standard
         defaults.removeObject(forKey: "userEmail")
     }
+    
     func erasePasswordFromKeychain(email: String){
         deleteFromKeychain(account: email)
     }
+    
     func deleteFromKeychain(account: String) {
         let service = "com.nktshklv.Pills"
         print("Account to delete: \(account)")
@@ -144,5 +147,13 @@ extension AccountSettingsView {
     func hideProgressSpinner() {
         self.progressSpinner.alpha = 0
         self.progressSpinner.stopAnimating()
+    }
+    
+    func updateUserData() {
+        var name = loadUserNameLocally()
+        var surname = loadUserSurnameLocally()
+        
+        self.userNameLabel.text = name
+        self.userSurnameLabel.text = surname
     }
 }

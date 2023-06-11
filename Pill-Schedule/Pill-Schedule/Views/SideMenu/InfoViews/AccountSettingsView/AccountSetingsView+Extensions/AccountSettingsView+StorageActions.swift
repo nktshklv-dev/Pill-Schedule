@@ -98,12 +98,12 @@ extension AccountSettingsView {
         surnameRef.setValue(surname)
     }
     
-    func loadUserNameRemote() -> String?{
+    func loadUserNameRemote(){
         var userName: String?
         
-        guard let userUID = Auth.auth().currentUser?.uid else {return nil}
+        guard let userUID = Auth.auth().currentUser?.uid else {return}
         let rootRef = Database.database(url: "https://pill-schedule-76e16-default-rtdb.europe-west1.firebasedatabase.app").reference().child("users").child(userUID)
-        
+        print(rootRef)
         rootRef.child("userName").getData { error, snapshot in
             guard error == nil else {
                 print(error?.localizedDescription)
@@ -111,15 +111,13 @@ extension AccountSettingsView {
             }
             let name = snapshot?.value as? String
             userName = name
+            self.saveUserNameLocally(name: userName)
+            self.updateUserData()
         }
-    
-        
-        print(userName)
-        return userName
     }
-    func loadUserSurnameRemote() -> String?{
+    func loadUserSurnameRemote() {
         var userSurname: String?
-        guard let userUID = Auth.auth().currentUser?.uid else {return nil}
+        guard let userUID = Auth.auth().currentUser?.uid else {return}
         let rootRef = Database.database(url: "https://pill-schedule-76e16-default-rtdb.europe-west1.firebasedatabase.app").reference().child("users").child(userUID)
         
         rootRef.child("userSurname").getData { error, snapshot in
@@ -129,9 +127,9 @@ extension AccountSettingsView {
             }
             let surname = snapshot?.value as? String
             userSurname = surname
+            self.saveUserSurnameLocally(surname: userSurname)
+            self.updateUserData()
         }
-    
-        return userSurname
         }
     
     
@@ -158,5 +156,12 @@ extension AccountSettingsView {
         
         guard let surname = defaults.string(forKey: "userSurname") else {return nil}
         return surname
+    }
+    
+    func deleteUserData() {
+        let defaults = UserDefaults.standard
+        
+        defaults.removeObject(forKey: "userName")
+        defaults.removeObject(forKey: "userSurname")
     }
 }
