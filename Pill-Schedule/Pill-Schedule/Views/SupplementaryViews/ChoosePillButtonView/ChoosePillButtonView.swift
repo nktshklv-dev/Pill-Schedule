@@ -10,13 +10,21 @@ import SnapKit
 
 class ChoosePillButtonView: UIStackView {
     
-    enum PillButton: String{
+    enum PillType: String{
         case pillButton
         case capsuleButton
         case ampouleButton
         case inhalerButton
     }
-    var pillsView = UIStackView()
+    
+
+    
+    var pillButton: PillButton!
+    var capsuleButton: PillButton!
+    var ampouleButton: PillButton!
+    var inhalerButton: PillButton!
+    var stackView: UIStackView!
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
@@ -28,30 +36,50 @@ class ChoosePillButtonView: UIStackView {
     }
     
     private func setupViews(){
-       pillsView = createPillsView()
-       self.addSubview(pillsView)
+        pillButton = PillButton()
+        pillButton.changeImage(to: .pillButton)
+        pillButton.isUserInteractionEnabled = true
+        pillButton.addTarget(self, action: #selector(didTapPillButton), for: .touchUpInside)
+        self.addSubview(pillButton)
+    
+        capsuleButton = PillButton()
+        capsuleButton.changeImage(to: .capsuleButton)
+        capsuleButton.isUserInteractionEnabled = true
+        capsuleButton.addTarget(self, action: #selector(didTapPillButton), for: .touchUpInside)
+        self.addSubview(capsuleButton)
+        
+        ampouleButton = PillButton()
+        ampouleButton.changeImage(to: .ampouleButton)
+        ampouleButton.isUserInteractionEnabled = true
+        ampouleButton.addTarget(self, action: #selector(didTapPillButton), for: .touchUpInside)
+        self.addSubview(ampouleButton)
+        
+        inhalerButton = PillButton()
+        inhalerButton.changeImage(to: .inhalerButton)
+        inhalerButton.isUserInteractionEnabled = true
+        inhalerButton.addTarget(self, action: #selector(didTapPillButton), for: .touchUpInside)
+        self.addSubview(inhalerButton)
+        
+        stackView = UIStackView()
+        stackView.spacing = 5
+        stackView.distribution = .equalSpacing
+        
+        stackView.addArrangedSubview(pillButton)
+        stackView.addArrangedSubview(capsuleButton)
+        stackView.addArrangedSubview(ampouleButton)
+        stackView.addArrangedSubview(inhalerButton)
+        self.addSubview(stackView)
+        
+        
     }
     private func setupConstraints(){
-        pillsView.snp.makeConstraints { make in
-            make.width.equalTo(self.snp.width)
-            make.height.equalTo(100)
-            make.centerX.equalTo(self.snp.centerX)
+       
+        stackView.snp.makeConstraints { make in
+            make.width.equalTo(self).multipliedBy(0.95)
+            make.height.equalTo(64)
+            make.centerX.equalTo(self)
+            make.top.equalTo(self)
         }
     }
     
-    private func createPillsView() -> UIStackView{
-        let buttonTypes: [PillButton] = [.pillButton, .capsuleButton, .ampouleButton, .inhalerButton]
-        let stack = UIStackView()
-       
-        for type in buttonTypes{
-            let button = UIButton(frame: CGRect(x: 0, y: 0, width: 64, height: 64))
-            button.setImage(UIImage(named: type.rawValue), for: .normal)
-            button.addTarget(self, action: #selector(didTapPillButton), for: .touchUpInside)
-            stack.addArrangedSubview(button)
-        }
-        stack.axis = .horizontal
-        stack.distribution = .fillEqually
-        stack.spacing = 10
-        return stack
-    }
 }
