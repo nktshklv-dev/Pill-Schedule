@@ -394,11 +394,11 @@
 		11400AAD2A2743EF00751E1A /* SupplementaryViews */ = {
 			isa = PBXGroup;
 			children = (
+				1165792C2A3652BC00397351 /* PillButton.swift */,
 				11400AAE2A27440300751E1A /* AddPillButton.swift */,
 				11400AB02A27441000751E1A /* CircularProgressBar.swift */,
 				11400AB62A27443900751E1A /* ChoosePillButtonView */,
 				11400AC22A291DB800751E1A /* SpinningProgressView.swift */,
-				1165792C2A3652BC00397351 /* PillButton.swift */,
 			);
 			path = SupplementaryViews;
 			sourceTree = "<group>";

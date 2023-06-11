@@ -14,9 +14,14 @@ class PillButton: UIButton {
     var isChecked: Bool = false {
         didSet {
             if isChecked {
-                checkmarkView.alpha = 1
+                UIView.animate(withDuration: 0.2) {
+                    self.checkmarkView.alpha = 1
+                }
+               
             } else {
-                checkmarkView.alpha = 0
+                UIView.animate(withDuration: 0.2) {
+                    self.checkmarkView.alpha = 0
+                }
             }
         }
     }
