@@ -21,14 +21,14 @@ extension AccountSettingsView {
         mainView.addSubview(userProfilePictureView)
         
         userNameLabel = UILabel()
-        userNameLabel.text = user?.email
+        userNameLabel.text = loadUserNameLocally()
         userNameLabel.textAlignment = .center
         userNameLabel.font = UIFont.systemFont(ofSize: 24, weight: .bold)
         userNameLabel.textColor = R.color.dark()
         mainView.addSubview(userNameLabel)
         
         userSurnameLabel = UILabel()
-        userSurnameLabel.text = "Surname"
+        userSurnameLabel.text = loadUserSurnameLocally()
         userSurnameLabel.textAlignment = .center
         userSurnameLabel.font = UIFont.systemFont(ofSize: 24, weight: .bold)
         userSurnameLabel.textColor = R.color.dark()

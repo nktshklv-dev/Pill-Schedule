@@ -62,6 +62,7 @@
 		11400AC32A291DB800751E1A /* SpinningProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400AC22A291DB800751E1A /* SpinningProgressView.swift */; };
 		11400AC52A29243F00751E1A /* LoginView+RegViewSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400AC42A29243F00751E1A /* LoginView+RegViewSetup.swift */; };
 		11400AC72A29244900751E1A /* LoginView+LogViewSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400AC62A29244900751E1A /* LoginView+LogViewSetup.swift */; };
+		116579292A308EC200397351 /* AccountSettingsView+TextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116579282A308EC200397351 /* AccountSettingsView+TextFieldDelegate.swift */; };
 		118654AA2A29F5CD00446B34 /* AccountSettingsView+EditModeViewSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118654A92A29F5CD00446B34 /* AccountSettingsView+EditModeViewSetup.swift */; };
 		118654AC2A2A7B9400446B34 /* AccountSettingsView+ImagePickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118654AB2A2A7B9400446B34 /* AccountSettingsView+ImagePickerDelegate.swift */; };
 		118654AE2A2A838800446B34 /* AccountSettingsView+StorageActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118654AD2A2A838800446B34 /* AccountSettingsView+StorageActions.swift */; };
@@ -127,6 +128,7 @@
 		11400AC22A291DB800751E1A /* SpinningProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinningProgressView.swift; sourceTree = "<group>"; };
 		11400AC42A29243F00751E1A /* LoginView+RegViewSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginView+RegViewSetup.swift"; sourceTree = "<group>"; };
 		11400AC62A29244900751E1A /* LoginView+LogViewSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginView+LogViewSetup.swift"; sourceTree = "<group>"; };
+		116579282A308EC200397351 /* AccountSettingsView+TextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountSettingsView+TextFieldDelegate.swift"; sourceTree = "<group>"; };
 		118654A92A29F5CD00446B34 /* AccountSettingsView+EditModeViewSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountSettingsView+EditModeViewSetup.swift"; sourceTree = "<group>"; };
 		118654AB2A2A7B9400446B34 /* AccountSettingsView+ImagePickerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountSettingsView+ImagePickerDelegate.swift"; sourceTree = "<group>"; };
 		118654AD2A2A838800446B34 /* AccountSettingsView+StorageActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountSettingsView+StorageActions.swift"; sourceTree = "<group>"; };
@@ -418,8 +420,17 @@
 				118654A92A29F5CD00446B34 /* AccountSettingsView+EditModeViewSetup.swift */,
 				118654AB2A2A7B9400446B34 /* AccountSettingsView+ImagePickerDelegate.swift */,
 				118654AD2A2A838800446B34 /* AccountSettingsView+StorageActions.swift */,
+				1165792A2A308EC600397351 /* Delegates */,
 			);
 			path = "AccountSetingsView+Extensions";
+			sourceTree = "<group>";
+		};
+		1165792A2A308EC600397351 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				116579282A308EC200397351 /* AccountSettingsView+TextFieldDelegate.swift */,
+			);
+			path = Delegates;
 			sourceTree = "<group>";
 		};
 		2C9209D61C61F87A20DC0068 /* Pods */ = {
@@ -593,6 +604,7 @@
 				11400AB12A27441000751E1A /* CircularProgressBar.swift in Sources */,
 				11400A692A273E7800751E1A /* FirstCreatePillViewController+Actions.swift in Sources */,
 				11400AB92A27509300751E1A /* AccountSettingsView+SetupViews.swift in Sources */,
+				116579292A308EC200397351 /* AccountSettingsView+TextFieldDelegate.swift in Sources */,
 				11400A8C2A2742A100751E1A /* InfoContainerView+Actions.swift in Sources */,
 				11400A3B2A2735F700751E1A /* ViewController.swift in Sources */,
 				11400A772A27416500751E1A /* VaccinationMenuDelegate.swift in Sources */,

@@ -26,13 +26,16 @@ extension AccountSettingsView {
     
     func toggledEditMode() {
         clearMainView()
+        
         if isEditing {
+            setupGestureRecognizer()
             progressSpinner.removeFromSuperview()
             setupEditModeView()
             setupEditModeConstraints()
             checkProfilePicture()
             logOutButton.removeFromSuperview()
         } else {
+            removeGestureRecognizers()
             progressSpinner.removeFromSuperview()
             editButton.removeFromSuperview()
             changeProfilePicButton.removeFromSuperview()

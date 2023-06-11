@@ -30,13 +30,17 @@ extension AccountSettingsView {
         self.addSubview(changeProfilePicButton)
         
         editNameTextField = UITextField()
+        editNameTextField.delegate = self
+        editNameTextField.addTarget(self, action: #selector(didChangeNameTextField), for: .editingChanged)
         editNameTextField.borderStyle = .roundedRect
-        editNameTextField.placeholder = "Name"
+        editNameTextField.placeholder = loadUserNameLocally()
         self.addSubview(editNameTextField)
         
         editSurnameTextField = UITextField()
+        editSurnameTextField.delegate = self
+        editSurnameTextField.addTarget(self, action: #selector(didChangeSurnameTextField), for: .editingChanged)
         editSurnameTextField.borderStyle = .roundedRect
-        editSurnameTextField.placeholder = "Surname"
+        editSurnameTextField.placeholder = loadUserSurnameLocally()
         self.addSubview(editSurnameTextField)
         
         editButton = UIButton()
@@ -95,4 +99,17 @@ extension AccountSettingsView {
         }
     }
     
+    func setupGestureRecognizer() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        self.addGestureRecognizer(tap)
+    }
+    func removeGestureRecognizers() {
+        guard let recognizers = self.gestureRecognizers else {return}
+        for recognizer in recognizers {
+            self.removeGestureRecognizer(recognizer)
+        }
+    }
+    @objc func dismissKeyboard() {
+        self.endEditing(true)
+    }
 }

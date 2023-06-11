@@ -83,20 +83,25 @@ extension AccountSettingsView {
         }
     }
     
-    func saveUserDataRemote(name: String, surname: String) {
+    func saveUserNameRemote(name: String) {
         guard let userUID = Auth.auth().currentUser?.uid else {return}
         let rootRef = Database.database(url: "https://pill-schedule-76e16-default-rtdb.europe-west1.firebasedatabase.app").reference().child("users").child("\(userUID)")
         let nameRef = rootRef.child("userName")
-        let surnameRef = rootRef.child("userSurname")
        
         nameRef.setValue(name)
+    }
+    
+    func saveUserSurnameRemote(surname: String) {
+        guard let userUID = Auth.auth().currentUser?.uid else {return}
+        let rootRef = Database.database(url: "https://pill-schedule-76e16-default-rtdb.europe-west1.firebasedatabase.app").reference().child("users").child("\(userUID)")
+        let surnameRef = rootRef.child("userSurname")
         surnameRef.setValue(surname)
     }
     
-    func loadUserDataRemote() {
+    func loadUserNameRemote() -> String?{
         var userName: String?
-        var userSurname: String?
-        guard let userUID = Auth.auth().currentUser?.uid else {return}
+        
+        guard let userUID = Auth.auth().currentUser?.uid else {return nil}
         let rootRef = Database.database(url: "https://pill-schedule-76e16-default-rtdb.europe-west1.firebasedatabase.app").reference().child("users").child(userUID)
         
         rootRef.child("userName").getData { error, snapshot in
@@ -104,34 +109,54 @@ extension AccountSettingsView {
                 print(error?.localizedDescription)
                 return
             }
-            let name = snapshot?.value as? String ?? "No name"
+            let name = snapshot?.value as? String
             userName = name
         }
+    
+        
+        print(userName)
+        return userName
+    }
+    func loadUserSurnameRemote() -> String?{
+        var userSurname: String?
+        guard let userUID = Auth.auth().currentUser?.uid else {return nil}
+        let rootRef = Database.database(url: "https://pill-schedule-76e16-default-rtdb.europe-west1.firebasedatabase.app").reference().child("users").child(userUID)
         
         rootRef.child("userSurname").getData { error, snapshot in
             guard error == nil else {
                 print(error?.localizedDescription)
                 return
             }
-            let surname = snapshot?.value as? String ?? "No surname"
+            let surname = snapshot?.value as? String
             userSurname = surname
         }
-        
-        print(userName)
-        print(userSurname)
+    
+        return userSurname
+        }
+    
+    
+    func saveUserNameLocally(name: String?) {
+        let defaults = UserDefaults.standard
+        defaults.set(name, forKey: "userName")
     }
     
-    func saveUserDataLocally(name: String, surname: String) {
+    func saveUserSurnameLocally(surname: String?) {
         let defaults = UserDefaults.standard
         
-        defaults.set(name, forKey: "userName")
         defaults.set(surname, forKey: "userSurname")
     }
     
-    func loadUserDataLocally() {
+    func loadUserNameLocally() -> String? {
+        let defaults = UserDefaults.standard
+    
+        guard let name = defaults.string(forKey: "userName") else {return nil}
+        return name
+    }
+    
+    func loadUserSurnameLocally() -> String? {
         let defaults = UserDefaults.standard
         
-        let name = defaults.string(forKey: "userName")
-        let surname = defaults.string(forKey: "userSurname")
+        guard let surname = defaults.string(forKey: "userSurname") else {return nil}
+        return surname
     }
 }
