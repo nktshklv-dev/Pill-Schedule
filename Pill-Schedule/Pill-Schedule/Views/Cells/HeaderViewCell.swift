@@ -34,7 +34,8 @@ class HeaderViewCell: UICollectionViewCell {
         dateLabel.font = UIFont.boldSystemFont(ofSize: 34)
         self.addSubview(dateLabel)
         
-        greetingLabel.text = "Hey, Sasha!"
+        let name = getUserName()
+        greetingLabel.text = "Hey, \(name)!"
         greetingLabel.textColor = R.color.gray()
         greetingLabel.font = UIFont.systemFont(ofSize: 16)
         self.addSubview(greetingLabel)
