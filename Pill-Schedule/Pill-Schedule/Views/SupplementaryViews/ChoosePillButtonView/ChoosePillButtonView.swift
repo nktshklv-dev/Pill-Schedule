@@ -18,11 +18,11 @@ class ChoosePillButtonView: UIStackView {
     }
     
 
-    
-    var pillButton: PillButton!
-    var capsuleButton: PillButton!
-    var ampouleButton: PillButton!
-    var inhalerButton: PillButton!
+    var currentSelectedPill: PillType?
+    private var pillButton: PillButton!
+    private var capsuleButton: PillButton!
+    private var ampouleButton: PillButton!
+    private var inhalerButton: PillButton!
     var stackView: UIStackView!
     
     override init(frame: CGRect) {
@@ -68,9 +68,7 @@ class ChoosePillButtonView: UIStackView {
         stackView.addArrangedSubview(capsuleButton)
         stackView.addArrangedSubview(ampouleButton)
         stackView.addArrangedSubview(inhalerButton)
-        self.addSubview(stackView)
-        
-        
+        self.addSubview(stackView) 
     }
     private func setupConstraints(){
        
