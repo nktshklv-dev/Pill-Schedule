@@ -14,7 +14,7 @@ class TimestampCollectionViewCell: UICollectionViewCell {
     public let myLabel: UILabel = {
         let label = UILabel()
         label.text = "My label"
-        label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
         label.textColor = R.color.gray2()
         label.backgroundColor = .clear
         label.textAlignment = .center

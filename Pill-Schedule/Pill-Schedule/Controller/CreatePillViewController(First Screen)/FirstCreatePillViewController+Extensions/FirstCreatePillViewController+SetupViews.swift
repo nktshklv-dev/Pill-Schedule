@@ -78,7 +78,7 @@ extension FirstCreatePillViewController {
         }
         
         timeStampCollectionView.snp.makeConstraints { make in
-            make.width.equalTo(self.view).multipliedBy(0.99)
+            make.width.equalTo(self.view).multipliedBy(0.98)
             make.height.equalTo(60)
             make.centerX.equalTo(self.view)
             make.top.equalTo(pillDoseTextField.snp.bottom).offset(36)
