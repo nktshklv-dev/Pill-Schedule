@@ -17,7 +17,7 @@ class FirstCreatePillViewController: UIViewController {
     var pillDoseTextField: UITextField!
     var timeStampCollectionView: UICollectionView!
     var continueButton: UIButton!
-    
+    let timestamps: [TimestampsModel] = [TimestampsModel(title: "Nevermind", isSelected: true), TimestampsModel(title: "Before Meals", isSelected: false), TimestampsModel(title: "After Meals", isSelected: false), TimestampsModel(title: "With food", isSelected: false)]
     
     override func viewDidLoad() {
         super.viewDidLoad()

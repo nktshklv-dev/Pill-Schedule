@@ -38,6 +38,18 @@ extension FirstCreatePillViewController {
         pillDoseTextField.textColor = R.color.dark()
         self.view.addSubview(pillDoseTextField)
         
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.itemSize = CGSize(width: view.frame.size.width / 2.60, height: view.frame.size.height / 15)
+        timeStampCollectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        timeStampCollectionView.translatesAutoresizingMaskIntoConstraints = false
+        timeStampCollectionView.register(TimestampCollectionViewCell.self, forCellWithReuseIdentifier: TimestampCollectionViewCell.reuseIdentifier)
+        timeStampCollectionView.dataSource = self
+        timeStampCollectionView.showsHorizontalScrollIndicator = false
+        timeStampCollectionView.delegate = self
+        self.view.addSubview(timeStampCollectionView)
+        
+        
     }
     
     func setupConstraints(){
@@ -71,6 +83,13 @@ extension FirstCreatePillViewController {
             make.height.equalTo(24)
             make.top.equalTo(pillNameTextField.snp.bottom).offset(44)
             make.left.equalTo(self.view).offset(24)
+        }
+        
+        timeStampCollectionView.snp.makeConstraints { make in
+            make.width.equalTo(self.view).multipliedBy(0.99)
+            make.height.equalTo(60)
+            make.centerX.equalTo(self.view)
+            make.top.equalTo(pillDoseTextField.snp.bottom).offset(36)
         }
     }
 }
