@@ -38,15 +38,7 @@ extension FirstCreatePillViewController {
         pillDoseTextField.textColor = R.color.dark()
         self.view.addSubview(pillDoseTextField)
         
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
-        layout.itemSize = CGSize(width: view.frame.size.width / 2.60, height: view.frame.size.height / 15)
-        timeStampCollectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        timeStampCollectionView.translatesAutoresizingMaskIntoConstraints = false
-        timeStampCollectionView.register(TimestampCollectionViewCell.self, forCellWithReuseIdentifier: TimestampCollectionViewCell.reuseIdentifier)
-        timeStampCollectionView.dataSource = self
-        timeStampCollectionView.showsHorizontalScrollIndicator = false
-        timeStampCollectionView.delegate = self
+        setupCollectionView()
         self.view.addSubview(timeStampCollectionView)
         
         

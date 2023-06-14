@@ -9,6 +9,18 @@ import Foundation
 import UIKit
 
 extension FirstCreatePillViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    func setupCollectionView() {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.itemSize = CGSize(width: view.frame.size.width / 2.60, height: view.frame.size.height / 15)
+        timeStampCollectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        timeStampCollectionView.translatesAutoresizingMaskIntoConstraints = false
+        timeStampCollectionView.register(TimestampCollectionViewCell.self, forCellWithReuseIdentifier: TimestampCollectionViewCell.reuseIdentifier)
+        timeStampCollectionView.dataSource = self
+        timeStampCollectionView.showsHorizontalScrollIndicator = false
+        timeStampCollectionView.delegate = self
+    }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 4
     }
