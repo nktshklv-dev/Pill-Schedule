@@ -10,7 +10,7 @@ import UIKit
 
 extension FirstCreatePillViewController {
     
-     func setupViews(){
+    func setupViews(){
         pageNumberLabel = UILabel()
         pageNumberLabel.text = "1 of 2"
         pageNumberLabel.textColor = R.color.gray()
@@ -26,9 +26,22 @@ extension FirstCreatePillViewController {
         pillsView = ChoosePillButtonView()
         self.view.addSubview(pillsView)
         
+        pillNameTextField = UITextField()
+        pillNameTextField.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+        pillNameTextField.placeholder = "Name"
+        pillNameTextField.textColor = R.color.dark()
+        self.view.addSubview(pillNameTextField)
+        
+        pillDoseTextField = UITextField()
+        pillDoseTextField.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+        pillDoseTextField.placeholder = "Single dose, e.g. 1 tablet"
+        pillDoseTextField.textColor = R.color.dark()
+        self.view.addSubview(pillDoseTextField)
+        
     }
-
-     func setupConstraints(){
+    
+    func setupConstraints(){
+        let width = UIScreen.main.bounds.width
         pageNumberLabel.snp.makeConstraints { make in
             make.top.equalTo(view.snp.top).offset(100)
             make.left.equalTo(view.snp.left).offset(24)
@@ -41,9 +54,23 @@ extension FirstCreatePillViewController {
         
         pillsView.snp.makeConstraints { make in
             make.width.equalTo(self.view.snp.width).multipliedBy(0.9)
-            make.height.equalTo(100)
             make.top.equalTo(titleLabel.snp.bottom).offset(30)
+            make.height.equalTo(74)
             make.centerX.equalTo(self.view.snp.centerX)
+        }
+        
+        pillNameTextField.snp.makeConstraints { make in
+            make.width.equalTo(width - 48)
+            make.height.equalTo(24)
+            make.top.equalTo(pillsView.snp.bottom).offset(40)
+            make.left.equalTo(self.view).offset(24)
+        }
+        
+        pillDoseTextField.snp.makeConstraints { make in
+            make.width.equalTo(width - 48)
+            make.height.equalTo(24)
+            make.top.equalTo(pillNameTextField.snp.bottom).offset(44)
+            make.left.equalTo(self.view).offset(24)
         }
     }
 }

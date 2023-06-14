@@ -13,6 +13,11 @@ class FirstCreatePillViewController: UIViewController {
     var pageNumberLabel = UILabel()
     var titleLabel = UILabel()
     var pillsView = ChoosePillButtonView()
+    var pillNameTextField: UITextField!
+    var pillDoseTextField: UITextField!
+    var timeStampCollectionView: UICollectionView!
+    var continueButton: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
