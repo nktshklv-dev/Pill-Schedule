@@ -41,7 +41,10 @@ extension FirstCreatePillViewController {
         setupCollectionView()
         self.view.addSubview(timeStampCollectionView)
         
-        
+        continueButton = ContinueButton()
+        continueButton.isDisabled = true
+        continueButton.addTarget(self, action: #selector(didTapContinueButton), for: .touchUpInside)
+        self.view.addSubview(continueButton)
     }
     
     func setupConstraints(){
@@ -82,6 +85,13 @@ extension FirstCreatePillViewController {
             make.height.equalTo(60)
             make.centerX.equalTo(self.view)
             make.top.equalTo(pillDoseTextField.snp.bottom).offset(36)
+        }
+        
+        continueButton.snp.makeConstraints { make in
+            make.width.equalTo(327)
+            make.height.equalTo(54)
+            make.centerX.equalTo(self.view)
+            make.bottom.equalTo(self.view.snp.bottom).offset(-44)
         }
     }
 }

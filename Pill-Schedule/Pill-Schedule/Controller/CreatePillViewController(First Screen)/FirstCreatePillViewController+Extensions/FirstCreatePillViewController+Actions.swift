@@ -13,4 +13,8 @@ extension FirstCreatePillViewController{
     @objc func didTapBackButton(){
         self.navigationController?.popViewController(animated: true)
     }
+    
+    @objc func didTapContinueButton() {
+        print("Continue button tapped")
+    }
 }

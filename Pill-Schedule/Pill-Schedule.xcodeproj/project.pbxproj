@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1122D9CC2A3B9B5B00913E01 /* ContinueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1122D9CB2A3B9B5B00913E01 /* ContinueButton.swift */; };
 		11400A372A2735F700751E1A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400A362A2735F700751E1A /* AppDelegate.swift */; };
 		11400A392A2735F700751E1A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400A382A2735F700751E1A /* SceneDelegate.swift */; };
 		11400A3B2A2735F700751E1A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400A3A2A2735F700751E1A /* ViewController.swift */; };
@@ -76,6 +77,7 @@
 
 /* Begin PBXFileReference section */
 		0FC939FBE800F91926364B70 /* Pods_Pill_Schedule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pill_Schedule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1122D9CB2A3B9B5B00913E01 /* ContinueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinueButton.swift; sourceTree = "<group>"; };
 		11400A332A2735F700751E1A /* Pill-Schedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pill-Schedule.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		11400A362A2735F700751E1A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11400A382A2735F700751E1A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -411,6 +413,7 @@
 				11400AB02A27441000751E1A /* CircularProgressBar.swift */,
 				11400AB62A27443900751E1A /* ChoosePillButtonView */,
 				11400AC22A291DB800751E1A /* SpinningProgressView.swift */,
+				1122D9CB2A3B9B5B00913E01 /* ContinueButton.swift */,
 			);
 			path = SupplementaryViews;
 			sourceTree = "<group>";
@@ -615,6 +618,7 @@
 				11400A6E2A2740F500751E1A /* Section.swift in Sources */,
 				11400ABF2A28A92300751E1A /* AccountSettingsView+ButtonActions.swift in Sources */,
 				118654AC2A2A7B9400446B34 /* AccountSettingsView+ImagePickerDelegate.swift in Sources */,
+				1122D9CC2A3B9B5B00913E01 /* ContinueButton.swift in Sources */,
 				114C7BEC2A3A4AB80004F0F9 /* Timestamp.swift in Sources */,
 				11400A832A27423C00751E1A /* BurgerMenuView+CollectionViewDelegate.swift in Sources */,
 				11400A702A27410800751E1A /* Item.swift in Sources */,
