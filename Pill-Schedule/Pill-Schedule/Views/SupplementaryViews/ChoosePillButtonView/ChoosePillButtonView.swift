@@ -23,6 +23,7 @@ class ChoosePillButtonView: UIStackView {
     private var capsuleButton: PillButton!
     private var ampouleButton: PillButton!
     private var inhalerButton: PillButton!
+    var delegate: ChoosePillButtonViewDelegate? = nil 
     var stackView: UIStackView!
     
     override init(frame: CGRect) {

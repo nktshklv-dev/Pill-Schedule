@@ -31,21 +31,21 @@ class ContinueButton: UIButton {
     
     private func disable() {
         self.isUserInteractionEnabled = false
-        self.setTitle("Fill in the fields", for: .normal)
         self.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .medium)
         UIView.animate(withDuration: 0.3) {
-            self.setTitleColor(R.color.gray2(), for: .normal)
             self.backgroundColor = R.color.gray5()
         }
+        self.setTitleColor(R.color.gray2(), for: .normal)
+        self.setTitle("Fill in the fields", for: .normal)
     }
     
     private func enable() {
-        self.isUserInteractionEnabled = true 
-        self.setTitle("Next", for: .normal)
+        self.isUserInteractionEnabled = true
         self.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .bold)
-        UIView.animate(withDuration: 0.3) {
+        UIView.animate(withDuration: 0.5) {
             self.setTitleColor(.white, for: .normal)
             self.backgroundColor = R.color.blue()
         }
+        self.setTitle("Next", for: .normal)
     }
 }

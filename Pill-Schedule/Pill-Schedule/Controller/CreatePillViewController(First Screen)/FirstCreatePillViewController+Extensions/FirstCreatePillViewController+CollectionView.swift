@@ -60,6 +60,7 @@ extension FirstCreatePillViewController: UICollectionViewDataSource, UICollectio
         else {
             timestamps[recentSelectedItemId].isSelected.toggle()
             timestamps[indexPath.row].isSelected.toggle()
+            self.selectedTimestamp = timestamps[indexPath.row].title
         }
         collectionView.reloadData()
     }

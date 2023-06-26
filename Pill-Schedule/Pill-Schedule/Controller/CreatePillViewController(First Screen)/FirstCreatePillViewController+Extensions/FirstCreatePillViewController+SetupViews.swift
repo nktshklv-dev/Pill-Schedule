@@ -24,17 +24,20 @@ extension FirstCreatePillViewController {
         self.view.addSubview(titleLabel)
         
         pillsView = ChoosePillButtonView()
+        pillsView.delegate = self
         self.view.addSubview(pillsView)
         
         pillNameTextField = UITextField()
         pillNameTextField.font = UIFont.systemFont(ofSize: 20, weight: .bold)
         pillNameTextField.placeholder = "Name"
+        pillNameTextField.addTarget(self, action: #selector(pillNameTextFieldChanged), for: .allEditingEvents)
         pillNameTextField.textColor = R.color.dark()
         self.view.addSubview(pillNameTextField)
         
         pillDoseTextField = UITextField()
         pillDoseTextField.font = UIFont.systemFont(ofSize: 20, weight: .bold)
         pillDoseTextField.placeholder = "Single dose, e.g. 1 tablet"
+        pillDoseTextField.addTarget(self, action: #selector(pillDoseTextFieldChanged), for: .allEditingEvents)
         pillDoseTextField.textColor = R.color.dark()
         self.view.addSubview(pillDoseTextField)
         

@@ -14,7 +14,7 @@ extension ChoosePillButtonView {
         sender.tappedButton()
         uncheckButtons(sender: sender)
         self.currentSelectedPill = getPillType(sender)
-        print(currentSelectedPill)
+        delegate?.didSelectPillImage(with: self.currentSelectedPill)
         if sender.isChecked {
             UIView.animate(withDuration: 0.2) {
                 sender.transform = CGAffineTransform(scaleX: 1.15, y: 1.15)
@@ -31,7 +31,6 @@ extension ChoosePillButtonView {
     
     func uncheckButtons(sender: PillButton) {
         let buttons = stackView.arrangedSubviews as [PillButton]
-        print(buttons)
         if sender.isChecked {
             for button in buttons {
                 button.isChecked = false
