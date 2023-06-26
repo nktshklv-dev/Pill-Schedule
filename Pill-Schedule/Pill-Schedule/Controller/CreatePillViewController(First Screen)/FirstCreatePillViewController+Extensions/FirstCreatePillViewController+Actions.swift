@@ -15,7 +15,13 @@ extension FirstCreatePillViewController{
     }
     
     @objc func didTapContinueButton() {
-        print("Continue button tapped")
+        let vc = SecondCreatePillViewController()
+        guard let name = pillName else {return}
+        guard let image = selectedImage else {return}
+        guard let dose = pillDose else {return}
+        let description = dose.lowercased() + " " + selectedTimestamp.lowercased()
+        vc.pill = Pill(name: name, imageType: image, description: "\(description)")
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func pillNameTextFieldChanged(_ sender: UITextField) {

@@ -50,13 +50,13 @@ extension ChoosePillButtonView {
         guard sender.isChecked else {return nil}
         switch buttonImage {
         case R.image.pillButton():
-            return .pillButton
+            return .pill
         case R.image.capsuleButton():
-            return .capsuleButton
+            return .capsule
         case R.image.ampouleButton():
-            return .ampouleButton
+            return .ampoule
         case R.image.inhalerButton():
-            return .inhalerButton
+            return .inhaler
         default:
             return nil
         }

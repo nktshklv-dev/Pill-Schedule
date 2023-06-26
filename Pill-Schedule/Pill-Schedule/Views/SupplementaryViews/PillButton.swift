@@ -55,16 +55,16 @@ class PillButton: UIButton {
     
     func changeImage(to type: ChoosePillButtonView.PillType) {
         switch type {
-        case .pillButton:
+        case .pill:
             self.setImage(R.image.pillButton(), for: .normal)
             break
-        case .capsuleButton:
+        case .capsule:
             self.setImage(R.image.capsuleButton(), for: .normal)
             break
-        case .ampouleButton:
+        case .ampoule:
             self.setImage(R.image.ampouleButton(), for: .normal)
             break
-        case .inhalerButton:
+        case .inhaler:
             self.setImage(R.image.inhalerButton(), for: .normal)
             break
         }

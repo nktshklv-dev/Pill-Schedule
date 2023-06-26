@@ -11,10 +11,12 @@ import SnapKit
 class ChoosePillButtonView: UIStackView {
     
     enum PillType: String{
-        case pillButton
-        case capsuleButton
-        case ampouleButton
-        case inhalerButton
+        case pill
+        case capsule
+        case ampoule
+        case inhaler
+        
+       
     }
     
 
@@ -38,25 +40,25 @@ class ChoosePillButtonView: UIStackView {
     
     private func setupViews(){
         pillButton = PillButton()
-        pillButton.changeImage(to: .pillButton)
+        pillButton.changeImage(to: .pill)
         pillButton.isUserInteractionEnabled = true
         pillButton.addTarget(self, action: #selector(didTapPillButton), for: .touchUpInside)
         self.addSubview(pillButton)
     
         capsuleButton = PillButton()
-        capsuleButton.changeImage(to: .capsuleButton)
+        capsuleButton.changeImage(to: .capsule)
         capsuleButton.isUserInteractionEnabled = true
         capsuleButton.addTarget(self, action: #selector(didTapPillButton), for: .touchUpInside)
         self.addSubview(capsuleButton)
         
         ampouleButton = PillButton()
-        ampouleButton.changeImage(to: .ampouleButton)
+        ampouleButton.changeImage(to: .ampoule)
         ampouleButton.isUserInteractionEnabled = true
         ampouleButton.addTarget(self, action: #selector(didTapPillButton), for: .touchUpInside)
         self.addSubview(ampouleButton)
         
         inhalerButton = PillButton()
-        inhalerButton.changeImage(to: .inhalerButton)
+        inhalerButton.changeImage(to: .inhaler)
         inhalerButton.isUserInteractionEnabled = true
         inhalerButton.addTarget(self, action: #selector(didTapPillButton), for: .touchUpInside)
         self.addSubview(inhalerButton)

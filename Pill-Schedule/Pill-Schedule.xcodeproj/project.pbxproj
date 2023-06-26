@@ -70,6 +70,7 @@
 		1165792D2A3652BC00397351 /* PillButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1165792C2A3652BC00397351 /* PillButton.swift */; };
 		117FD9CF2A498D3C0099F837 /* ChoosePillButtonViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117FD9CE2A498D3C0099F837 /* ChoosePillButtonViewDelegate.swift */; };
 		117FD9D12A498D760099F837 /* FirstCreatePillViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117FD9D02A498D760099F837 /* FirstCreatePillViewController+Delegate.swift */; };
+		117FD9D42A49AC1A0099F837 /* SecondCreatePillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117FD9D32A49AC1A0099F837 /* SecondCreatePillViewController.swift */; };
 		118654AA2A29F5CD00446B34 /* AccountSettingsView+EditModeViewSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118654A92A29F5CD00446B34 /* AccountSettingsView+EditModeViewSetup.swift */; };
 		118654AC2A2A7B9400446B34 /* AccountSettingsView+ImagePickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118654AB2A2A7B9400446B34 /* AccountSettingsView+ImagePickerDelegate.swift */; };
 		118654AE2A2A838800446B34 /* AccountSettingsView+StorageActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118654AD2A2A838800446B34 /* AccountSettingsView+StorageActions.swift */; };
@@ -144,6 +145,7 @@
 		1165792C2A3652BC00397351 /* PillButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillButton.swift; sourceTree = "<group>"; };
 		117FD9CE2A498D3C0099F837 /* ChoosePillButtonViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosePillButtonViewDelegate.swift; sourceTree = "<group>"; };
 		117FD9D02A498D760099F837 /* FirstCreatePillViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirstCreatePillViewController+Delegate.swift"; sourceTree = "<group>"; };
+		117FD9D32A49AC1A0099F837 /* SecondCreatePillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondCreatePillViewController.swift; sourceTree = "<group>"; };
 		118654A92A29F5CD00446B34 /* AccountSettingsView+EditModeViewSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountSettingsView+EditModeViewSetup.swift"; sourceTree = "<group>"; };
 		118654AB2A2A7B9400446B34 /* AccountSettingsView+ImagePickerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountSettingsView+ImagePickerDelegate.swift"; sourceTree = "<group>"; };
 		118654AD2A2A838800446B34 /* AccountSettingsView+StorageActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountSettingsView+StorageActions.swift"; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 		11400A552A273D4000751E1A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				117FD9D22A49AC040099F837 /* CreatePillViewController(Second Screen) */,
 				11400A642A273DFF00751E1A /* CreatePillViewController(First Screen) */,
 				11400A632A273DF400751E1A /* ViewController */,
 			);
@@ -457,6 +460,22 @@
 			path = Delegates;
 			sourceTree = "<group>";
 		};
+		117FD9D22A49AC040099F837 /* CreatePillViewController(Second Screen) */ = {
+			isa = PBXGroup;
+			children = (
+				117FD9D52A49AC220099F837 /* SecondCreatePillViewController+Extensions */,
+				117FD9D32A49AC1A0099F837 /* SecondCreatePillViewController.swift */,
+			);
+			path = "CreatePillViewController(Second Screen)";
+			sourceTree = "<group>";
+		};
+		117FD9D52A49AC220099F837 /* SecondCreatePillViewController+Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "SecondCreatePillViewController+Extensions";
+			sourceTree = "<group>";
+		};
 		119D5FB02A375B9900263CF9 /* HeaderViewCell+Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -665,6 +684,7 @@
 				11400A872A27426700751E1A /* MenuViewCell.swift in Sources */,
 				11400A5E2A273DA500751E1A /* ViewController+Actions.swift in Sources */,
 				11400AA32A27438E00751E1A /* AccountSettingsView+UIActions.swift in Sources */,
+				117FD9D42A49AC1A0099F837 /* SecondCreatePillViewController.swift in Sources */,
 				11400A392A2735F700751E1A /* SceneDelegate.swift in Sources */,
 				11400A662A273E4C00751E1A /* FirstCreatePillViewController.swift in Sources */,
 				11400A7F2A27421C00751E1A /* BurgerMenuView+SetupViews.swift in Sources */,

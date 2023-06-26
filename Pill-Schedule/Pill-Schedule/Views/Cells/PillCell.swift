@@ -31,9 +31,19 @@ enum PillImageType: String{
 class PillCell: UICollectionViewCell {
     
     static let reuseIdentifier = "PillCell"
-    var imageType: PillImageType = .pill {
+    var imageType: ChoosePillButtonView.PillType = .pill {
         didSet{
-            pillImageView.image = imageType.image
+            switch imageType {
+            case .pill:
+                pillImageView.image
+                = R.image.pill()
+            case .capsule:
+                pillImageView.image = R.image.capsule()
+            case .ampoule:
+                pillImageView.image = R.image.ampoule()
+            case .inhaler:
+                pillImageView.image = R.image.inhaler()
+            }
         }
     }
     private let pillImageView = UIImageView()
