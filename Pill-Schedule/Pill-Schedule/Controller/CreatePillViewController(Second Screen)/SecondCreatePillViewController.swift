@@ -16,11 +16,18 @@ class SecondCreatePillViewController: UIViewController {
     var pillNameLabel: UILabel!
     var pillInfoLabel: UILabel!
     var pill: Pill!
+    var reminderStackView: UIStackView!
+    var addReminderButton: UIButton!
+    var promptLabel: UILabel!
+    var reminderStackViewHeight = 24
+    var width: CGFloat = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupViews()
         setupConstraints()
+        
+        self.width = self.view.frame.width
     }
     
     func setupViews() {
@@ -57,7 +64,74 @@ class SecondCreatePillViewController: UIViewController {
         pillInfoLabel.font = UIFont.systemFont(ofSize: 16, weight: .light)
         pillInfoLabel.textColor = R.color.gray()
         self.view.addSubview(pillInfoLabel)
+        
+        reminderStackView = UIStackView()
+        reminderStackView.axis = .vertical
+        reminderStackView.distribution = .fillProportionally
+        reminderStackView.spacing = 20
+        self.view.addSubview(reminderStackView)
+        addReminder()
+        
+        addReminderButton = UIButton()
+        addReminderButton.addTarget(self, action: #selector(didTapAddReminderButton), for: .touchUpInside)
+        addReminderButton.setImage(R.image.addReminderButton(), for: .normal)
+        self.view.addSubview(addReminderButton)
+        
+        promptLabel = UILabel()
+        promptLabel.text = "You can only add up to 3 reminders"
+        promptLabel.font = UIFont.systemFont(ofSize: 16, weight: .light)
+        promptLabel.textColor = R.color.gray2()
+        promptLabel.alpha = 0
+        self.view.addSubview(promptLabel)
+        
+        promptLabel.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(reminderStackView.snp.bottom).offset(10)
+        }
+
+        
     }
+    
+    @objc func didTapAddReminderButton() {
+        reminderStackViewHeight += 44
+        UIView.animate(withDuration: 0.35) {
+            self.reminderStackView.snp.updateConstraints { make in
+                make.height.equalTo(self.reminderStackViewHeight)
+            }
+            self.addReminder()
+            self.view.layoutIfNeeded()
+        }
+        
+    }
+    
+    func addReminder() {
+        
+        let reminderView = ReminderView(frame: CGRect(x: 0, y: 0, width: width, height: 24))
+        reminderView.reminderNumber = reminderStackView.arrangedSubviews.count + 1
+        
+        if reminderView.reminderNumber >= 3 {
+            hideAddReminderButton()
+            showReminderPrompt()
+        }
+      
+        self.reminderStackView.addArrangedSubview(reminderView)
+    }
+    
+    func hideAddReminderButton() {
+        UIView.animate(withDuration: 0.5) {
+            self.addReminderButton.alpha = 0
+            self.addReminderButton.isUserInteractionEnabled = false
+        }
+    }
+    
+    func showReminderPrompt() {
+        UIView.animate(withDuration: 1, animations: {
+            self.promptLabel.alpha = 1
+        })
+        
+    }
+    
+
     
     func setupConstraints() {
         pageNumberLabel.snp.makeConstraints { make in
@@ -93,6 +167,19 @@ class SecondCreatePillViewController: UIViewController {
             make.left.equalTo(pillNameLabel)
         }
         
+        reminderStackView.snp.makeConstraints { make in
+            make.width.equalToSuperview()
+            make.height.equalTo(reminderStackViewHeight)
+            make.top.equalTo(verticalView.snp.bottom).offset(44)
+            make.left.equalToSuperview()
+            make.right.equalToSuperview()
+        }
         
+        
+        addReminderButton.snp.makeConstraints { make in
+            make.height.width.equalTo(48)
+            make.left.equalTo(reminderStackView).inset(24)
+            make.top.equalTo(reminderStackView.snp.bottom).offset(28)
+        }
     }
 }

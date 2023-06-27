@@ -71,6 +71,7 @@
 		117FD9CF2A498D3C0099F837 /* ChoosePillButtonViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117FD9CE2A498D3C0099F837 /* ChoosePillButtonViewDelegate.swift */; };
 		117FD9D12A498D760099F837 /* FirstCreatePillViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117FD9D02A498D760099F837 /* FirstCreatePillViewController+Delegate.swift */; };
 		117FD9D42A49AC1A0099F837 /* SecondCreatePillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117FD9D32A49AC1A0099F837 /* SecondCreatePillViewController.swift */; };
+		117FD9D72A4A38410099F837 /* ReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117FD9D62A4A38410099F837 /* ReminderView.swift */; };
 		118654AA2A29F5CD00446B34 /* AccountSettingsView+EditModeViewSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118654A92A29F5CD00446B34 /* AccountSettingsView+EditModeViewSetup.swift */; };
 		118654AC2A2A7B9400446B34 /* AccountSettingsView+ImagePickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118654AB2A2A7B9400446B34 /* AccountSettingsView+ImagePickerDelegate.swift */; };
 		118654AE2A2A838800446B34 /* AccountSettingsView+StorageActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118654AD2A2A838800446B34 /* AccountSettingsView+StorageActions.swift */; };
@@ -146,6 +147,7 @@
 		117FD9CE2A498D3C0099F837 /* ChoosePillButtonViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosePillButtonViewDelegate.swift; sourceTree = "<group>"; };
 		117FD9D02A498D760099F837 /* FirstCreatePillViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirstCreatePillViewController+Delegate.swift"; sourceTree = "<group>"; };
 		117FD9D32A49AC1A0099F837 /* SecondCreatePillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondCreatePillViewController.swift; sourceTree = "<group>"; };
+		117FD9D62A4A38410099F837 /* ReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderView.swift; sourceTree = "<group>"; };
 		118654A92A29F5CD00446B34 /* AccountSettingsView+EditModeViewSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountSettingsView+EditModeViewSetup.swift"; sourceTree = "<group>"; };
 		118654AB2A2A7B9400446B34 /* AccountSettingsView+ImagePickerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountSettingsView+ImagePickerDelegate.swift"; sourceTree = "<group>"; };
 		118654AD2A2A838800446B34 /* AccountSettingsView+StorageActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountSettingsView+StorageActions.swift"; sourceTree = "<group>"; };
@@ -423,6 +425,7 @@
 				11400AC22A291DB800751E1A /* SpinningProgressView.swift */,
 				1122D9CB2A3B9B5B00913E01 /* ContinueButton.swift */,
 				11400AB62A27443900751E1A /* ChoosePillButtonView */,
+				117FD9D62A4A38410099F837 /* ReminderView.swift */,
 			);
 			path = SupplementaryViews;
 			sourceTree = "<group>";
@@ -643,6 +646,7 @@
 				11400A6E2A2740F500751E1A /* Section.swift in Sources */,
 				11400ABF2A28A92300751E1A /* AccountSettingsView+ButtonActions.swift in Sources */,
 				118654AC2A2A7B9400446B34 /* AccountSettingsView+ImagePickerDelegate.swift in Sources */,
+				117FD9D72A4A38410099F837 /* ReminderView.swift in Sources */,
 				1122D9CC2A3B9B5B00913E01 /* ContinueButton.swift in Sources */,
 				114C7BEC2A3A4AB80004F0F9 /* Timestamp.swift in Sources */,
 				11400A832A27423C00751E1A /* BurgerMenuView+CollectionViewDelegate.swift in Sources */,
