@@ -11,12 +11,13 @@ class ReminderView: UIView {
 
     var reminderNumberLabel: UILabel!
     var timerTextField: UITextField!
+    var deleteButton: UIButton!
     var reminderNumber = 1 {
         didSet {
             reminderNumberLabel.text = "Reminder \(reminderNumber)"
         }
-       
     }
+    var delegate: ReminderViewDelegate! = nil
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
@@ -38,10 +39,20 @@ class ReminderView: UIView {
         timerTextField = UITextField()
         timerTextField.font = UIFont.systemFont(ofSize: 20, weight: .bold)
         timerTextField.placeholder = "00:00"
-        timerTextField.textColor = R.color.dark()
+        timerTextField.textColor = R.color.gray2()
         self.addSubview(timerTextField)
+        
+        deleteButton = UIButton()
+        deleteButton.setImage(UIImage(systemName: "minus.circle"), for: .normal)
+        deleteButton.tintColor = R.color.orange()
+        deleteButton.alpha = 0
+        deleteButton.addTarget(self, action: #selector(didTapDeleteButon), for: .touchUpInside)
+        self.addSubview(deleteButton)
     }
     
+    @objc func didTapDeleteButon() {
+        delegate.removeReminder()
+    }
     func setupConstraints() {
         reminderNumberLabel.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
@@ -50,7 +61,13 @@ class ReminderView: UIView {
         
         timerTextField.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
-            make.right.equalTo(self.snp.right).inset(24)
+            make.right.equalTo(self.snp.right).inset(48)
+        }
+        
+        deleteButton.snp.makeConstraints { make in
+            make.width.height.equalTo(24)
+            make.centerY.equalToSuperview()
+            make.right.equalTo(self.snp.right).inset(15)
         }
     }
 }

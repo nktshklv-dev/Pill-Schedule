@@ -7,8 +7,8 @@
 
 import UIKit
 
-class SecondCreatePillViewController: UIViewController {
-
+class SecondCreatePillViewController: UIViewController, ReminderViewDelegate {
+   
     var pageNumberLabel: UILabel!
     var titleLabel: UILabel!
     var verticalView: UIImageView!
@@ -70,7 +70,8 @@ class SecondCreatePillViewController: UIViewController {
         reminderStackView.distribution = .fillProportionally
         reminderStackView.spacing = 20
         self.view.addSubview(reminderStackView)
-        addReminder()
+        let reminder = createReminder()
+        addReminder(reminder: reminder)
         
         addReminderButton = UIButton()
         addReminderButton.addTarget(self, action: #selector(didTapAddReminderButton), for: .touchUpInside)
@@ -94,27 +95,33 @@ class SecondCreatePillViewController: UIViewController {
     
     @objc func didTapAddReminderButton() {
         reminderStackViewHeight += 44
+        let reminder = createReminder()
         UIView.animate(withDuration: 0.35) {
             self.reminderStackView.snp.updateConstraints { make in
                 make.height.equalTo(self.reminderStackViewHeight)
             }
-            self.addReminder()
+            self.addReminder(reminder: reminder)
             self.view.layoutIfNeeded()
         }
         
     }
     
-    func addReminder() {
-        
-        let reminderView = ReminderView(frame: CGRect(x: 0, y: 0, width: width, height: 24))
-        reminderView.reminderNumber = reminderStackView.arrangedSubviews.count + 1
-        
-        if reminderView.reminderNumber >= 3 {
+    func addReminder(reminder: ReminderView) {
+        if reminder.reminderNumber >= 3 {
             hideAddReminderButton()
             showReminderPrompt()
         }
       
-        self.reminderStackView.addArrangedSubview(reminderView)
+        self.reminderStackView.addArrangedSubview(reminder)
+    }
+    func createReminder() -> ReminderView {
+        let reminderView = ReminderView(frame: CGRect(x: 0, y: 0, width: width, height: 24))
+        reminderView.reminderNumber = reminderStackView.arrangedSubviews.count + 1
+        if reminderView.reminderNumber > 1 {
+            reminderView.deleteButton.alpha = 1
+        }
+        reminderView.delegate = self
+        return reminderView
     }
     
     func hideAddReminderButton() {
@@ -179,7 +186,32 @@ class SecondCreatePillViewController: UIViewController {
         addReminderButton.snp.makeConstraints { make in
             make.height.width.equalTo(48)
             make.left.equalTo(reminderStackView).inset(24)
-            make.top.equalTo(reminderStackView.snp.bottom).offset(28)
+            make.top.equalTo(reminderStackView.snp.bottom).offset(20)
         }
     }
+    
+    
+    func removeReminder() {
+        if reminderStackView.arrangedSubviews.count != 1{
+            guard let lastView = reminderStackView.arrangedSubviews.last else {return}
+            UIView.animate(withDuration: 0.35) {
+                lastView.alpha = 0
+                self.reminderStackView.removeArrangedSubview(lastView)
+                self.reminderStackViewHeight -= 44
+                
+                self.reminderStackView.snp.updateConstraints { make in
+                    make.height.equalTo(self.reminderStackViewHeight)
+                }
+                if self.reminderStackView.arrangedSubviews.count > 1{
+                    self.addReminderButton.alpha = 1
+                    self.addReminderButton.isUserInteractionEnabled = true
+                    self.promptLabel.alpha = 0
+                }
+                self.view.layoutIfNeeded()
+                
+            }
+           
+        }
+    }
+    
 }
