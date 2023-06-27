@@ -86,7 +86,7 @@ class SecondCreatePillViewController: UIViewController {
         
         promptLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(reminderStackView.snp.bottom).offset(10)
+            make.top.equalTo(reminderStackView.snp.bottom).offset(15)
         }
 
         
