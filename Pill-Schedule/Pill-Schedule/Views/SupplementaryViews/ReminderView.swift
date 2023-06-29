@@ -43,7 +43,9 @@ class ReminderView: UIView {
         self.addSubview(timerTextField)
         
         deleteButton = UIButton()
-        deleteButton.setImage(UIImage(systemName: "minus.circle"), for: .normal)
+        let symbolConfiguration = UIImage.SymbolConfiguration(pointSize: 20, weight: .bold, scale: .small)
+        let largeBoldMinusIcon = UIImage(systemName: "minus.circle", withConfiguration: symbolConfiguration)
+        deleteButton.setImage(largeBoldMinusIcon, for: .normal)
         deleteButton.tintColor = R.color.orange()
         deleteButton.alpha = 0
         deleteButton.addTarget(self, action: #selector(didTapDeleteButon), for: .touchUpInside)
