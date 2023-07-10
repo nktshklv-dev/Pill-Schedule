@@ -19,6 +19,7 @@ target 'Pill-Schedule' do
   pod 'FirebaseUI/Phone'
   pod 'Firebase/Database'
   pod 'FirebaseUI/OAuth'
+  pod 'RealmSwift', '~> 10.41'
   # Pods for Pill-Schedule
 
 end

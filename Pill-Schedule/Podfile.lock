@@ -835,6 +835,11 @@ PODS:
   - nanopb/encode (2.30909.0)
   - PromisesObjC (2.2.0)
   - R.swift (7.3.0)
+  - Realm (10.41.0):
+    - Realm/Headers (= 10.41.0)
+  - Realm/Headers (10.41.0)
+  - RealmSwift (10.41.0):
+    - Realm (= 10.41.0)
   - SnapKit (5.6.0)
 
 DEPENDENCIES:
@@ -851,6 +856,7 @@ DEPENDENCIES:
   - FirebaseUI/OAuth
   - FirebaseUI/Phone
   - R.swift
+  - RealmSwift (~> 10.41)
   - SnapKit (~> 5.6.0)
 
 SPEC REPOS:
@@ -893,6 +899,8 @@ SPEC REPOS:
     - nanopb
     - PromisesObjC
     - R.swift
+    - Realm
+    - RealmSwift
     - SnapKit
 
 SPEC CHECKSUMS:
@@ -934,8 +942,10 @@ SPEC CHECKSUMS:
   nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
   PromisesObjC: 09985d6d70fbe7878040aa746d78236e6946d2ef
   R.swift: cef1c530541cb49412752721797f10dae6b32d11
+  Realm: 669efee7dc1ce0aa9f6739a60f8c0df0a3835067
+  RealmSwift: 6b7b0e91b79dc66d5cfceeb3b319cacfc9b1a70e
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
 
-PODFILE CHECKSUM: a841cb5356829b4e7aa5a93137503beee5d5aa02
+PODFILE CHECKSUM: 79e3ddde0aff34cc551e0f414fde80cc6e510129
 
 COCOAPODS: 1.12.0
