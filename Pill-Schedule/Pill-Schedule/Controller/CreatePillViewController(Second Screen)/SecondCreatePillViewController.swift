@@ -265,7 +265,20 @@ class SecondCreatePillViewController: UIViewController, ReminderViewDelegate {
         else if reminderStackView.arrangedSubviews.count == 1 {
             guard let lastView = reminderStackView.arrangedSubviews.last as? ReminderView else {return}
             lastView.timerTextField.text = ""
+            continueButton.isDisabled = true
             
+        }
+    }
+    
+    func didSetTimeByDatePicker() {
+        for reminderView in reminderStackView.arrangedSubviews as [ReminderView] {
+            guard let reminderViewText = reminderView.timerTextField.text else {return}
+            if reminderViewText.trimmingCharacters(in: .whitespaces) == "" {
+                continueButton.isDisabled = true
+                return
+            } else {
+                continueButton.isDisabled = false
+            }
         }
     }
     

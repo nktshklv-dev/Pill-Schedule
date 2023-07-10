@@ -19,6 +19,7 @@ class ReminderView: UIView {
             reminderNumberLabel.text = "Reminder \(reminderNumber)"
         }
     }
+
     var delegate: ReminderViewDelegate! = nil
     
     override init(frame: CGRect) {
@@ -77,6 +78,7 @@ class ReminderView: UIView {
         self.timerTextField.text = "\(datePicker.date.formatted(date: .omitted, time: .shortened))"
         self.reminderDate = datePicker.date
         self.endEditing(true)
+        delegate.didSetTimeByDatePicker()
     }
     func setupConstraints() {
         reminderNumberLabel.snp.makeConstraints { make in
