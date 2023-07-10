@@ -67,6 +67,11 @@ class SecondCreatePillViewController: UIViewController, ReminderViewDelegate {
         pillInfoLabel.textColor = R.color.gray()
         self.view.addSubview(pillInfoLabel)
         
+        continueButton = ContinueButton()
+        continueButton.isDisabled = true
+        continueButton.addTarget(self, action: #selector(didTapContinueButton), for: .touchUpInside)
+        self.view.addSubview(continueButton)
+        
         reminderStackView = UIStackView()
         reminderStackView.axis = .vertical
         reminderStackView.distribution = .fillProportionally
@@ -95,14 +100,7 @@ class SecondCreatePillViewController: UIViewController, ReminderViewDelegate {
         
         remindInView = RemindInView()
         self.view.addSubview(remindInView)
-        
-        continueButton = ContinueButton()
-        continueButton.isDisabled = true
-        continueButton.addTarget(self, action: #selector(didTapContinueButton), for: .touchUpInside)
-        self.view.addSubview(continueButton)
-        
 
-        
     }
     
     @objc func didTapContinueButton() {
@@ -127,7 +125,7 @@ class SecondCreatePillViewController: UIViewController, ReminderViewDelegate {
             hideAddReminderButton()
             showReminderPrompt()
         }
-      
+        continueButton.isDisabled = true
         self.reminderStackView.addArrangedSubview(reminder)
     }
     func createReminder() -> ReminderView {
@@ -242,7 +240,14 @@ class SecondCreatePillViewController: UIViewController, ReminderViewDelegate {
     
     
     func removeReminder() {
-        if reminderStackView.arrangedSubviews.count != 1{
+        if reminderStackView.arrangedSubviews.count == 1 {
+           guard let lastView = reminderStackView.arrangedSubviews.last as? ReminderView else {return}
+           lastView.timerTextField.text = ""
+           continueButton.isDisabled = true
+           
+       }
+        
+       if reminderStackView.arrangedSubviews.count != 1{
             guard let lastView = reminderStackView.arrangedSubviews.last else {return}
             UIView.animate(withDuration: 0.35) {
                 lastView.alpha = 0
@@ -258,16 +263,12 @@ class SecondCreatePillViewController: UIViewController, ReminderViewDelegate {
                     self.promptLabel.alpha = 0
                 }
                 self.showLastDeleteButton()
+                guard let lastView = self.reminderStackView.arrangedSubviews.last as? ReminderView else {return}
                 self.view.layoutIfNeeded()
             }
            
         }
-        else if reminderStackView.arrangedSubviews.count == 1 {
-            guard let lastView = reminderStackView.arrangedSubviews.last as? ReminderView else {return}
-            lastView.timerTextField.text = ""
-            continueButton.isDisabled = true
-            
-        }
+        
     }
     
     func didSetTimeByDatePicker() {

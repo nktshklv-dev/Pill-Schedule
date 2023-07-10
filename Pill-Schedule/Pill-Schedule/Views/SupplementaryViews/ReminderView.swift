@@ -66,7 +66,8 @@ class ReminderView: UIView {
         toolbar.sizeToFit()
         
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(donePressed))
-        toolbar.setItems([doneButton], animated: true)
+        let spacer = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        toolbar.setItems([spacer,doneButton], animated: true)
         return toolbar
     }
     
