@@ -8,7 +8,7 @@
 import UIKit
 
 class RemindInView: UIView {
-
+    
     var titleLabel: UILabel!
     var switcher: UISwitch!
     var minutesView: UIStackView!
@@ -32,6 +32,7 @@ class RemindInView: UIView {
         
         switcher = UISwitch()
         switcher.onTintColor = R.color.blue()
+        switcher.addTarget(self, action: #selector(didTapSwitcher), for: .touchUpInside)
         self.addSubview(switcher)
         
         minutesView = UIStackView()
@@ -39,7 +40,8 @@ class RemindInView: UIView {
         minutesView.distribution = .fillProportionally
         minutesView.spacing = 24
         fillMinutesView()
-       // minutesView.alpha = 0
+        minutesView.isUserInteractionEnabled = false
+        minutesView.alpha = 0
         self.addSubview(minutesView)
         
     }
@@ -59,7 +61,7 @@ class RemindInView: UIView {
             make.left.equalTo(titleLabel)
             make.right.equalTo(switcher)
             make.height.equalTo(30)
-            make.top.equalTo(titleLabel.snp.bottom).offset(28)
+            make.top.equalTo(titleLabel.snp.bottom)
         }
     }
     
@@ -69,7 +71,7 @@ class RemindInView: UIView {
             label.setTitleColor(R.color.gray2(), for: .normal)
             label.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
             label.addTarget(self, action: #selector(didTapMinutesView), for: .touchUpInside)
-            label.isUserInteractionEnabled = true 
+            label.isUserInteractionEnabled = true
             switch i {
             case 1: label.setTitle("in 5 m", for: .normal)
             case 2: label.setTitle("10 m", for: .normal)
@@ -86,17 +88,33 @@ class RemindInView: UIView {
     
     @objc func didTapMinutesView(_ sender: UIButton) {
         deselectAll()
-        UIView.animate(withDuration: 0.35) {
-            sender.setTitleColor(R.color.dark(), for: .normal)
-        }
-      
+        sender.setTitleColor(R.color.dark(), for: .normal)
     }
     
-    func deselectAll() {
-        UIView.animate(withDuration: 0.35) {
-            for view in self.minutesView.arrangedSubviews as [UIButton]{
-                view.setTitleColor(R.color.gray2(), for: .normal)
+    @objc func didTapSwitcher(_ sender: UISwitch) {
+        if sender.isOn {
+            UIView.animate(withDuration: 0.35) {
+                self.minutesView.isUserInteractionEnabled = true
+                self.minutesView.transform = CGAffineTransform(translationX: 0, y: 28)
+                self.minutesView.alpha = 1
             }
+           
+        }
+        
+        else {
+            UIView.animate(withDuration: 0.35) {
+                self.minutesView.isUserInteractionEnabled = false
+                self.minutesView.transform = CGAffineTransform(translationX: 0, y: 0)
+                self.minutesView.alpha = 0
+            }
+           
+        }
+    }
+
+    
+    func deselectAll() {
+        for view in self.minutesView.arrangedSubviews as [UIButton]{
+            view.setTitleColor(R.color.gray2(), for: .normal)
         }
        
     }

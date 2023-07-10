@@ -209,7 +209,6 @@ class SecondCreatePillViewController: UIViewController, ReminderViewDelegate {
             UIView.animate(withDuration: 0.35) {
                 lastView.alpha = 0
                 self.reminderStackView.removeArrangedSubview(lastView)
-                lastView.removeFromSuperview()
                 self.reminderStackViewHeight -= 44
                 
                 self.reminderStackView.snp.updateConstraints { make in
@@ -221,7 +220,6 @@ class SecondCreatePillViewController: UIViewController, ReminderViewDelegate {
                     self.promptLabel.alpha = 0
                 }
                 self.view.layoutIfNeeded()
-                
             }
            
         }

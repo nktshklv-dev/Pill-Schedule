@@ -39,7 +39,7 @@ class ReminderView: UIView {
         timerTextField = UITextField()
         timerTextField.font = UIFont.systemFont(ofSize: 20, weight: .bold)
         timerTextField.placeholder = "00:00"
-        timerTextField.textColor = R.color.gray2()
+        timerTextField.textColor = R.color.dark()
         self.addSubview(timerTextField)
         
         deleteButton = UIButton()
