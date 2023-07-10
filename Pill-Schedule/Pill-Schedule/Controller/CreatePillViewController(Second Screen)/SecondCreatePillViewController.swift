@@ -196,9 +196,9 @@ class SecondCreatePillViewController: UIViewController, ReminderViewDelegate {
         
         remindInView.snp.makeConstraints { make in
             make.width.equalToSuperview()
-            make.height.equalTo(70)
+            make.height.equalTo(100)
             make.centerX.equalToSuperview()
-            make.bottom.equalTo(self.view.snp.bottom).inset(300)
+            make.bottom.equalTo(self.view.snp.bottom).inset(250)
         }
     }
     
@@ -209,6 +209,7 @@ class SecondCreatePillViewController: UIViewController, ReminderViewDelegate {
             UIView.animate(withDuration: 0.35) {
                 lastView.alpha = 0
                 self.reminderStackView.removeArrangedSubview(lastView)
+                lastView.removeFromSuperview()
                 self.reminderStackViewHeight -= 44
                 
                 self.reminderStackView.snp.updateConstraints { make in

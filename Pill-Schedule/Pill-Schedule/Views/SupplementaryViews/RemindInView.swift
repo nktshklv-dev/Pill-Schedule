@@ -33,18 +33,72 @@ class RemindInView: UIView {
         switcher = UISwitch()
         switcher.onTintColor = R.color.blue()
         self.addSubview(switcher)
+        
+        minutesView = UIStackView()
+        minutesView.axis = .horizontal
+        minutesView.distribution = .fillProportionally
+        minutesView.spacing = 24
+        fillMinutesView()
+       // minutesView.alpha = 0
+        self.addSubview(minutesView)
+        
     }
     
     func setupConstraints() {
         titleLabel.snp.makeConstraints { make in
-            make.centerY.equalToSuperview()
+            make.top.equalTo(self).offset(10)
             make.left.equalTo(self).inset(24)
         }
         
         switcher.snp.makeConstraints { make in
-            make.centerY.equalToSuperview()
+            make.centerY.equalTo(titleLabel)
             make.right.equalTo(self).inset(24)
         }
+        
+        minutesView.snp.makeConstraints { make in
+            make.left.equalTo(titleLabel)
+            make.right.equalTo(switcher)
+            make.height.equalTo(30)
+            make.top.equalTo(titleLabel.snp.bottom).offset(28)
+        }
+    }
+    
+    func fillMinutesView() {
+        for i in 1...5 {
+            let label = UIButton()
+            label.setTitleColor(R.color.gray2(), for: .normal)
+            label.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+            label.addTarget(self, action: #selector(didTapMinutesView), for: .touchUpInside)
+            label.isUserInteractionEnabled = true 
+            switch i {
+            case 1: label.setTitle("in 5 m", for: .normal)
+            case 2: label.setTitle("10 m", for: .normal)
+            case 3: label.setTitle("15 m", for: .normal)
+            case 4: label.setTitle("20 m", for: .normal)
+            case 5: label.setTitle("30 m", for: .normal)
+            default: break
+            }
+            
+            minutesView.addArrangedSubview(label)
+            
+        }
+    }
+    
+    @objc func didTapMinutesView(_ sender: UIButton) {
+        deselectAll()
+        UIView.animate(withDuration: 0.35) {
+            sender.setTitleColor(R.color.dark(), for: .normal)
+        }
+      
+    }
+    
+    func deselectAll() {
+        UIView.animate(withDuration: 0.35) {
+            for view in self.minutesView.arrangedSubviews as [UIButton]{
+                view.setTitleColor(R.color.gray2(), for: .normal)
+            }
+        }
+       
     }
     
     
