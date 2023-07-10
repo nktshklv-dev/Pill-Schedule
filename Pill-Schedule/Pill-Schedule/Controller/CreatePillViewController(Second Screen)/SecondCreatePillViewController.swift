@@ -21,6 +21,7 @@ class SecondCreatePillViewController: UIViewController, ReminderViewDelegate {
     var promptLabel: UILabel!
     var reminderStackViewHeight = 24
     var width: CGFloat = 0
+    var remindInView: RemindInView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,6 +90,10 @@ class SecondCreatePillViewController: UIViewController, ReminderViewDelegate {
             make.centerX.equalToSuperview()
             make.top.equalTo(reminderStackView.snp.bottom).offset(15)
         }
+        
+        
+        remindInView = RemindInView()
+        self.view.addSubview(remindInView)
 
         
     }
@@ -187,6 +192,13 @@ class SecondCreatePillViewController: UIViewController, ReminderViewDelegate {
             make.height.width.equalTo(48)
             make.left.equalTo(reminderStackView).inset(24)
             make.top.equalTo(reminderStackView.snp.bottom).offset(20)
+        }
+        
+        remindInView.snp.makeConstraints { make in
+            make.width.equalToSuperview()
+            make.height.equalTo(70)
+            make.centerX.equalToSuperview()
+            make.bottom.equalTo(self.view.snp.bottom).inset(300)
         }
     }
     
