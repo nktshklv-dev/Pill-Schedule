@@ -22,6 +22,7 @@ class SecondCreatePillViewController: UIViewController, ReminderViewDelegate {
     var reminderStackViewHeight = 24
     var width: CGFloat = 0
     var remindInView: RemindInView!
+    var continueButton: ContinueButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -94,7 +95,17 @@ class SecondCreatePillViewController: UIViewController, ReminderViewDelegate {
         
         remindInView = RemindInView()
         self.view.addSubview(remindInView)
+        
+        continueButton = ContinueButton()
+        continueButton.isDisabled = true
+        continueButton.addTarget(self, action: #selector(didTapContinueButton), for: .touchUpInside)
+        self.view.addSubview(continueButton)
+        
 
+        
+    }
+    
+    @objc func didTapContinueButton() {
         
     }
     
@@ -122,11 +133,31 @@ class SecondCreatePillViewController: UIViewController, ReminderViewDelegate {
     func createReminder() -> ReminderView {
         let reminderView = ReminderView(frame: CGRect(x: 0, y: 0, width: width, height: 24))
         reminderView.reminderNumber = reminderStackView.arrangedSubviews.count + 1
-        if reminderView.reminderNumber > 1 {
-            reminderView.deleteButton.alpha = 1
-        }
+        //if reminderView.reminderNumber > 1 {
+        hideDeleteButtons()
+        reminderView.deleteButton.alpha = 1
+        //}
         reminderView.delegate = self
         return reminderView
+    }
+    
+    func hideDeleteButtons() {
+        for reminder in reminderStackView.arrangedSubviews as [ReminderView]{
+            UIView.animate(withDuration: 0.35) {
+                reminder.deleteButton.alpha = 0
+                reminder.deleteButton.isUserInteractionEnabled = false
+            }
+           
+        }
+    }
+    
+    func showLastDeleteButton() {
+        UIView.animate(withDuration: 0.35) {
+            guard let lastReminder = self.reminderStackView.arrangedSubviews.last as? ReminderView else {return}
+            lastReminder.deleteButton.alpha = 1
+            lastReminder.deleteButton.isUserInteractionEnabled = true
+        }
+        
     }
     
     func hideAddReminderButton() {
@@ -200,6 +231,13 @@ class SecondCreatePillViewController: UIViewController, ReminderViewDelegate {
             make.centerX.equalToSuperview()
             make.bottom.equalTo(self.view.snp.bottom).inset(250)
         }
+        
+        continueButton.snp.makeConstraints { make in
+            make.width.equalTo(327)
+            make.height.equalTo(54)
+            make.centerX.equalTo(self.view)
+            make.bottom.equalTo(self.view.snp.bottom).offset(-44)
+        }
     }
     
     
@@ -219,9 +257,15 @@ class SecondCreatePillViewController: UIViewController, ReminderViewDelegate {
                     self.addReminderButton.isUserInteractionEnabled = true
                     self.promptLabel.alpha = 0
                 }
+                self.showLastDeleteButton()
                 self.view.layoutIfNeeded()
             }
            
+        }
+        else if reminderStackView.arrangedSubviews.count == 1 {
+            guard let lastView = reminderStackView.arrangedSubviews.last as? ReminderView else {return}
+            lastView.timerTextField.text = ""
+            
         }
     }
     

@@ -78,6 +78,7 @@
 		118654AC2A2A7B9400446B34 /* AccountSettingsView+ImagePickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118654AB2A2A7B9400446B34 /* AccountSettingsView+ImagePickerDelegate.swift */; };
 		118654AE2A2A838800446B34 /* AccountSettingsView+StorageActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118654AD2A2A838800446B34 /* AccountSettingsView+StorageActions.swift */; };
 		119D5FB22A375BA900263CF9 /* HeaderViewCell+Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119D5FB12A375BA900263CF9 /* HeaderViewCell+Actions.swift */; };
+		11B9A5962A5C97A30068CDFA /* DatePickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B9A5952A5C97A30068CDFA /* DatePickerDelegate.swift */; };
 		352D5C0B61B6710BC14F3744 /* Pods_Pill_Schedule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FC939FBE800F91926364B70 /* Pods_Pill_Schedule.framework */; };
 /* End PBXBuildFile section */
 
@@ -156,6 +157,7 @@
 		118654AB2A2A7B9400446B34 /* AccountSettingsView+ImagePickerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountSettingsView+ImagePickerDelegate.swift"; sourceTree = "<group>"; };
 		118654AD2A2A838800446B34 /* AccountSettingsView+StorageActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountSettingsView+StorageActions.swift"; sourceTree = "<group>"; };
 		119D5FB12A375BA900263CF9 /* HeaderViewCell+Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HeaderViewCell+Actions.swift"; sourceTree = "<group>"; };
+		11B9A5952A5C97A30068CDFA /* DatePickerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerDelegate.swift; sourceTree = "<group>"; };
 		8AAEE064348429D8E370FB7D /* Pods-Pill-Schedule.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pill-Schedule.debug.xcconfig"; path = "Target Support Files/Pods-Pill-Schedule/Pods-Pill-Schedule.debug.xcconfig"; sourceTree = "<group>"; };
 		A7885F8EB21951C0CA0E75A0 /* Pods-Pill-Schedule.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pill-Schedule.release.xcconfig"; path = "Target Support Files/Pods-Pill-Schedule/Pods-Pill-Schedule.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -289,6 +291,7 @@
 				11400A762A27416500751E1A /* VaccinationMenuDelegate.swift */,
 				117FD9CE2A498D3C0099F837 /* ChoosePillButtonViewDelegate.swift */,
 				117FD9D82A4B3E3D0099F837 /* ReminderViewDelegate.swift */,
+				11B9A5952A5C97A30068CDFA /* DatePickerDelegate.swift */,
 			);
 			path = Delegates;
 			sourceTree = "<group>";
@@ -648,6 +651,7 @@
 			files = (
 				11400A582A273D6900751E1A /* ViewController+DataSource.swift in Sources */,
 				11400AC72A29244900751E1A /* LoginView+LogViewSetup.swift in Sources */,
+				11B9A5962A5C97A30068CDFA /* DatePickerDelegate.swift in Sources */,
 				117FD9DB2A4D75280099F837 /* RemindInView.swift in Sources */,
 				11400A8F2A2742C100751E1A /* LoginView.swift in Sources */,
 				11400A6E2A2740F500751E1A /* Section.swift in Sources */,

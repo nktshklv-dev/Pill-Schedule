@@ -9,6 +9,8 @@ import UIKit
 
 class ReminderView: UIView {
 
+   private var datePicker: UIDatePicker!
+    var reminderDate = Date()
     var reminderNumberLabel: UILabel!
     var timerTextField: UITextField!
     var deleteButton: UIButton!
@@ -50,10 +52,31 @@ class ReminderView: UIView {
         deleteButton.alpha = 0
         deleteButton.addTarget(self, action: #selector(didTapDeleteButon), for: .touchUpInside)
         self.addSubview(deleteButton)
+        
+        datePicker = UIDatePicker()
+        datePicker.datePickerMode = .time
+        datePicker.preferredDatePickerStyle = .wheels
+        timerTextField.inputView = datePicker
+        timerTextField.inputAccessoryView = createToolbar()
+    }
+    
+    func createToolbar() -> UIToolbar {
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(donePressed))
+        toolbar.setItems([doneButton], animated: true)
+        return toolbar
     }
     
     @objc func didTapDeleteButon() {
         delegate.removeReminder()
+    }
+    
+    @objc func donePressed() {
+        self.timerTextField.text = "\(datePicker.date.formatted(date: .omitted, time: .shortened))"
+        self.reminderDate = datePicker.date
+        self.endEditing(true)
     }
     func setupConstraints() {
         reminderNumberLabel.snp.makeConstraints { make in
