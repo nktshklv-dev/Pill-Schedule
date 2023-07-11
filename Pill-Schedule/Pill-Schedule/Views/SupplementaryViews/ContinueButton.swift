@@ -9,6 +9,7 @@ import UIKit
 
 class ContinueButton: UIButton {
 
+    var text = "Next"
     var isDisabled: Bool = true {
         didSet {
             if isDisabled {
@@ -46,6 +47,6 @@ class ContinueButton: UIButton {
             self.setTitleColor(.white, for: .normal)
             self.backgroundColor = R.color.blue()
         }
-        self.setTitle("Next", for: .normal)
+        self.setTitle(text, for: .normal)
     }
 }

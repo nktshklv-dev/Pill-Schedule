@@ -8,7 +8,7 @@
 import UIKit
 
 class SecondCreatePillViewController: UIViewController, ReminderViewDelegate {
-   
+    
     var pageNumberLabel: UILabel!
     var titleLabel: UILabel!
     var verticalView: UIImageView!
@@ -68,6 +68,7 @@ class SecondCreatePillViewController: UIViewController, ReminderViewDelegate {
         self.view.addSubview(pillInfoLabel)
         
         continueButton = ContinueButton()
+        continueButton.text = "Done"
         continueButton.isDisabled = true
         continueButton.addTarget(self, action: #selector(didTapContinueButton), for: .touchUpInside)
         self.view.addSubview(continueButton)
@@ -100,11 +101,11 @@ class SecondCreatePillViewController: UIViewController, ReminderViewDelegate {
         
         remindInView = RemindInView()
         self.view.addSubview(remindInView)
-
+        
     }
     
     @objc func didTapContinueButton() {
-        
+        navigationController?.popToRootViewController(animated: true)
     }
     
     @objc func didTapAddReminderButton() {
@@ -117,6 +118,7 @@ class SecondCreatePillViewController: UIViewController, ReminderViewDelegate {
             self.addReminder(reminder: reminder)
             self.view.layoutIfNeeded()
         }
+        continueButton.isDisabled = true
         
     }
     
@@ -125,16 +127,13 @@ class SecondCreatePillViewController: UIViewController, ReminderViewDelegate {
             hideAddReminderButton()
             showReminderPrompt()
         }
-        continueButton.isDisabled = true
         self.reminderStackView.addArrangedSubview(reminder)
     }
     func createReminder() -> ReminderView {
         let reminderView = ReminderView(frame: CGRect(x: 0, y: 0, width: width, height: 24))
         reminderView.reminderNumber = reminderStackView.arrangedSubviews.count + 1
-        //if reminderView.reminderNumber > 1 {
         hideDeleteButtons()
         reminderView.deleteButton.alpha = 1
-        //}
         reminderView.delegate = self
         return reminderView
     }
@@ -145,7 +144,7 @@ class SecondCreatePillViewController: UIViewController, ReminderViewDelegate {
                 reminder.deleteButton.alpha = 0
                 reminder.deleteButton.isUserInteractionEnabled = false
             }
-           
+            
         }
     }
     
@@ -172,7 +171,7 @@ class SecondCreatePillViewController: UIViewController, ReminderViewDelegate {
         
     }
     
-
+    
     
     func setupConstraints() {
         pageNumberLabel.snp.makeConstraints { make in
@@ -241,13 +240,13 @@ class SecondCreatePillViewController: UIViewController, ReminderViewDelegate {
     
     func removeReminder() {
         if reminderStackView.arrangedSubviews.count == 1 {
-           guard let lastView = reminderStackView.arrangedSubviews.last as? ReminderView else {return}
-           lastView.timerTextField.text = ""
-           continueButton.isDisabled = true
-           
-       }
+            guard let lastView = reminderStackView.arrangedSubviews.last as? ReminderView else {return}
+            lastView.timerTextField.text = ""
+            continueButton.isDisabled = true
+            
+        }
         
-       if reminderStackView.arrangedSubviews.count != 1{
+        if reminderStackView.arrangedSubviews.count != 1{
             guard let lastView = reminderStackView.arrangedSubviews.last else {return}
             UIView.animate(withDuration: 0.35) {
                 lastView.alpha = 0
@@ -263,24 +262,33 @@ class SecondCreatePillViewController: UIViewController, ReminderViewDelegate {
                     self.promptLabel.alpha = 0
                 }
                 self.showLastDeleteButton()
-                guard let lastView = self.reminderStackView.arrangedSubviews.last as? ReminderView else {return}
                 self.view.layoutIfNeeded()
             }
-           
+            guard let lastView = self.reminderStackView.arrangedSubviews.last as? ReminderView else {return}
+            if lastView.timerTextField.text?.trimmingCharacters(in: .whitespaces) != "" {
+                self.continueButton.isDisabled = false
+            }
+            
         }
         
     }
     
     func didSetTimeByDatePicker() {
+        var hasEmpty = true
         for reminderView in reminderStackView.arrangedSubviews as [ReminderView] {
             guard let reminderViewText = reminderView.timerTextField.text else {return}
             if reminderViewText.trimmingCharacters(in: .whitespaces) == "" {
-                continueButton.isDisabled = true
+                hasEmpty = true
                 return
             } else {
-                continueButton.isDisabled = false
+                hasEmpty = false
             }
         }
+        
+        if hasEmpty {
+            continueButton.isDisabled = true
+        } else {
+            continueButton.isDisabled = false
+        }
     }
-    
 }
