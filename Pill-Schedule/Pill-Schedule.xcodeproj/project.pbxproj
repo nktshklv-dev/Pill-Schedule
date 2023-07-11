@@ -78,6 +78,10 @@
 		118654AC2A2A7B9400446B34 /* AccountSettingsView+ImagePickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118654AB2A2A7B9400446B34 /* AccountSettingsView+ImagePickerDelegate.swift */; };
 		118654AE2A2A838800446B34 /* AccountSettingsView+StorageActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118654AD2A2A838800446B34 /* AccountSettingsView+StorageActions.swift */; };
 		119D5FB22A375BA900263CF9 /* HeaderViewCell+Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119D5FB12A375BA900263CF9 /* HeaderViewCell+Actions.swift */; };
+		11E677672A5D612C00711E8C /* SecondCreatePillViewController+SetupViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E677662A5D612C00711E8C /* SecondCreatePillViewController+SetupViews.swift */; };
+		11E677692A5D619900711E8C /* SecondCreatePillViewController+Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E677682A5D619900711E8C /* SecondCreatePillViewController+Actions.swift */; };
+		11E6776B2A5D61E200711E8C /* SecondCreatePillViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E6776A2A5D61E200711E8C /* SecondCreatePillViewController+Delegate.swift */; };
+		11E6776D2A5D624A00711E8C /* SecondCreatePillViewController+UIActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E6776C2A5D624A00711E8C /* SecondCreatePillViewController+UIActions.swift */; };
 		352D5C0B61B6710BC14F3744 /* Pods_Pill_Schedule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FC939FBE800F91926364B70 /* Pods_Pill_Schedule.framework */; };
 /* End PBXBuildFile section */
 
@@ -156,6 +160,10 @@
 		118654AB2A2A7B9400446B34 /* AccountSettingsView+ImagePickerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountSettingsView+ImagePickerDelegate.swift"; sourceTree = "<group>"; };
 		118654AD2A2A838800446B34 /* AccountSettingsView+StorageActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountSettingsView+StorageActions.swift"; sourceTree = "<group>"; };
 		119D5FB12A375BA900263CF9 /* HeaderViewCell+Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HeaderViewCell+Actions.swift"; sourceTree = "<group>"; };
+		11E677662A5D612C00711E8C /* SecondCreatePillViewController+SetupViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SecondCreatePillViewController+SetupViews.swift"; sourceTree = "<group>"; };
+		11E677682A5D619900711E8C /* SecondCreatePillViewController+Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SecondCreatePillViewController+Actions.swift"; sourceTree = "<group>"; };
+		11E6776A2A5D61E200711E8C /* SecondCreatePillViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SecondCreatePillViewController+Delegate.swift"; sourceTree = "<group>"; };
+		11E6776C2A5D624A00711E8C /* SecondCreatePillViewController+UIActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SecondCreatePillViewController+UIActions.swift"; sourceTree = "<group>"; };
 		8AAEE064348429D8E370FB7D /* Pods-Pill-Schedule.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pill-Schedule.debug.xcconfig"; path = "Target Support Files/Pods-Pill-Schedule/Pods-Pill-Schedule.debug.xcconfig"; sourceTree = "<group>"; };
 		A7885F8EB21951C0CA0E75A0 /* Pods-Pill-Schedule.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pill-Schedule.release.xcconfig"; path = "Target Support Files/Pods-Pill-Schedule/Pods-Pill-Schedule.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -481,6 +489,10 @@
 		117FD9D52A49AC220099F837 /* SecondCreatePillViewController+Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				11E677662A5D612C00711E8C /* SecondCreatePillViewController+SetupViews.swift */,
+				11E677682A5D619900711E8C /* SecondCreatePillViewController+Actions.swift */,
+				11E6776A2A5D61E200711E8C /* SecondCreatePillViewController+Delegate.swift */,
+				11E6776C2A5D624A00711E8C /* SecondCreatePillViewController+UIActions.swift */,
 			);
 			path = "SecondCreatePillViewController+Extensions";
 			sourceTree = "<group>";
@@ -666,6 +678,7 @@
 				11400A942A2742F100751E1A /* LoginView+Actions.swift in Sources */,
 				11400A5C2A273D9400751E1A /* ViewController+CollectionViewSetup.swift in Sources */,
 				11400A8A2A27428A00751E1A /* InfoContainerView.swift in Sources */,
+				11E677672A5D612C00711E8C /* SecondCreatePillViewController+SetupViews.swift in Sources */,
 				11400AB12A27441000751E1A /* CircularProgressBar.swift in Sources */,
 				11400A692A273E7800751E1A /* FirstCreatePillViewController+Actions.swift in Sources */,
 				11400AB92A27509300751E1A /* AccountSettingsView+SetupViews.swift in Sources */,
@@ -693,6 +706,7 @@
 				11400A4F2A273A7800751E1A /* R.generated.swift in Sources */,
 				11400A9A2A27433100751E1A /* LoginView+Auth.swift in Sources */,
 				11400A6B2A2740CD00751E1A /* FirstCreatePillViewController+SetupViews.swift in Sources */,
+				11E6776B2A5D61E200711E8C /* SecondCreatePillViewController+Delegate.swift in Sources */,
 				11400A872A27426700751E1A /* MenuViewCell.swift in Sources */,
 				11400A5E2A273DA500751E1A /* ViewController+Actions.swift in Sources */,
 				11400AA32A27438E00751E1A /* AccountSettingsView+UIActions.swift in Sources */,
@@ -710,8 +724,10 @@
 				11400AC32A291DB800751E1A /* SpinningProgressView.swift in Sources */,
 				11400ABB2A2750D700751E1A /* AccountSettingsView+LoggedInSetup.swift in Sources */,
 				11400A962A27430600751E1A /* LoginView+TextFieldDelegate.swift in Sources */,
+				11E677692A5D619900711E8C /* SecondCreatePillViewController+Actions.swift in Sources */,
 				118654AA2A29F5CD00446B34 /* AccountSettingsView+EditModeViewSetup.swift in Sources */,
 				11400A812A27422B00751E1A /* BurgerMenuView+CollectionView.swift in Sources */,
+				11E6776D2A5D624A00711E8C /* SecondCreatePillViewController+UIActions.swift in Sources */,
 				11400A412A2735F700751E1A /* Pill_Schedule.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
