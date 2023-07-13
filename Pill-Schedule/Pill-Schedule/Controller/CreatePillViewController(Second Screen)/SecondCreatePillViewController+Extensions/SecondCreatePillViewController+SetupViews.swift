@@ -30,7 +30,7 @@ extension SecondCreatePillViewController {
         
         pillImageView = UIImageView()
         pillImageView.contentMode = .scaleToFill
-        pillImageView.image = pill.image
+        pillImageView.image = pill.getPillImage()
         self.view.addSubview(pillImageView)
         
         pillNameLabel = UILabel()
@@ -145,4 +145,6 @@ extension SecondCreatePillViewController {
             make.bottom.equalTo(self.view.snp.bottom).offset(-44)
         }
     }
+    
+   
 }

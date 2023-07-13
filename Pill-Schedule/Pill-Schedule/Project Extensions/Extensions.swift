@@ -6,6 +6,9 @@
 //
 
 import Foundation
+import UIKit
+import RealmSwift
+
 //MARK: - String Extensions
 extension String {
     enum ValidityType {

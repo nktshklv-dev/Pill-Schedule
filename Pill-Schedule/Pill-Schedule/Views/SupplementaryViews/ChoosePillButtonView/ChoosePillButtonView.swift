@@ -7,10 +7,11 @@
 
 import UIKit
 import SnapKit
+import RealmSwift
 
 class ChoosePillButtonView: UIStackView {
     
-    enum PillType: String{
+    enum PillType: String, PersistableEnum{
         case pill
         case capsule
         case ampoule

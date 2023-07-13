@@ -97,7 +97,7 @@ class PillCell: UICollectionViewCell {
     
     func setupCell(for pill: Pill){
         mainTitle.text = pill.name
-        secondaryTitle.text = pill.description
+        secondaryTitle.text = pill.pillDescription
         imageType = pill.imageType
         
     }

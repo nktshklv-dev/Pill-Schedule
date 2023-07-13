@@ -423,8 +423,8 @@
 				11400AA72A2743C500751E1A /* VaccinationViewCell.swift */,
 				11400AA92A2743D600751E1A /* PillCell.swift */,
 				11400AAB2A2743E200751E1A /* HeaderViewCell.swift */,
-				119D5FB02A375B9900263CF9 /* HeaderViewCell+Extensions */,
 				114C7BE92A3A3C380004F0F9 /* TimestampCollectionViewCell.swift */,
+				119D5FB02A375B9900263CF9 /* HeaderViewCell+Extensions */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
