@@ -7,10 +7,13 @@
 
 import Foundation
 import UIKit
+import RealmSwift
 
 extension SecondCreatePillViewController {
     
     @objc func didTapContinueButton() {
+        createPillObject()
+        let vc = ViewController()
         navigationController?.popToRootViewController(animated: true)
     }
     
@@ -43,6 +46,33 @@ extension SecondCreatePillViewController {
         reminderView.deleteButton.alpha = 1
         reminderView.delegate = self
         return reminderView
+    }
+    
+    
+    func createPillObject() {
+        guard let name = pillNameLabel.text else {return}
+        guard let description = pillInfoLabel.text else {return}
+        guard let imageName = pillImageView.image else {return}
+        let pill = Pill()
+        pill.id = UUID().hashValue
+        pill.pillDescription = description
+        pill.name = name
+        pill.imageName = self.pill.imageName
+       savePillObject(pill: pill)
+        
+    }
+    
+    func savePillObject(pill: Pill) {
+        do {
+            let realm = try Realm()
+            print(pill.imageName)
+            try realm.write {
+                realm.add(pill)
+            }
+            
+        } catch {
+            print(error)
+        }
     }
     
 }

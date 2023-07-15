@@ -17,6 +17,7 @@ class ViewController: UIViewController{
             checkAccount()
         }
     }
+
     var mainView: UIView!
     var burgerMenuView: BurgerMenuView!
     var blurView: UIView!
@@ -41,6 +42,12 @@ class ViewController: UIViewController{
         setupConstraints()
         tryUserLogin()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        reloadSnapshot()
+    }
+    
     
     func checkAccount() {
         print("User: \(user), email: \(user?.email)")

@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import RealmSwift
 
 extension ViewController{
     
@@ -34,20 +35,57 @@ extension ViewController{
                 return cell
             }
         }
-        dataSource.apply(createSnapshot())
+        let snapshot = createSnapshot()
+        dataSource.apply(snapshot)
         return dataSource
     }
     
-    func createSnapshot() -> Snapshot {
+    func createSnapshot() -> Snapshot{
+        print(dataSource)
         var snapshot = Snapshot()
         snapshot.appendSections([.headerSection, .infoSection, .vaccinatedViewSection, .mainSection])
         snapshot.appendItems([ItemView.headerView], toSection: .headerSection)
         snapshot.appendItems([ItemView.infoView], toSection: .infoSection)
         snapshot.appendItems([ItemView.vaccinationView], toSection: .vaccinatedViewSection)
-        for pill in Pill.mockPills{
+        
+        var pills: [Pill]!
+        do {
+            let realm = try Realm()
+            
+            pills = Array(realm.objects(Pill.self)).reversed()
+            print(pills.count)
+        } catch {
+            print(error)
+        }
+        for pill in pills{
+            print(pill.imageName)
             snapshot.appendItems([ItemView.pillView(pill)], toSection: .mainSection)
         }
         return snapshot
+    }
+    
+    func reloadSnapshot(){
+        
+        guard let ds = self.dataSource else {
+            print("data source nil")
+            return
+        }
+        
+        var snapshot = ds.snapshot()
+    
+        var pills: [Pill]!
+        do {
+            let realm = try Realm()
+            pills = Array(realm.objects(Pill.self)).reversed()
+            print(pills)
+        } catch {
+            print(error)
+        }
+        for pill in pills {
+            snapshot.appendItems([ItemView.pillView(pill)])
+        }
+
+        dataSource.apply(snapshot, animatingDifferences: true)
     }
 
 }

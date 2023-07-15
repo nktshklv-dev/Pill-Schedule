@@ -11,24 +11,18 @@ import RealmSwift
 
 class Pill: Object {
     
-    static var mockPills =
-    [Pill(name: "First Pill", imageType: .pill, description: "First pill description"),
-     Pill(name: "Second Pill", imageType: .capsule, description: "second pill description"),
-     Pill(name: "Third Pill", imageType: .ampoule, description: "Third pill description"),
-    Pill(name: "Fourth Pill", imageType: .inhaler, description: "Fourth pill description")]
+    @Persisted(primaryKey: true) var id = 0
+    @Persisted var name: String = ""
+    @Persisted var imageType: ChoosePillButtonView.PillType = .pill
+    @Persisted var pillDescription: String = ""
+    @Persisted var imageName: String = ""
     
-    @Persisted var id: UUID
-    @Persisted var name: String
-    @Persisted var imageType: ChoosePillButtonView.PillType
-    @Persisted  var pillDescription: String
-    @Persisted var imageName: String
-    
-    init(name: String, imageType: ChoosePillButtonView.PillType, description: String) {
-        self.id = UUID()
-        self.name = name
-        self.imageType = imageType
-        self.pillDescription = description
-    }
+//    init(name: String, imageType: ChoosePillButtonView.PillType, description: String) {
+//        self.id = UUID()
+//        self.name = name
+//        self.imageType = imageType
+//        self.pillDescription = description
+//    }
     
     func getPillImage() -> UIImage? {
         let name = self.imageName

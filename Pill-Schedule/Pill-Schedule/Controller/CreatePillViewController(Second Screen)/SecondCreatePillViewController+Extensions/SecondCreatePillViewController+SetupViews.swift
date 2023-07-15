@@ -40,7 +40,7 @@ extension SecondCreatePillViewController {
         self.view.addSubview(pillNameLabel)
         
         pillInfoLabel = UILabel()
-        pillInfoLabel.text = pill.description
+        pillInfoLabel.text = pill.pillDescription
         pillInfoLabel.font = UIFont.systemFont(ofSize: 16, weight: .light)
         pillInfoLabel.textColor = R.color.gray()
         self.view.addSubview(pillInfoLabel)

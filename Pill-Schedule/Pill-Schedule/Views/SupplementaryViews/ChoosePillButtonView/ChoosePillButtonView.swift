@@ -17,7 +17,14 @@ class ChoosePillButtonView: UIStackView {
         case ampoule
         case inhaler
         
-       
+        var imageDescription: String {
+            switch self {
+            case .pill: return "pill"
+            case .capsule: return "capsule"
+            case .inhaler: return "inhaler"
+            case .ampoule: return "ampoule"
+            }
+        }
     }
     
 

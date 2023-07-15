@@ -31,21 +31,10 @@ enum PillImageType: String{
 class PillCell: UICollectionViewCell {
     
     static let reuseIdentifier = "PillCell"
-    var imageType: ChoosePillButtonView.PillType = .pill {
-        didSet{
-            switch imageType {
-            case .pill:
-                pillImageView.image
-                = R.image.pill()
-            case .capsule:
-                pillImageView.image = R.image.capsule()
-            case .ampoule:
-                pillImageView.image = R.image.ampoule()
-            case .inhaler:
-                pillImageView.image = R.image.inhaler()
-            }
-        }
-    }
+    
+    var imageName: String = "pill"
+    
+    var pill: Pill?
     private let pillImageView = UIImageView()
     private let mainTitle = UILabel()
     private let secondaryTitle = UILabel()
@@ -65,7 +54,6 @@ class PillCell: UICollectionViewCell {
         self.layer.borderWidth = 1
         self.layer.borderColor = R.color.gray3()?.cgColor
         
-        pillImageView.image = R.image.pill()
         pillImageView.backgroundColor = .white
         self.addSubview(pillImageView)
         
@@ -79,9 +67,11 @@ class PillCell: UICollectionViewCell {
         self.addSubview(secondaryTitle)
     }
     private func setupConstraints(){
+        
         pillImageView.snp.makeConstraints { make in
-            make.top.equalTo(self.snp.top).offset(10)
+            make.top.equalTo(self.snp.top).offset(20)
             make.left.equalTo(self.snp.left).offset(10)
+            make.width.height.equalTo(65)
         }
         
         mainTitle.snp.makeConstraints { make in
@@ -98,7 +88,23 @@ class PillCell: UICollectionViewCell {
     func setupCell(for pill: Pill){
         mainTitle.text = pill.name
         secondaryTitle.text = pill.pillDescription
-        imageType = pill.imageType
+        print(pill.imageName)
+        imageName = pill.imageName
+        
+        switch imageName {
+        case "pill":
+            pillImageView.image
+            = R.image.pill()
+        case "capsule":
+            pillImageView.image = R.image.capsule()
+        case "ampoule":
+            pillImageView.image = R.image.ampoule()
+        case "inhaler":
+            pillImageView.image = R.image.inhaler()
+        default:
+            print("return")
+            return
+        }
         
     }
 }

@@ -16,6 +16,7 @@ extension ViewController {
         collectionView.register(VaccinationViewCell.self, forCellWithReuseIdentifier: VaccinationViewCell.identifier)
         collectionView.register(PillCell.self, forCellWithReuseIdentifier: PillCell.reuseIdentifier)
         collectionView.register(HeaderViewCell.self, forCellWithReuseIdentifier: HeaderViewCell.reuseIdentifier)
-        collectionView.dataSource = createDataSource()
+        self.dataSource = createDataSource() 
+        collectionView.dataSource = dataSource
     }
 }

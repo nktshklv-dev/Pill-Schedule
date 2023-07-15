@@ -20,8 +20,17 @@ extension FirstCreatePillViewController{
         guard let image = selectedImage else {return}
         guard let dose = pillDose else {return}
         let description = dose.lowercased() + " " + selectedTimestamp.lowercased()
-        vc.pill = Pill(name: name, imageType: image, description: "\(description)")
+        let pill = Pill()
+        pill.name = name
+        pill.pillDescription = description
+        pill.imageName = image.imageDescription
+        print(pill.imageName)
+        print(pill.name)
+        print(pill.pillDescription)
+        vc.pill = pill
+       
         navigationController?.pushViewController(vc, animated: true)
+
     }
     
     @objc func pillNameTextFieldChanged(_ sender: UITextField) {
