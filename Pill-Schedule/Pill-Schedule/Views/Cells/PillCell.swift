@@ -99,7 +99,7 @@ class PillCell: UICollectionViewCell {
         case "capsule":
             pillImageView.image = R.image.capsule()
             pillImageView.snp.makeConstraints { make in
-                make.top.equalTo(self.snp.top).offset(16)
+                make.top.equalTo(self.snp.top).offset(17)
                 make.left.equalTo(self.snp.left).offset(12)
                 make.width.height.equalTo(65)
             }
