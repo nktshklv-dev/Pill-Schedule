@@ -68,11 +68,7 @@ class PillCell: UICollectionViewCell {
     }
     private func setupConstraints(){
         
-        pillImageView.snp.makeConstraints { make in
-            make.top.equalTo(self.snp.top).offset(20)
-            make.left.equalTo(self.snp.left).offset(10)
-            make.width.height.equalTo(65)
-        }
+        
         
         mainTitle.snp.makeConstraints { make in
             make.top.equalTo(self.snp.top).offset(24)
@@ -95,12 +91,32 @@ class PillCell: UICollectionViewCell {
         case "pill":
             pillImageView.image
             = R.image.pill()
+            pillImageView.snp.makeConstraints { make in
+                make.top.equalTo(self.snp.top).offset(15)
+                make.left.equalTo(self.snp.left).offset(12)
+                make.width.height.equalTo(70)
+            }
         case "capsule":
             pillImageView.image = R.image.capsule()
+            pillImageView.snp.makeConstraints { make in
+                make.top.equalTo(self.snp.top).offset(16)
+                make.left.equalTo(self.snp.left).offset(12)
+                make.width.height.equalTo(65)
+            }
         case "ampoule":
             pillImageView.image = R.image.ampoule()
+            pillImageView.snp.makeConstraints { make in
+                make.top.equalTo(self.snp.top).offset(17)
+                make.left.equalTo(self.snp.left).offset(12)
+                make.width.height.equalTo(65)
+            }
         case "inhaler":
             pillImageView.image = R.image.inhaler()
+            pillImageView.snp.makeConstraints { make in
+                make.top.equalTo(self.snp.top).offset(17)
+                make.left.equalTo(self.snp.left).offset(10)
+                make.width.height.equalTo(65)
+            }
         default:
             print("return")
             return
