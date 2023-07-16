@@ -7,8 +7,8 @@
 
 import UIKit
 
-class SecondCreatePillViewController: UIViewController, ReminderViewDelegate {
-    
+class SecondCreatePillViewController: UIViewController, ReminderViewDelegate, RemindInViewDelegate {
+   
     var pageNumberLabel: UILabel!
     var titleLabel: UILabel!
     var verticalView: UIImageView!
@@ -23,7 +23,12 @@ class SecondCreatePillViewController: UIViewController, ReminderViewDelegate {
     var width: CGFloat = 0
     var remindInView: RemindInView!
     var continueButton: ContinueButton!
-    var reminderTimes: [Date?] = []
+    var mainReminderTimes: [Date] = [] {
+        didSet {
+            cuttedReminderTimes = mainReminderTimes
+        }
+    }
+    var cuttedReminderTimes: [Date] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,13 +37,4 @@ class SecondCreatePillViewController: UIViewController, ReminderViewDelegate {
         
         self.width = self.view.frame.width
     }
-
-   
-    
-    
-   
-    
-   
-    
-    
 }

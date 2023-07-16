@@ -78,6 +78,7 @@ extension SecondCreatePillViewController {
         
         
         remindInView = RemindInView()
+        remindInView.delegate = self
         self.view.addSubview(remindInView)
         
     }

@@ -48,11 +48,15 @@ extension SecondCreatePillViewController {
     func didSetTimeByDatePicker(date: Date) {
         print(date)
         checkReminderViewTextFields()
-        reminderTimes = []
+        mainReminderTimes = []
         for reminderView in reminderStackView.arrangedSubviews as! [ReminderView] {
             guard let date = reminderView.reminderDate else  {return }
-                reminderTimes.append(reminderView.reminderDate)
-            print(reminderTimes)
+            mainReminderTimes.append(date)
+            print(mainReminderTimes)
+        }
+        
+        if remindInView.switcher.isOn {
+            didTapMinuteButton(value: remindInView.selectedMinutesViewValue)
         }
     }
     
@@ -73,5 +77,18 @@ extension SecondCreatePillViewController {
         } else {
             continueButton.isDisabled = false
         }
+    }
+    
+    
+    //MARK: - RemindInView delegate
+    func didTapMinuteButton(value: Double) {
+        //var dateComp = DateComponents(minute: -value)
+        cuttedReminderTimes = []
+        for time in mainReminderTimes {
+            let cuttedDate = time.addingTimeInterval(-(value*60.0))
+            cuttedReminderTimes.append(cuttedDate)
+        }
+        print(mainReminderTimes)
+        print(cuttedReminderTimes)
     }
 }

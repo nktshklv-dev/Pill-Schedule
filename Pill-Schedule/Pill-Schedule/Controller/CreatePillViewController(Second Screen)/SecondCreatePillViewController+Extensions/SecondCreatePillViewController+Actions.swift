@@ -13,9 +13,21 @@ extension SecondCreatePillViewController {
     
     @objc func didTapContinueButton() {
         createPillObject()
+        if remindInView.switcher.isOn {
+            self.createLocalNotification(dates: cuttedReminderTimes)
+        } else {
+            createLocalNotification(dates: mainReminderTimes)
+        }
+      
         let vc = ViewController()
         navigationController?.popToRootViewController(animated: true)
     }
+    
+    func createLocalNotification (dates: [Date]) {
+        createTriggers(dates: dates)
+    }
+    
+   
     
     @objc func didTapAddReminderButton() {
         reminderStackViewHeight += 44
@@ -48,21 +60,12 @@ extension SecondCreatePillViewController {
         pill.pillDescription = description
         pill.name = name
         pill.imageName = self.pill.imageName
+        self.pill = pill
        savePillObject(pill: pill)
         
     }
-    
-    func createNotification() -> UNMutableNotificationContent{
-        let notificationContent = UNMutableNotificationContent()
-        notificationContent.title = "It's time to take your medication!"
-        notificationContent.body = "According to your schedule, it's time to take a medicine called \(pillNameLabel.text)"
-        notificationContent.sound = .default
-        return notificationContent
-    }
-    
-    func createTrigger() {
-        
-    }
+
+
     
     func savePillObject(pill: Pill) {
         do {
@@ -76,7 +79,43 @@ extension SecondCreatePillViewController {
             print(error)
         }
     }
-
+    
+    func createNotification() -> UNMutableNotificationContent{
+        let notificationContent = UNMutableNotificationContent()
+        
+        notificationContent.title = "Time to take your medication!"
+        var text = ""
+        if remindInView.switcher.isOn {
+            let minutes = Int(remindInView.selectedMinutesViewValue)
+            text = "In \(minutes) minutes you need to take \(pillNameLabel.text!)!"
+        }
+        else {
+            text = "You need to take \"\(pillNameLabel.text!)\"!"
+        }
+        notificationContent.body = text
+        notificationContent.sound = .default
+        return notificationContent
+    }
+    
+    func createTriggers(dates: [Date]) {
+        for date in dates {
+            var components = DateComponents()
+            var calendar = Calendar.current
+            components.hour = calendar.component(.hour, from: date)
+            components.minute = calendar.component(.minute, from: date)
+            let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: true)
+            createRequest(with: trigger)
+        }
+    }
+    
+    func createRequest(with trigger: UNCalendarNotificationTrigger) {
+        print(pill.id.description)
+        let center = UNUserNotificationCenter.current()
+        let request = UNNotificationRequest(identifier: pill.id.description, content: createNotification(), trigger: trigger)
+        
+        center.add(request)
+    }
+    
     func requestNotification() {
         let center = UNUserNotificationCenter.current()
         

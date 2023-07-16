@@ -63,6 +63,7 @@
 		11400AC32A291DB800751E1A /* SpinningProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400AC22A291DB800751E1A /* SpinningProgressView.swift */; };
 		11400AC52A29243F00751E1A /* LoginView+RegViewSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400AC42A29243F00751E1A /* LoginView+RegViewSetup.swift */; };
 		11400AC72A29244900751E1A /* LoginView+LogViewSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400AC62A29244900751E1A /* LoginView+LogViewSetup.swift */; };
+		1140242D2A641D2500EB50D1 /* RemindInViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1140242C2A641D2500EB50D1 /* RemindInViewDelegate.swift */; };
 		114C7BE82A3A39960004F0F9 /* FirstCreatePillViewController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114C7BE72A3A39960004F0F9 /* FirstCreatePillViewController+CollectionView.swift */; };
 		114C7BEA2A3A3C380004F0F9 /* TimestampCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114C7BE92A3A3C380004F0F9 /* TimestampCollectionViewCell.swift */; };
 		114C7BEC2A3A4AB80004F0F9 /* Timestamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114C7BEB2A3A4AB80004F0F9 /* Timestamp.swift */; };
@@ -145,6 +146,7 @@
 		11400AC22A291DB800751E1A /* SpinningProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinningProgressView.swift; sourceTree = "<group>"; };
 		11400AC42A29243F00751E1A /* LoginView+RegViewSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginView+RegViewSetup.swift"; sourceTree = "<group>"; };
 		11400AC62A29244900751E1A /* LoginView+LogViewSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginView+LogViewSetup.swift"; sourceTree = "<group>"; };
+		1140242C2A641D2500EB50D1 /* RemindInViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindInViewDelegate.swift; sourceTree = "<group>"; };
 		114C7BE72A3A39960004F0F9 /* FirstCreatePillViewController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirstCreatePillViewController+CollectionView.swift"; sourceTree = "<group>"; };
 		114C7BE92A3A3C380004F0F9 /* TimestampCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimestampCollectionViewCell.swift; sourceTree = "<group>"; };
 		114C7BEB2A3A4AB80004F0F9 /* Timestamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timestamp.swift; sourceTree = "<group>"; };
@@ -297,6 +299,7 @@
 				11400A762A27416500751E1A /* VaccinationMenuDelegate.swift */,
 				117FD9CE2A498D3C0099F837 /* ChoosePillButtonViewDelegate.swift */,
 				117FD9D82A4B3E3D0099F837 /* ReminderViewDelegate.swift */,
+				1140242C2A641D2500EB50D1 /* RemindInViewDelegate.swift */,
 			);
 			path = Delegates;
 			sourceTree = "<group>";
@@ -480,8 +483,8 @@
 		117FD9D22A49AC040099F837 /* CreatePillViewController(Second Screen) */ = {
 			isa = PBXGroup;
 			children = (
-				117FD9D52A49AC220099F837 /* SecondCreatePillViewController+Extensions */,
 				117FD9D32A49AC1A0099F837 /* SecondCreatePillViewController.swift */,
+				117FD9D52A49AC220099F837 /* SecondCreatePillViewController+Extensions */,
 			);
 			path = "CreatePillViewController(Second Screen)";
 			sourceTree = "<group>";
@@ -715,6 +718,7 @@
 				11400A662A273E4C00751E1A /* FirstCreatePillViewController.swift in Sources */,
 				11400A7F2A27421C00751E1A /* BurgerMenuView+SetupViews.swift in Sources */,
 				11400AAF2A27440300751E1A /* AddPillButton.swift in Sources */,
+				1140242D2A641D2500EB50D1 /* RemindInViewDelegate.swift in Sources */,
 				11400A5A2A273D7F00751E1A /* ViewController+Layout.swift in Sources */,
 				119D5FB22A375BA900263CF9 /* HeaderViewCell+Actions.swift in Sources */,
 				114C7BEA2A3A3C380004F0F9 /* TimestampCollectionViewCell.swift in Sources */,

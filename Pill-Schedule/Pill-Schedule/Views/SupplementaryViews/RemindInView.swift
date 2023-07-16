@@ -12,6 +12,8 @@ class RemindInView: UIView {
     var titleLabel: UILabel!
     var switcher: UISwitch!
     var minutesView: UIStackView!
+    var selectedMinutesViewValue = 5.0
+    var delegate: RemindInViewDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
@@ -89,6 +91,18 @@ class RemindInView: UIView {
     @objc func didTapMinutesView(_ sender: UIButton) {
         deselectAll()
         sender.setTitleColor(R.color.dark(), for: .normal)
+        var value = 5.0
+        switch sender.titleLabel?.text {
+        case "5 m": value = 5.0
+        case "10 m": value = 10.0
+        case "15 m": value = 15.0
+        case "20 m": value = 20.0
+        case "30 m": value = 30.0
+        default: value = 5.0
+            
+        }
+        selectedMinutesViewValue = value
+        delegate?.didTapMinuteButton(value: value)
     }
     
     @objc func didTapSwitcher(_ sender: UISwitch) {
@@ -117,7 +131,4 @@ class RemindInView: UIView {
         }
        
     }
-    
-    
-    
 }
