@@ -92,6 +92,7 @@ class RemindInView: UIView {
     }
     
     @objc func didTapSwitcher(_ sender: UISwitch) {
+        requestNotification()
         if sender.isOn {
             UIView.animate(withDuration: 0.35) {
                 self.minutesView.isUserInteractionEnabled = true
@@ -109,6 +110,17 @@ class RemindInView: UIView {
             }
            
         }
+    }
+    
+    func requestNotification() {
+        let center = UNUserNotificationCenter.current()
+        
+        center.requestAuthorization( options: [.alert, .badge, .sound], completionHandler: { granted, error in
+            
+            if let error = error {
+                print(error)
+            }
+        })
     }
 
     
