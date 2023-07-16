@@ -10,6 +10,19 @@ import UIKit
 
 extension SecondCreatePillViewController {
     
+    
+    func createReminder() -> ReminderView {
+        requestNotification()
+        let reminderView = ReminderView(frame: CGRect(x: 0, y: 0, width: width, height: 24))
+        reminderView.reminderNumber = reminderStackView.arrangedSubviews.count + 1
+        hideDeleteButtons()
+        reminderView.deleteButton.alpha = 1
+        reminderView.delegate = self
+        return reminderView
+    }
+    
+    
+    
     func hideDeleteButtons() {
         for reminder in reminderStackView.arrangedSubviews as [ReminderView]{
             UIView.animate(withDuration: 0.35) {

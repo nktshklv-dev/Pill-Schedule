@@ -25,7 +25,7 @@ class RemindInView: UIView {
     
     func setupViews() {
         titleLabel = UILabel()
-        titleLabel.text = "Reminders"
+        titleLabel.text = "Remind in"
         titleLabel.font = UIFont.systemFont(ofSize: 20, weight: .bold)
         titleLabel.textColor = R.color.dark()
         self.addSubview(titleLabel)
@@ -73,7 +73,7 @@ class RemindInView: UIView {
             label.addTarget(self, action: #selector(didTapMinutesView), for: .touchUpInside)
             label.isUserInteractionEnabled = true
             switch i {
-            case 1: label.setTitle("in 5 m", for: .normal)
+            case 1: label.setTitle("5 m", for: .normal)
             case 2: label.setTitle("10 m", for: .normal)
             case 3: label.setTitle("15 m", for: .normal)
             case 4: label.setTitle("20 m", for: .normal)
@@ -92,7 +92,6 @@ class RemindInView: UIView {
     }
     
     @objc func didTapSwitcher(_ sender: UISwitch) {
-        requestNotification()
         if sender.isOn {
             UIView.animate(withDuration: 0.35) {
                 self.minutesView.isUserInteractionEnabled = true
@@ -111,18 +110,6 @@ class RemindInView: UIView {
            
         }
     }
-    
-    func requestNotification() {
-        let center = UNUserNotificationCenter.current()
-        
-        center.requestAuthorization( options: [.alert, .badge, .sound], completionHandler: { granted, error in
-            
-            if let error = error {
-                print(error)
-            }
-        })
-    }
-
     
     func deselectAll() {
         for view in self.minutesView.arrangedSubviews as [UIButton]{

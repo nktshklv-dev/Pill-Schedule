@@ -39,16 +39,6 @@ extension SecondCreatePillViewController {
         self.reminderStackView.addArrangedSubview(reminder)
     }
     
-    func createReminder() -> ReminderView {
-        let reminderView = ReminderView(frame: CGRect(x: 0, y: 0, width: width, height: 24))
-        reminderView.reminderNumber = reminderStackView.arrangedSubviews.count + 1
-        hideDeleteButtons()
-        reminderView.deleteButton.alpha = 1
-        reminderView.delegate = self
-        return reminderView
-    }
-    
-    
     func createPillObject() {
         guard let name = pillNameLabel.text else {return}
         guard let description = pillInfoLabel.text else {return}
@@ -73,6 +63,17 @@ extension SecondCreatePillViewController {
         } catch {
             print(error)
         }
+    }
+
+    func requestNotification() {
+        let center = UNUserNotificationCenter.current()
+        
+        center.requestAuthorization( options: [.alert, .badge, .sound], completionHandler: { granted, error in
+            
+            if let error = error {
+                print(error)
+            }
+        })
     }
     
 }
