@@ -52,6 +52,18 @@ extension SecondCreatePillViewController {
         
     }
     
+    func createNotification() -> UNMutableNotificationContent{
+        let notificationContent = UNMutableNotificationContent()
+        notificationContent.title = "It's time to take your medication!"
+        notificationContent.body = "According to your schedule, it's time to take a medicine called \(pillNameLabel.text)"
+        notificationContent.sound = .default
+        return notificationContent
+    }
+    
+    func createTrigger() {
+        
+    }
+    
     func savePillObject(pill: Pill) {
         do {
             let realm = try Realm()

@@ -10,6 +10,7 @@ import SnapKit
 
 class FirstCreatePillViewController: UIViewController {
     
+    var reminderDates: [Date]?
     var pageNumberLabel = UILabel()
     var titleLabel = UILabel()
     var pillsView = ChoosePillButtonView()

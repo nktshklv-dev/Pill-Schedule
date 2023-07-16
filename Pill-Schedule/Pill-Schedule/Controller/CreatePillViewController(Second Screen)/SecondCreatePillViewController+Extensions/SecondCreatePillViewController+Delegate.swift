@@ -45,9 +45,20 @@ extension SecondCreatePillViewController {
         
     }
     
-    func didSetTimeByDatePicker() {
+    func didSetTimeByDatePicker(date: Date) {
+        print(date)
+        checkReminderViewTextFields()
+        reminderTimes = []
+        for reminderView in reminderStackView.arrangedSubviews as! [ReminderView] {
+            guard let date = reminderView.reminderDate else  {return }
+                reminderTimes.append(reminderView.reminderDate)
+            print(reminderTimes)
+        }
+    }
+    
+    func checkReminderViewTextFields() {
         var hasEmpty = true
-        for reminderView in reminderStackView.arrangedSubviews as [ReminderView] {
+        for reminderView in reminderStackView.arrangedSubviews as! [ReminderView] {
             guard let reminderViewText = reminderView.timerTextField.text else {return}
             if reminderViewText.trimmingCharacters(in: .whitespaces) == "" {
                 hasEmpty = true

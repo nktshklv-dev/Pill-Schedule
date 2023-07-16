@@ -23,6 +23,7 @@ class SecondCreatePillViewController: UIViewController, ReminderViewDelegate {
     var width: CGFloat = 0
     var remindInView: RemindInView!
     var continueButton: ContinueButton!
+    var reminderTimes: [Date?] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()

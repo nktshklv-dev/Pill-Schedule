@@ -10,5 +10,5 @@ import Foundation
 
 protocol ReminderViewDelegate {
     func removeReminder()
-    func didSetTimeByDatePicker()
+    func didSetTimeByDatePicker(date: Date)
 }

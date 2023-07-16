@@ -8,9 +8,9 @@
 import UIKit
 
 class ReminderView: UIView {
-
-   private var datePicker: UIDatePicker!
-    var reminderDate = Date()
+    
+    private var datePicker: UIDatePicker!
+    var reminderDate: Date?
     var reminderNumberLabel: UILabel!
     var timerTextField: UITextField!
     var deleteButton: UIButton!
@@ -72,14 +72,17 @@ class ReminderView: UIView {
     }
     
     @objc func didTapDeleteButon() {
+        self.reminderDate = nil
         delegate.removeReminder()
     }
     
     @objc func donePressed() {
         self.timerTextField.text = "\(datePicker.date.formatted(date: .omitted, time: .shortened))"
         self.reminderDate = datePicker.date
+        guard let date = reminderDate else {return}
+        self.reminderDate = date
         self.endEditing(true)
-        delegate.didSetTimeByDatePicker()
+        delegate.didSetTimeByDatePicker(date: date)
     }
     func setupConstraints() {
         reminderNumberLabel.snp.makeConstraints { make in
