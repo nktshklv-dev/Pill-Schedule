@@ -87,5 +87,17 @@ extension ViewController{
 
         dataSource.apply(snapshot, animatingDifferences: true)
     }
+    
+    func deleteItemFromSnapshot(pill: Pill) {
+        guard let ds = self.dataSource else {
+            print("data source nil")
+            return
+        }
+        var snapshot = ds.snapshot()
+        
+        snapshot.deleteItems([ItemView.pillView(pill)])
+        
+        dataSource.apply(snapshot)
+    }
 
 }
