@@ -49,11 +49,7 @@ class ViewController: UIViewController{
       
     }
     
-    func viewWillAppear() {
-        super.viewWillAppear(true)
-        UNUserNotificationCenter.current().removeAllDeliveredNotifications()
-        UNUserNotificationCenter.current().setBadgeCount(0)
-    }
+   
     
     
     func checkAccount() {
