@@ -16,6 +16,7 @@ class Pill: Object {
     @Persisted var imageType: ChoosePillButtonView.PillType = .pill
     @Persisted var pillDescription: String = ""
     @Persisted var imageName: String = ""
+    @Persisted var notificationID = List<String>()
     
 //    init(name: String, imageType: ChoosePillButtonView.PillType, description: String) {
 //        self.id = UUID()

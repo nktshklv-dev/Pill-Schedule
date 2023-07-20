@@ -12,7 +12,6 @@
 		11400A392A2735F700751E1A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400A382A2735F700751E1A /* SceneDelegate.swift */; };
 		11400A3B2A2735F700751E1A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400A3A2A2735F700751E1A /* ViewController.swift */; };
 		11400A3E2A2735F700751E1A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11400A3C2A2735F700751E1A /* Main.storyboard */; };
-		11400A412A2735F700751E1A /* Pill_Schedule.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 11400A3F2A2735F700751E1A /* Pill_Schedule.xcdatamodeld */; };
 		11400A432A2735F800751E1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11400A422A2735F800751E1A /* Assets.xcassets */; };
 		11400A462A2735F800751E1A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11400A442A2735F800751E1A /* LaunchScreen.storyboard */; };
 		11400A4F2A273A7800751E1A /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400A4E2A273A7800751E1A /* R.generated.swift */; };
@@ -94,7 +93,6 @@
 		11400A382A2735F700751E1A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		11400A3A2A2735F700751E1A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		11400A3D2A2735F700751E1A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		11400A402A2735F700751E1A /* Pill_Schedule.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pill_Schedule.xcdatamodel; sourceTree = "<group>"; };
 		11400A422A2735F800751E1A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11400A452A2735F800751E1A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		11400A472A2735F800751E1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -215,7 +213,6 @@
 				11400A442A2735F800751E1A /* LaunchScreen.storyboard */,
 				11400A472A2735F800751E1A /* Info.plist */,
 				11400A502A273C8100751E1A /* GoogleService-Info.plist */,
-				11400A3F2A2735F700751E1A /* Pill_Schedule.xcdatamodeld */,
 			);
 			path = "Pill-Schedule";
 			sourceTree = "<group>";
@@ -732,7 +729,6 @@
 				118654AA2A29F5CD00446B34 /* AccountSettingsView+EditModeViewSetup.swift in Sources */,
 				11400A812A27422B00751E1A /* BurgerMenuView+CollectionView.swift in Sources */,
 				11E6776D2A5D624A00711E8C /* SecondCreatePillViewController+UIActions.swift in Sources */,
-				11400A412A2735F700751E1A /* Pill_Schedule.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -956,19 +952,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		11400A3F2A2735F700751E1A /* Pill_Schedule.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				11400A402A2735F700751E1A /* Pill_Schedule.xcdatamodel */,
-			);
-			currentVersion = 11400A402A2735F700751E1A /* Pill_Schedule.xcdatamodel */;
-			path = Pill_Schedule.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 11400A2B2A2735F600751E1A /* Project object */;
 }

@@ -61,6 +61,12 @@ extension SecondCreatePillViewController {
         pill.name = name
         pill.imageName = self.pill.imageName
         self.pill = pill
+        
+        for i in 0...2{
+            let id = pill.id.description + i.description
+            pill.notificationID.append(id)
+            print(pill.notificationID)
+        }
        savePillObject(pill: pill)
         
     }
@@ -87,31 +93,35 @@ extension SecondCreatePillViewController {
         var text = ""
         if remindInView.switcher.isOn {
             let minutes = Int(remindInView.selectedMinutesViewValue)
-            text = "In \(minutes) minutes you need to take \(pillNameLabel.text!)!"
+            text = "In \(minutes) minutes you need to take \(pillNameLabel.text!)."
         }
         else {
-            text = "You need to take \"\(pillNameLabel.text!)\"!"
+            text = "You need to take \"\(pillNameLabel.text!)\"."
         }
         notificationContent.body = text
         notificationContent.sound = .default
+        notificationContent.badge = 1 
         return notificationContent
     }
     
     func createTriggers(dates: [Date]) {
+        var counterID = 0
         for date in dates {
             var components = DateComponents()
             var calendar = Calendar.current
             components.hour = calendar.component(.hour, from: date)
             components.minute = calendar.component(.minute, from: date)
             let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: true)
-            createRequest(with: trigger)
+            createRequest(with: trigger, id: counterID.description)
+            counterID += 1
         }
     }
     
-    func createRequest(with trigger: UNCalendarNotificationTrigger) {
+    func createRequest(with trigger: UNCalendarNotificationTrigger, id: String) {
         print(pill.id.description)
+        let requestIdentifier = pill.id.description + id
         let center = UNUserNotificationCenter.current()
-        let request = UNNotificationRequest(identifier: pill.id.description, content: createNotification(), trigger: trigger)
+        let request = UNNotificationRequest(identifier: requestIdentifier, content: createNotification(), trigger: trigger)
         
         center.add(request)
     }

@@ -46,6 +46,13 @@ class ViewController: UIViewController{
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         reloadSnapshot()
+      
+    }
+    
+    func viewWillAppear() {
+        super.viewWillAppear(true)
+        UNUserNotificationCenter.current().removeAllDeliveredNotifications()
+        UNUserNotificationCenter.current().setBadgeCount(0)
     }
     
     

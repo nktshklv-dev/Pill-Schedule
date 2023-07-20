@@ -62,15 +62,20 @@ extension ViewController: UICollectionViewDelegate {
             
             var selectedPill = pills[row]
             deleteItemFromSnapshot(pill: selectedPill)
+            deleteNotifications(for: selectedPill)
             try realm.write({
                 realm.delete(selectedPill)
             })
             pills = Array(realm.objects(Pill.self).reversed())
-            print(pills.count)
-          
         } catch {
             print(error)
         }
+    }
+    
+    func deleteNotifications(for pill: Pill) {
+        let center = UNUserNotificationCenter.current()
+        let ids = Array(pill.notificationID)
+        center.removePendingNotificationRequests(withIdentifiers: ids)
     }
     
 }
