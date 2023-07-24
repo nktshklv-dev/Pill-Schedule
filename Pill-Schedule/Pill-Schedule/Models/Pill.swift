@@ -17,6 +17,7 @@ class Pill: Object {
     @Persisted var pillDescription: String = ""
     @Persisted var imageName: String = ""
     @Persisted var notificationID = List<String>()
+    @Persisted var reminderTimes = List<String>()
     
 //    init(name: String, imageType: ChoosePillButtonView.PillType, description: String) {
 //        self.id = UUID()
@@ -32,7 +33,7 @@ class Pill: Object {
         case "ampoule": return R.image.ampoule()
         case "inhaler": return R.image.inhaler()
         case "capsule": return R.image.capsule()
-        default: return nil
+        default: return R.image.pill()
         }
     }
 }

@@ -57,7 +57,7 @@ extension ViewController{
         } catch {
             print(error)
         }
-        for pill in pills{
+        for pill in pills {
             print(pill.imageName)
             snapshot.appendItems([ItemView.pillView(pill)], toSection: .mainSection)
         }

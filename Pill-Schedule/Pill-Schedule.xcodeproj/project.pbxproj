@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1122D9CC2A3B9B5B00913E01 /* ContinueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1122D9CB2A3B9B5B00913E01 /* ContinueButton.swift */; };
+		1124CEF62A6EFA4500D9420D /* PillEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1124CEF52A6EFA4500D9420D /* PillEditViewController.swift */; };
 		11400A372A2735F700751E1A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400A362A2735F700751E1A /* AppDelegate.swift */; };
 		11400A392A2735F700751E1A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400A382A2735F700751E1A /* SceneDelegate.swift */; };
 		11400A3B2A2735F700751E1A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400A3A2A2735F700751E1A /* ViewController.swift */; };
@@ -88,6 +89,7 @@
 /* Begin PBXFileReference section */
 		0FC939FBE800F91926364B70 /* Pods_Pill_Schedule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pill_Schedule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1122D9CB2A3B9B5B00913E01 /* ContinueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinueButton.swift; sourceTree = "<group>"; };
+		1124CEF52A6EFA4500D9420D /* PillEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillEditViewController.swift; sourceTree = "<group>"; };
 		11400A332A2735F700751E1A /* Pill-Schedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pill-Schedule.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		11400A362A2735F700751E1A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11400A382A2735F700751E1A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -440,6 +442,7 @@
 				1122D9CB2A3B9B5B00913E01 /* ContinueButton.swift */,
 				117FD9D62A4A38410099F837 /* ReminderView.swift */,
 				117FD9DA2A4D75280099F837 /* RemindInView.swift */,
+				1124CEF52A6EFA4500D9420D /* PillEditViewController.swift */,
 			);
 			path = SupplementaryViews;
 			sourceTree = "<group>";
@@ -721,6 +724,7 @@
 				114C7BEA2A3A3C380004F0F9 /* TimestampCollectionViewCell.swift in Sources */,
 				11400AA62A2743B900751E1A /* InfoViewCell.swift in Sources */,
 				1165792D2A3652BC00397351 /* PillButton.swift in Sources */,
+				1124CEF62A6EFA4500D9420D /* PillEditViewController.swift in Sources */,
 				11400A852A27424900751E1A /* BurgerMenuView+Actions.swift in Sources */,
 				11400AC32A291DB800751E1A /* SpinningProgressView.swift in Sources */,
 				11400ABB2A2750D700751E1A /* AccountSettingsView+LoggedInSetup.swift in Sources */,

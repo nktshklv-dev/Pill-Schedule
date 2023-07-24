@@ -67,11 +67,17 @@ extension SecondCreatePillViewController {
             pill.notificationID.append(id)
             print(pill.notificationID)
         }
-       savePillObject(pill: pill)
         
+        for date in cuttedReminderTimes {
+            let date = date.formatted(date: .omitted, time: .shortened)
+            let stringDate = String(date.dropLast(3))
+            print(stringDate)
+            pill.reminderTimes.append(stringDate)
+            print(pill.reminderTimes)
+        }
+       savePillObject(pill: pill)
+
     }
-
-
     
     func savePillObject(pill: Pill) {
         do {

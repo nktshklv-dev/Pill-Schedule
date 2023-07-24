@@ -40,6 +40,7 @@ extension ViewController: UICollectionViewDelegate {
                 
                 let edit = UIAction(title: "Edit", image: UIImage(systemName: "square.and.pencil"), identifier: nil, discoverabilityTitle: nil, state: .off) { (_) in
                     print("edit button clicked")
+                    self.editSelectedPill(indexPath: indexPath)
                 }
                 let delete = UIAction(title: "Delete", image: UIImage(systemName: "trash"), identifier: nil, discoverabilityTitle: nil,attributes: .destructive, state: .off) { (_) in
                     print("delete button clicked")
@@ -70,6 +71,27 @@ extension ViewController: UICollectionViewDelegate {
         } catch {
             print(error)
         }
+    }
+    
+    func editSelectedPill(indexPath: IndexPath) {
+        let row = indexPath.row
+        let editView = PillEditViewController()
+        
+        do {
+            let realm = try Realm()
+            var pills = Array(realm.objects(Pill.self).reversed())
+            
+            var selectedPill = pills[row]
+            
+            editView.editingPill = selectedPill
+            
+        }
+        catch {
+            print(error)
+        }
+        
+        self.present(editView, animated: true)
+        
     }
     
     func deleteNotifications(for pill: Pill) {
