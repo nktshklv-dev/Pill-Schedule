@@ -34,7 +34,7 @@ class PillEditViewController : UIViewController, RemindInViewDelegate, ReminderV
     var width: CGFloat = 0
     var remindInView: RemindInView!
     var doneButton: UIButton!
-    var reminderTimes: [Date] = []
+    var reminderTimes: [String] = []
     
     
     override func viewDidLoad() {
@@ -55,9 +55,19 @@ class PillEditViewController : UIViewController, RemindInViewDelegate, ReminderV
         if dates.count != 0 {
             for dateString in dates {
                 guard let date = getDate(from: dateString) else {return}
-                reminderTimes.append(date)
-                print(reminderTimes)
+                reminderTimes.append(date.formatted(date: .omitted, time: .shortened))
             }
+            fillReminderStackView()
+        }
+    }
+    
+    func fillReminderStackView() {
+        for reminderText in reminderTimes {
+            let reminderView = ReminderView()
+            reminderView.timerTextField.text = reminderText
+            reminderView.deleteButton.alpha = 1
+            reminderView.delegate = self
+            addReminder(reminder: reminderView)
         }
     }
     
@@ -103,8 +113,6 @@ class PillEditViewController : UIViewController, RemindInViewDelegate, ReminderV
         reminderStackView.distribution = .fillProportionally
         reminderStackView.spacing = 20
         self.view.addSubview(reminderStackView)
-        let reminder = createReminder()
-        addReminder(reminder: reminder)
         
         addReminderButton = UIButton()
         addReminderButton.addTarget(self, action: #selector(didTapAddReminderButton), for: .touchUpInside)
@@ -242,51 +250,51 @@ class PillEditViewController : UIViewController, RemindInViewDelegate, ReminderV
         }
         
     }
-        
+    
     func hideDeleteButtons() {
-            for reminder in reminderStackView.arrangedSubviews as [ReminderView]{
-                UIView.animate(withDuration: 0.35) {
-                    reminder.deleteButton.alpha = 0
-                    reminder.deleteButton.isUserInteractionEnabled = false
-                }
-                
-            }
-        }
-        
-        func addReminder(reminder: ReminderView) {
-            if reminder.reminderNumber >= 3 {
-                hideAddReminderButton()
-                showReminderPrompt()
-            }
-            self.reminderStackView.addArrangedSubview(reminder)
-        }
-        
-        func hideAddReminderButton() {
-            UIView.animate(withDuration: 0.5) {
-                self.addReminderButton.alpha = 0
-                self.addReminderButton.isUserInteractionEnabled = false
-            }
-        }
-        func showReminderPrompt() {
-            UIView.animate(withDuration: 1, animations: {
-                self.promptLabel.alpha = 1
-            })
-            
-        }
-        
-        @objc func didTapAddReminderButton() {
-            reminderStackViewHeight += 44
-            let reminder = createReminder()
+        for reminder in reminderStackView.arrangedSubviews as [ReminderView]{
             UIView.animate(withDuration: 0.35) {
-                self.reminderStackView.snp.updateConstraints { make in
-                    make.height.equalTo(self.reminderStackViewHeight)
-                }
-                self.addReminder(reminder: reminder)
-                self.view.layoutIfNeeded()
+                reminder.deleteButton.alpha = 0
+                reminder.deleteButton.isUserInteractionEnabled = false
             }
             
         }
+    }
+    
+    func addReminder(reminder: ReminderView) {
+        if reminder.reminderNumber >= 3 {
+            hideAddReminderButton()
+            showReminderPrompt()
+        }
+        self.reminderStackView.addArrangedSubview(reminder)
+    }
+    
+    func hideAddReminderButton() {
+        UIView.animate(withDuration: 0.5) {
+            self.addReminderButton.alpha = 0
+            self.addReminderButton.isUserInteractionEnabled = false
+        }
+    }
+    func showReminderPrompt() {
+        UIView.animate(withDuration: 1, animations: {
+            self.promptLabel.alpha = 1
+        })
         
+    }
+    
+    @objc func didTapAddReminderButton() {
+        reminderStackViewHeight += 44
+        let reminder = createReminder()
+        UIView.animate(withDuration: 0.35) {
+            self.reminderStackView.snp.updateConstraints { make in
+                make.height.equalTo(self.reminderStackViewHeight)
+            }
+            self.addReminder(reminder: reminder)
+            self.view.layoutIfNeeded()
+        }
+        
+    }
+    
     
     func getDate(from dateString: String) -> Date? {
         print(dateString)
@@ -298,5 +306,3 @@ class PillEditViewController : UIViewController, RemindInViewDelegate, ReminderV
         return date
     }
 }
-
-
