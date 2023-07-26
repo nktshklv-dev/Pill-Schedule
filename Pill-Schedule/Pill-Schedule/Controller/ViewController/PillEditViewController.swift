@@ -134,6 +134,7 @@ class PillEditViewController : UIViewController, RemindInViewDelegate, ReminderV
         
         
         remindInView = RemindInView()
+        checkRemindInView()
         remindInView.delegate = self
         self.view.addSubview(remindInView)
         
@@ -144,9 +145,7 @@ class PillEditViewController : UIViewController, RemindInViewDelegate, ReminderV
         self.view.addSubview(doneButton)
         
     }
-    
-    
-    
+
     func setupConstraints() {
         doneButton.snp.makeConstraints { make in
             make.top.equalTo(self.view).offset(10)
@@ -306,6 +305,20 @@ class PillEditViewController : UIViewController, RemindInViewDelegate, ReminderV
             self.view.layoutIfNeeded()
         }
     }
+    
+    func checkRemindInView() {
+        let minutes = editingPill.remindIntime
+        
+        if minutes == 0.0 {
+            return
+        }
+        else {
+            remindInView.toggleSwitcher(isOn: true)
+            remindInView.setMinutesViewValue(to: minutes)
+        }
+    }
+    
+    
     
     
     func getDate(from dateString: String) -> Date? {

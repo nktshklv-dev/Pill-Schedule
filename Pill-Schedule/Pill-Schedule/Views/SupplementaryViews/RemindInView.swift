@@ -11,7 +11,7 @@ class RemindInView: UIView {
     
     var titleLabel: UILabel!
     var switcher: UISwitch!
-    var minutesView: UIStackView!
+    var minutesStackView: UIStackView!
     var selectedMinutesViewValue = 5.0
     var delegate: RemindInViewDelegate?
     
@@ -25,7 +25,7 @@ class RemindInView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupViews() {
+    private func setupViews() {
         titleLabel = UILabel()
         titleLabel.text = "Remind in"
         titleLabel.font = UIFont.systemFont(ofSize: 20, weight: .bold)
@@ -37,18 +37,18 @@ class RemindInView: UIView {
         switcher.addTarget(self, action: #selector(didTapSwitcher), for: .touchUpInside)
         self.addSubview(switcher)
         
-        minutesView = UIStackView()
-        minutesView.axis = .horizontal
-        minutesView.distribution = .fillProportionally
-        minutesView.spacing = 24
+        minutesStackView = UIStackView()
+        minutesStackView.axis = .horizontal
+        minutesStackView.distribution = .fillProportionally
+        minutesStackView.spacing = 24
         fillMinutesView()
-        minutesView.isUserInteractionEnabled = false
-        minutesView.alpha = 0
-        self.addSubview(minutesView)
+        minutesStackView.isUserInteractionEnabled = false
+        minutesStackView.alpha = 0
+        self.addSubview(minutesStackView)
         
     }
     
-    func setupConstraints() {
+   private func setupConstraints() {
         titleLabel.snp.makeConstraints { make in
             make.top.equalTo(self).offset(10)
             make.left.equalTo(self).inset(24)
@@ -59,7 +59,7 @@ class RemindInView: UIView {
             make.right.equalTo(self).inset(24)
         }
         
-        minutesView.snp.makeConstraints { make in
+        minutesStackView.snp.makeConstraints { make in
             make.left.equalTo(titleLabel)
             make.right.equalTo(switcher)
             make.height.equalTo(30)
@@ -67,7 +67,7 @@ class RemindInView: UIView {
         }
     }
     
-    func fillMinutesView() {
+    private func fillMinutesView() {
         for i in 1...5 {
             let label = UIButton()
             label.setTitleColor(R.color.gray2(), for: .normal)
@@ -83,12 +83,12 @@ class RemindInView: UIView {
             default: break
             }
             
-            minutesView.addArrangedSubview(label)
+            minutesStackView.addArrangedSubview(label)
             
         }
     }
     
-    @objc func didTapMinutesView(_ sender: UIButton) {
+     @objc private func didTapMinutesView(_ sender: UIButton) {
         deselectAll()
         sender.setTitleColor(R.color.dark(), for: .normal)
         var value = 5.0
@@ -105,30 +105,50 @@ class RemindInView: UIView {
         delegate?.didTapMinuteButton(value: value)
     }
     
-    @objc func didTapSwitcher(_ sender: UISwitch) {
+    func toggleSwitcher(isOn: Bool) {
+        switcher.isOn = isOn
+        self.didTapSwitcher(switcher)
+    }
+    @objc private func didTapSwitcher(_ sender: UISwitch) {
         if sender.isOn {
             UIView.animate(withDuration: 0.35) {
-                self.minutesView.isUserInteractionEnabled = true
-                self.minutesView.transform = CGAffineTransform(translationX: 0, y: 28)
-                self.minutesView.alpha = 1
+                self.minutesStackView.isUserInteractionEnabled = true
+                self.minutesStackView.transform = CGAffineTransform(translationX: 0, y: 28)
+                self.minutesStackView.alpha = 1
             }
            
         }
         
         else {
             UIView.animate(withDuration: 0.35) {
-                self.minutesView.isUserInteractionEnabled = false
-                self.minutesView.transform = CGAffineTransform(translationX: 0, y: 0)
-                self.minutesView.alpha = 0
+                self.minutesStackView.isUserInteractionEnabled = false
+                self.minutesStackView.transform = CGAffineTransform(translationX: 0, y: 0)
+                self.minutesStackView.alpha = 0
             }
            
         }
     }
     
-    func deselectAll() {
-        for view in self.minutesView.arrangedSubviews as [UIButton]{
+    private func deselectAll() {
+        for view in self.minutesStackView.arrangedSubviews as [UIButton]{
             view.setTitleColor(R.color.gray2(), for: .normal)
         }
        
+    }
+    
+    func setMinutesViewValue(to minutes: Double) {
+        self.selectedMinutesViewValue = minutes
+        guard let arrangedSubviews = minutesStackView.arrangedSubviews as? [UIButton] else {return}
+        var index = 0
+        switch minutes {
+        case 5.0: index = 0
+        case 10.0: index = 1
+        case 15.0: index = 2
+        case 20.0: index = 3
+        case 30.0: index = 4
+        default:  print("default"); index = 0
+        }
+        didTapMinutesView(arrangedSubviews[index])
+        
     }
 }

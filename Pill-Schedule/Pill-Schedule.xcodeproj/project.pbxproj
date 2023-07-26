@@ -255,6 +255,7 @@
 			children = (
 				11400A562A273D5100751E1A /* ViewController+Extensions */,
 				11400A3A2A2735F700751E1A /* ViewController.swift */,
+				1124CEF52A6EFA4500D9420D /* PillEditViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -442,7 +443,6 @@
 				1122D9CB2A3B9B5B00913E01 /* ContinueButton.swift */,
 				117FD9D62A4A38410099F837 /* ReminderView.swift */,
 				117FD9DA2A4D75280099F837 /* RemindInView.swift */,
-				1124CEF52A6EFA4500D9420D /* PillEditViewController.swift */,
 			);
 			path = SupplementaryViews;
 			sourceTree = "<group>";
