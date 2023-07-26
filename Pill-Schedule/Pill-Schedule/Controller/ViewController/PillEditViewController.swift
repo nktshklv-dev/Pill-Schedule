@@ -34,6 +34,7 @@ class PillEditViewController : UIViewController, RemindInViewDelegate, ReminderV
     var width: CGFloat = 0
     var remindInView: RemindInView!
     var doneButton: UIButton!
+    var cancelButton: UIButton!
     var reminderTimes: [String] = []
     
     
@@ -139,11 +140,23 @@ class PillEditViewController : UIViewController, RemindInViewDelegate, ReminderV
         self.view.addSubview(remindInView)
         
         doneButton = UIButton()
-        doneButton.setTitle("Done", for: .normal)
-        doneButton.setTitleColor(R.color.blue(), for: .normal)
+        doneButton.setTitle("Save", for: .normal)
+        doneButton.setTitleColor(R.color.gray2(), for: .normal)
         doneButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         self.view.addSubview(doneButton)
         
+        cancelButton = UIButton()
+        cancelButton.setTitle("Cancel", for: .normal)
+        cancelButton.setTitleColor(R.color.blue(), for: .normal)
+        cancelButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+        cancelButton.addTarget(self, action: #selector(didTapCancelButton), for: .touchUpInside)
+        self.view.addSubview(cancelButton)
+        
+        
+    }
+     
+    @objc func didTapCancelButton(_ sender: UIButton) {
+        self.dismiss(animated: true)
     }
 
     func setupConstraints() {
@@ -152,14 +165,19 @@ class PillEditViewController : UIViewController, RemindInViewDelegate, ReminderV
             make.right.equalTo(self.view).offset(-20)
         }
         
+        cancelButton.snp.makeConstraints { make in
+            make.top.equalTo(doneButton)
+            make.left.equalTo(self.view).offset(20)
+        }
+        
         titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(self.view).offset(30)
+            make.top.equalTo(self.view).offset(50)
             make.left.equalTo(self.view).offset(24)
         }
         
         verticalView.snp.makeConstraints { make in
             make.left.equalTo(self.view).offset(14)
-            make.top.equalTo(titleLabel.snp.bottom).offset(34)
+            make.top.equalTo(titleLabel.snp.bottom).offset(24)
         }
         
         pillImageView.snp.makeConstraints { make in
