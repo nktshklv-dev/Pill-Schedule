@@ -63,11 +63,12 @@ class PillEditViewController : UIViewController, RemindInViewDelegate, ReminderV
     
     func fillReminderStackView() {
         for reminderText in reminderTimes {
-            let reminderView = ReminderView()
-            reminderView.timerTextField.text = reminderText
-            reminderView.deleteButton.alpha = 1
-            reminderView.delegate = self
-            addReminder(reminder: reminderView)
+            didTapAddReminderButton()
+        }
+        guard var reminderViews = reminderStackView.arrangedSubviews as? [ReminderView] else {return}
+        
+        for (index, reminderView) in reminderViews.enumerated() {
+            reminderView.timerTextField.text = reminderTimes[index]
         }
     }
     
@@ -293,6 +294,17 @@ class PillEditViewController : UIViewController, RemindInViewDelegate, ReminderV
             self.view.layoutIfNeeded()
         }
         
+    }
+    
+    func addExistingReminder(reminder: ReminderView) {
+        reminderStackViewHeight += 44
+        UIView.animate(withDuration: 0.35) {
+            self.reminderStackView.snp.updateConstraints { make in
+                make.height.equalTo(self.reminderStackViewHeight)
+            }
+            self.addReminder(reminder: reminder)
+            self.view.layoutIfNeeded()
+        }
     }
     
     

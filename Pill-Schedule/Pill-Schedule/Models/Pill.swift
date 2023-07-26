@@ -18,6 +18,7 @@ class Pill: Object {
     @Persisted var imageName: String = ""
     @Persisted var notificationID = List<String>()
     @Persisted var reminderTimes = List<String>()
+    @Persisted var remindIntime = 0.0
     
 //    init(name: String, imageType: ChoosePillButtonView.PillType, description: String) {
 //        self.id = UUID()

@@ -60,6 +60,13 @@ extension SecondCreatePillViewController {
         pill.pillDescription = description
         pill.name = name
         pill.imageName = self.pill.imageName
+        if remindInView.switcher.isOn {
+            pill.remindIntime = self.remindInView.selectedMinutesViewValue
+        }
+        else {
+            pill.remindIntime = 0.0 
+        }
+      
         self.pill = pill
         
         for i in 0...2{
