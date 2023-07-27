@@ -9,17 +9,7 @@ import Foundation
 import UIKit
 
 class PillEditViewController : UIViewController, RemindInViewDelegate, ReminderViewDelegate {
-    
-    
-    func didSetTimeByDatePicker(date: Date) {
-        
-    }
-    
-    func didTapMinuteButton(value: Double) {
-        
-    }
-    
-    
+
     var editingPill: Pill!
     
     var titleLabel: UILabel!
@@ -36,6 +26,8 @@ class PillEditViewController : UIViewController, RemindInViewDelegate, ReminderV
     var doneButton: UIButton!
     var cancelButton: UIButton!
     var reminderTimes: [String] = []
+    var newReminderTimes: [String] = []
+    var remindInTime: Double = 0
     
     
     override func viewDidLoad() {
@@ -49,6 +41,24 @@ class PillEditViewController : UIViewController, RemindInViewDelegate, ReminderV
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         print("viewWillDisappear")
+    }
+    
+    func didSetTimeByDatePicker(date: Date) {
+        reloadReminderTimes()
+    }
+    
+    func didTapMinuteButton(value: Double) {
+        self.remindInTime = value
+        
+        if self.remindInTime != editingPill.remindIntime {
+            UIView.animate(withDuration: 0.35) {
+                self.doneButton.setTitleColor(R.color.blue(), for: .normal)
+            }
+        } else {
+            UIView.animate(withDuration: 0.35) {
+                self.doneButton.setTitleColor(R.color.gray2(), for: .normal)
+            }
+        }
     }
     
     func checkReminderDates() {
@@ -70,6 +80,16 @@ class PillEditViewController : UIViewController, RemindInViewDelegate, ReminderV
         
         for (index, reminderView) in reminderViews.enumerated() {
             reminderView.timerTextField.text = reminderTimes[index]
+        }
+    }
+    
+    func reloadReminderTimes() {
+        var arrangedSubviews = reminderStackView.arrangedSubviews as [ReminderView]
+        
+        for arrangedSubview in arrangedSubviews {
+            guard let timerText = arrangedSubview.timerTextField.text else {return}
+            print(timerText)
+            reminderTimes.append(timerText)
         }
     }
     
@@ -258,6 +278,7 @@ class PillEditViewController : UIViewController, RemindInViewDelegate, ReminderV
             if lastView.timerTextField.text?.trimmingCharacters(in: .whitespaces) != "" {
             }
         }
+        reloadReminderTimes()
     }
     
     func showLastDeleteButton() {
@@ -326,7 +347,7 @@ class PillEditViewController : UIViewController, RemindInViewDelegate, ReminderV
     
     func checkRemindInView() {
         let minutes = editingPill.remindIntime
-        
+        remindInTime = minutes
         if minutes == 0.0 {
             return
         }
@@ -335,9 +356,6 @@ class PillEditViewController : UIViewController, RemindInViewDelegate, ReminderV
             remindInView.setMinutesViewValue(to: minutes)
         }
     }
-    
-    
-    
     
     func getDate(from dateString: String) -> Date? {
         print(dateString)

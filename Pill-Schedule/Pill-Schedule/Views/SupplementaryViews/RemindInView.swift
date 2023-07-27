@@ -116,6 +116,7 @@ class RemindInView: UIView {
                 self.minutesStackView.transform = CGAffineTransform(translationX: 0, y: 28)
                 self.minutesStackView.alpha = 1
             }
+            self.delegate?.didTapMinuteButton(value: self.selectedMinutesViewValue)
            
         }
         
@@ -125,6 +126,7 @@ class RemindInView: UIView {
                 self.minutesStackView.transform = CGAffineTransform(translationX: 0, y: 0)
                 self.minutesStackView.alpha = 0
             }
+            self.delegate?.didTapMinuteButton(value: 0.0)
            
         }
     }
