@@ -28,6 +28,8 @@ class PillEditViewController : UIViewController {
     var reminderTimes: [String] = []
     var newReminderTimes: [String] = []
     var remindInTime: Double = 0
+    var mainReminderTimes = [Date]()
+    var cuttedReminderTimes = [Date]()
     
     
     override func viewDidLoad() {
@@ -49,7 +51,9 @@ class PillEditViewController : UIViewController {
             for dateString in dates {
                 guard let date = getDate(from: dateString) else {return}
                 reminderTimes.append(date.formatted(date: .omitted, time: .shortened))
+                print(reminderTimes)
             }
+            newReminderTimes = reminderTimes
             fillReminderStackView()
         }
     }
@@ -57,11 +61,11 @@ class PillEditViewController : UIViewController {
    
     func reloadReminderTimes() {
         var arrangedSubviews = reminderStackView.arrangedSubviews as [ReminderView]
-        
+        newReminderTimes = [String]()
         for arrangedSubview in arrangedSubviews {
             guard let timerText = arrangedSubview.timerTextField.text else {return}
             print(timerText)
-            reminderTimes.append(timerText)
+            newReminderTimes.append(timerText)
         }
     }
     

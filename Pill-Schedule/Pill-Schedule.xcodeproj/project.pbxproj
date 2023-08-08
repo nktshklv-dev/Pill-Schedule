@@ -250,6 +250,7 @@
 		11400A552A273D4000751E1A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				113ABCDA2A78167E00F66649 /* PillEditViewController */,
 				117FD9D22A49AC040099F837 /* CreatePillViewController(Second Screen) */,
 				11400A642A273DFF00751E1A /* CreatePillViewController(First Screen) */,
 				11400A632A273DF400751E1A /* ViewController */,
@@ -275,7 +276,6 @@
 			children = (
 				11400A562A273D5100751E1A /* ViewController+Extensions */,
 				11400A3A2A2735F700751E1A /* ViewController.swift */,
-				113ABCDA2A78167E00F66649 /* PillEditViewController */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";

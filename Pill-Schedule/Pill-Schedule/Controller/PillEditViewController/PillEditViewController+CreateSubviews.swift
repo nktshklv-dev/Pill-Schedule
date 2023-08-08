@@ -13,7 +13,6 @@ extension PillEditViewController {
     func setupViews() {
         self.view.backgroundColor = .white
         
-        
         titleLabel = UILabel()
         titleLabel?.text = "Edit"
         titleLabel.textColor = R.color.dark()
@@ -75,6 +74,8 @@ extension PillEditViewController {
         doneButton.setTitle("Save", for: .normal)
         doneButton.setTitleColor(R.color.gray2(), for: .normal)
         doneButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+        doneButton.addTarget(self, action: #selector(didTapDoneButton), for: .touchUpInside)
+        doneButton.isUserInteractionEnabled = false
         self.view.addSubview(doneButton)
         
         cancelButton = UIButton()
@@ -146,8 +147,4 @@ extension PillEditViewController {
         }
         
     }
-    
-    
-    
-    
 }

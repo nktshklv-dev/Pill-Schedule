@@ -16,16 +16,19 @@ extension PillEditViewController: RemindInViewDelegate {
         if self.remindInTime != editingPill.remindIntime {
             UIView.animate(withDuration: 0.35) {
                 self.doneButton.setTitleColor(R.color.blue(), for: .normal)
+                self.doneButton.isUserInteractionEnabled = true
             }
         } else {
             UIView.animate(withDuration: 0.35) {
                 self.doneButton.setTitleColor(R.color.gray2(), for: .normal)
+                self.doneButton.isUserInteractionEnabled = false
             }
         }
     }
 }
 
 extension PillEditViewController: ReminderViewDelegate {
+    
     func removeReminder() {
         if reminderStackView.arrangedSubviews.count == 1 {
             guard let lastView = reminderStackView.arrangedSubviews.last as? ReminderView else {return}
@@ -55,10 +58,24 @@ extension PillEditViewController: ReminderViewDelegate {
             }
         }
         reloadReminderTimes()
+        compareReminderTimes()
     }
     
     func didSetTimeByDatePicker(date: Date) {
         reloadReminderTimes()
+        compareReminderTimes()
+    }
+    
+    func compareReminderTimes() {
+        print(reminderTimes)
+        print(newReminderTimes)
+        if reminderTimes != newReminderTimes {
+            doneButton.setTitleColor(R.color.blue(), for: .normal)
+            doneButton.isUserInteractionEnabled = true
+        } else {
+            doneButton.setTitleColor(R.color.gray2(), for: .normal)
+            doneButton.isUserInteractionEnabled = false
+        }
     }
     
 }
