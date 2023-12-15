@@ -20,7 +20,6 @@
 		11400A432A2735F800751E1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11400A422A2735F800751E1A /* Assets.xcassets */; };
 		11400A462A2735F800751E1A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11400A442A2735F800751E1A /* LaunchScreen.storyboard */; };
 		11400A4F2A273A7800751E1A /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400A4E2A273A7800751E1A /* R.generated.swift */; };
-		11400A512A273C8100751E1A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11400A502A273C8100751E1A /* GoogleService-Info.plist */; };
 		11400A542A273D2F00751E1A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400A532A273D2F00751E1A /* Extensions.swift */; };
 		11400A582A273D6900751E1A /* ViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400A572A273D6900751E1A /* ViewController+DataSource.swift */; };
 		11400A5A2A273D7F00751E1A /* ViewController+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11400A592A273D7F00751E1A /* ViewController+Layout.swift */; };
@@ -83,6 +82,7 @@
 		118654AC2A2A7B9400446B34 /* AccountSettingsView+ImagePickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118654AB2A2A7B9400446B34 /* AccountSettingsView+ImagePickerDelegate.swift */; };
 		118654AE2A2A838800446B34 /* AccountSettingsView+StorageActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118654AD2A2A838800446B34 /* AccountSettingsView+StorageActions.swift */; };
 		119D5FB22A375BA900263CF9 /* HeaderViewCell+Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119D5FB12A375BA900263CF9 /* HeaderViewCell+Actions.swift */; };
+		11D5EAE72B2CF26000D9C2A7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11D5EAE62B2CF26000D9C2A7 /* GoogleService-Info.plist */; };
 		11E677672A5D612C00711E8C /* SecondCreatePillViewController+SetupViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E677662A5D612C00711E8C /* SecondCreatePillViewController+SetupViews.swift */; };
 		11E677692A5D619900711E8C /* SecondCreatePillViewController+Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E677682A5D619900711E8C /* SecondCreatePillViewController+Actions.swift */; };
 		11E6776B2A5D61E200711E8C /* SecondCreatePillViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E6776A2A5D61E200711E8C /* SecondCreatePillViewController+Delegate.swift */; };
@@ -107,7 +107,6 @@
 		11400A452A2735F800751E1A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		11400A472A2735F800751E1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11400A4E2A273A7800751E1A /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
-		11400A502A273C8100751E1A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		11400A532A273D2F00751E1A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		11400A572A273D6900751E1A /* ViewController+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+DataSource.swift"; sourceTree = "<group>"; };
 		11400A592A273D7F00751E1A /* ViewController+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Layout.swift"; sourceTree = "<group>"; };
@@ -170,6 +169,7 @@
 		118654AB2A2A7B9400446B34 /* AccountSettingsView+ImagePickerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountSettingsView+ImagePickerDelegate.swift"; sourceTree = "<group>"; };
 		118654AD2A2A838800446B34 /* AccountSettingsView+StorageActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountSettingsView+StorageActions.swift"; sourceTree = "<group>"; };
 		119D5FB12A375BA900263CF9 /* HeaderViewCell+Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HeaderViewCell+Actions.swift"; sourceTree = "<group>"; };
+		11D5EAE62B2CF26000D9C2A7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		11E677662A5D612C00711E8C /* SecondCreatePillViewController+SetupViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SecondCreatePillViewController+SetupViews.swift"; sourceTree = "<group>"; };
 		11E677682A5D619900711E8C /* SecondCreatePillViewController+Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SecondCreatePillViewController+Actions.swift"; sourceTree = "<group>"; };
 		11E6776A2A5D61E200711E8C /* SecondCreatePillViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SecondCreatePillViewController+Delegate.swift"; sourceTree = "<group>"; };
@@ -234,7 +234,7 @@
 				11400A422A2735F800751E1A /* Assets.xcassets */,
 				11400A442A2735F800751E1A /* LaunchScreen.storyboard */,
 				11400A472A2735F800751E1A /* Info.plist */,
-				11400A502A273C8100751E1A /* GoogleService-Info.plist */,
+				11D5EAE62B2CF26000D9C2A7 /* GoogleService-Info.plist */,
 			);
 			path = "Pill-Schedule";
 			sourceTree = "<group>";
@@ -607,7 +607,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				11400A462A2735F800751E1A /* LaunchScreen.storyboard in Resources */,
-				11400A512A273C8100751E1A /* GoogleService-Info.plist in Resources */,
+				11D5EAE72B2CF26000D9C2A7 /* GoogleService-Info.plist in Resources */,
 				11400A432A2735F800751E1A /* Assets.xcassets in Resources */,
 				11400A3E2A2735F700751E1A /* Main.storyboard in Resources */,
 			);
@@ -913,7 +913,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -944,7 +944,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
